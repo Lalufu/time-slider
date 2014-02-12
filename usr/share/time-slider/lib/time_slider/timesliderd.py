@@ -31,6 +31,7 @@ import time
 import datetime
 import calendar
 import signal
+import argparse
 
 import glib
 import gobject
@@ -928,9 +929,13 @@ def create_daemon():
 
 def main(argv):
 
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--foreground', action='store_true', help='Do not daemonize', default=False)
+    args, _ = parser.parse_known_args()
 
     # Daemonise the service.
-    create_daemon()
+    if not args.foreground:
+        create_daemon()
 
     # The user security attributes checked are the following:
     # Note that UID == 0 will match any profile search so
