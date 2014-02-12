@@ -132,6 +132,9 @@ class Datasets(Exception):
             if excludedchild == False:
                 # We want recursive list sorted in alphabetical order
                 # so insert instead of append to the list.
+                # Also, remove all children from the recursive
+                # list, as they are covered by the parent
+                recursive = [x for x in recursive if x not in children]
                 recursive.insert(0, datasetname)
 
         for datasetname in recursive:
