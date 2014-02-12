@@ -177,12 +177,6 @@ def main(argv):
                 sys.exit(-1)
         
         
-        # Invoke the send and receive commands via pfexec(1) since
-        # we are not using the role's shell to take care of that
-        # for us.
-        sendcmd.insert(0, smf.PFCMD)
-        recvcmd.insert(0, smf.PFCMD)
-
         try:
             sendP = subprocess.Popen(sendcmd,
                                      stdout=subprocess.PIPE,

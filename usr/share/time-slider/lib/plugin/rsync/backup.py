@@ -532,7 +532,7 @@ class BackupQueue():
                     pending = [name for time,name in \
                                list_pending_snapshots(self._propName) if \
                                name.find(snapshot.fsname + '@') == 0]
-                    cmd = [zfs.PFCMD, zfs.ZFSCMD, "inherit", self._propName]
+                    cmd = [zfs.ZFSCMD, "inherit", self._propName]
                     util.debug("Unqueuing pending backups of deselected " \
                                "filesystem: " + snapshot.fsname + '\n' + \
                                str(pending),

@@ -95,14 +95,14 @@ class SMFInstance(Exception):
         return result
 
     def set_prop(self, propgroup, propname, proptype, value):
-        cmd = [PFCMD, SVCCFGCMD, "-s", self.instanceName, "setprop", \
+        cmd = [SVCCFGCMD, "-s", self.instanceName, "setprop", \
                propgroup + '/' + propname, "=", proptype + ":", \
                value]
         util.run_command(cmd)
         self.refresh_service()
 
     def set_string_prop(self, propgroup, propname, value):
-        cmd = [PFCMD, SVCCFGCMD, "-s", self.instanceName, "setprop", \
+        cmd = [SVCCFGCMD, "-s", self.instanceName, "setprop", \
                propgroup + '/' + propname, "=", "astring:",
                "\"%s\"" % (value)]
         util.run_command(cmd)
@@ -119,20 +119,20 @@ class SMFInstance(Exception):
         self.set_prop(propgroup, propname, "integer", str(value))
 
     def refresh_service(self):
-        cmd = [PFCMD, SVCADMCMD, "refresh", self.instanceName]
+        cmd = [SVCADMCMD, "refresh", self.instanceName]
         p = subprocess.Popen(cmd, close_fds=True)
 
     def disable_service (self):
         if self.svcstate == "disabled":
             return
-        cmd = [PFCMD, SVCADMCMD, "disable", self.instanceName]
+        cmd = [SVCADMCMD, "disable", self.instanceName]
         p = subprocess.Popen(cmd, close_fds=True)
         self.svcstate = self.get_service_state()
 
     def enable_service (self):
         if (self.svcstate == "online" or self.svcstate == "degraded"):
             return
-        cmd = [PFCMD, SVCADMCMD, "enable", self.instanceName]
+        cmd = [SVCADMCMD, "enable", self.instanceName]
         p = subprocess.Popen(cmd, close_fds=True)
         self.svcstate = self.get_service_state()
 

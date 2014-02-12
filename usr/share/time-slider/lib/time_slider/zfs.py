@@ -659,11 +659,11 @@ class ReadableDataset:
         return outdata.rstrip()
 
     def set_user_property(self, prop, value):
-        cmd = [PFCMD, ZFSCMD, "set", "%s=%s" % (prop, value), self.name]
+        cmd = [ZFSCMD, "set", "%s=%s" % (prop, value), self.name]
         outdata,errdata = util.run_command(cmd)
     
     def unset_user_property(self, prop):
-        cmd = [PFCMD, ZFSCMD, "inherit", prop, self.name]
+        cmd = [ZFSCMD, "inherit", prop, self.name]
         outdata,errdata = util.run_command(cmd)
 
 class Snapshot(ReadableDataset):
@@ -740,9 +740,9 @@ class Snapshot(ReadableDataset):
         if self.exists() == False:
             return
         if deferred == False:
-            cmd = [PFCMD, ZFSCMD, "destroy", self.name]
+            cmd = [ZFSCMD, "destroy", self.name]
         else:
-            cmd = [PFCMD, ZFSCMD, "destroy", "-d", self.name]
+            cmd = [ZFSCMD, "destroy", "-d", self.name]
 
         outdata,errdata = util.run_command(cmd)
         # Clear the global snapshot cache so that a rescan will be
@@ -758,7 +758,7 @@ class Snapshot(ReadableDataset):
         if self.exists() == False:
             return
 
-        cmd = [PFCMD, ZFSCMD, "hold", tag, self.name]
+        cmd = [ZFSCMD, "hold", tag, self.name]
         outdata,errdata = util.run_command(cmd)
 
     def holds(self):
@@ -788,7 +788,7 @@ class Snapshot(ReadableDataset):
         if self.exists() == False:
             return
 
-        cmd = [PFCMD, ZFSCMD, "release", tag, self.name]
+        cmd = [ZFSCMD, "release", tag, self.name]
 
         outdata,errdata = util.run_command(cmd)
         # Releasing the snapshot might cause it get automatically
@@ -855,7 +855,7 @@ class ReadWritableDataset(ReadableDataset):
             Recursively snapshot childfren of this dataset.
             Default = False
         """
-        cmd = [PFCMD, ZFSCMD, "snapshot"]
+        cmd = [ZFSCMD, "snapshot"]
         if recursive == True:
             cmd.append("-r")
         cmd.append("%s@%s" % (self.name, snaplabel))

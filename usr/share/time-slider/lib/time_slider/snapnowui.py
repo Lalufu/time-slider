@@ -132,7 +132,7 @@ class SnapshotNowDialog:
       name = self.snap_name_entry.get_text()
       valid_name = self.validate_name (name, True)
       if name == valid_name:
-	cmd = "pfexec /usr/sbin/zfs snapshot %s@%s" % (self.zfs_fs, self.validate_name (self.snap_name_entry.get_text()))
+	cmd = "/usr/sbin/zfs snapshot %s@%s" % (self.zfs_fs, self.validate_name (self.snap_name_entry.get_text()))
 	fin,fout,ferr = os.popen3(cmd)
         # Check for any error output generated and
         # return it to caller if so.
