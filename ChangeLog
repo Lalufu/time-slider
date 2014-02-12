@@ -1,0 +1,952 @@
+2011-04-27 Erwann Chenede - <erwann.chenede@oracle.com>
+
+	* VERSION: Bump to 0.2.98
+	* usr/share/time-slider/lib/time_slider/applet.py
+	  usr/share/time-slider/lib/time_slider/deletegui.py
+	  usr/share/time-slider/lib/time_slider/setupgui.py
+	  usr/share/time-slider/lib/time_slider/snapnowui.py
+	  usr/share/time-slider/lib/time_slider/timesliderd.py :
+	  Fix for 7038498 removed Primary Administrator references
+
+	* usr/share/time-slider/lib/time_slider/util.py
+	  usr/share/time-slider/lib/time_slider/zfs.py : 
+	  Fix for 6996354 gracefully handle snapshot failure
+
+2010-07-29 Niall Power - <niall.power@oracle.com>
+
+	* VERSION: Bump to 0.2.97
+
+2010-07-08 Niall Power - <niall.power@oracle.com>
+
+	* usr/share/time-slider/lib/time_slider/timesliderd.py:
+	  Fix typo when raising exception. Defect #16361
+	  RunTimeError -> RuntimeError
+
+2010-07-05 Niall Power - <niall.power@oracle.com>
+
+	* usr/share/time-slider/lib/time_slider/setupgui.py:
+	  Don't set filesystem tree view size request based on 
+	  number of filesystems: Doesn't scale well. Set fixed
+	  initial size instead. Fixes defect  #16319
+	  Correct misspellings of "writable and "administrator".
+	  Fixes defect #16388
+
+	* usr/share/time-slider/lib/time_slider/zfs.py:
+	  Check returned value of bisect.bisect_left() is within
+	  index range of list before trying to dereference it and
+	  causing IndexError exceptions. Fixes defect #16377. 
+	  Thanks to Tim Foster for this fix.
+
+2010-06-16 Niall Power - <niall.power@oracle.com>
+	* usr/share/time-slider/lib/plugin/rsync/backup.py:
+	  Remove accidental clobbering of tempSchedule list so
+	  that non-archived backups can be expired as per normal
+	  schedule retention rules. Opensolaris defect #16280
+
+2010-06-04 Niall Power - <niall.power@oracle.com>
+
+	* usr/share/time-slider/lib/time_slider/applet.py:
+	  Register menu callback in Note class instantiation to
+	  avoid multiple registration of same callback.
+
+2010-05-24 Niall Power - <niall.power@oracle.com>
+
+	* usr/share/time-slider/lib/time_slider/setupgui.py:
+	  Fix minor function spelling typo
+
+2010-05-24 Niall Power - <niall.power@oracle.com>
+
+	* usr/share/time-slider/glade/time-slider-setup.glade:
+	  Replace GtkFileChooser combo widget with standard
+	  GtkComboBox
+
+	* usr/share/time-slider/lib/time_slider/applet.py:
+	  User path_tol_volume() from util library instead of
+	  private copy
+
+	* usr/share/time-slider/lib/time_slider/setupgui.py:
+	  Replace standard GtkFileChooser logic with custom combo
+	  box implementation that is more tailored towards selecting
+	  a backup device rather than a generic path. Is able to 
+	  handle an offline/unmounted previously configured backup
+	  device gracefully (impossible with stock widget). Doesn't
+	  show meaningless shortcuts like Home, Documents, etc. either
+	  Cleanup of code, renamed variables to use camel case and 
+	  made unnecessarily public class variables private.
+	  Changed order of target validation tests to check if the
+	  device supports posix style links before checking if it's
+	  empty. Means user doesn't have to delete everything on a
+	  PCFS/FAT32 device only then to find out it's still unsuitable.
+
+	* usr/share/time-slider/lib/time_slider/util.py: Move previously
+	  private function path_to_volume(path) here so it can be shared.
+
+2010-05-14 Niall Power - <niall.power@oracle.com>
+
+	* usr/share/time-slider/lib/time_slider/applet.py:
+	  Use icon list hinted by gio.Volume instead of hardcoded
+	  harddisk icon when possible when displaying notifications.
+	  Makes icon more context specific to type of backup device.
+
+2010-05-14 Niall Power - <niall.power@oracle.com>
+
+	* usr/share/time-slider/lib/time_slider/applet.py:
+	  Determine volume name of rsync target if available and
+	  display that instead of the raw mount point in 
+	  notifications. More user friendly.
+
+2010-05-14 Erwann Chenede - <erwann.chenede@sun.com>
+
+	* usr/share/time-slider/glade/time-slider-delete.glade:
+	  Added Type combobox
+	* usr/share/time-slider/lib/plugin/pluginsmf.py:
+	  fix import to call this class from a non standard 
+	  location
+	* usr/share/time-slider/lib/time_slider/deletegui.py:
+	  implemented rsync backup visualization and deletion
+	* usr/share/time-slider/lib/time_slider/zfs.py: 
+	  renamed member function destroy_snapshot to destroy 
+	  to reflect allow polymorphic call in deletegui.py
+	  as the list of backup to delete can now be snapshots
+	  or rsync backups.
+	* usr/share/time-slider/lib/time_slider/timesliderd.py:
+	  propagated member function destroy name change.
+
+2010-05-14 Niall Power - <niall.power@oracle.com>
+
+	* usr/share/time-slider/lib/plugin/rsync/backup.py:
+	  Fix list ValueError in list_pending_snapshots() caused
+	  when rsync plugin is enabled but no fileystems are 
+	  selected for backup. Check that zfs returns something
+	  more than a blank in such cases.
+
+2010-05-14 Niall Power - <niall.power@oracle.com>
+
+	* usr/share/time-slider/glade/time-slider-setup.glade:
+	  Fix resizing issue that prevented list view from expanding
+	  to occupy all extra space when window gets vertically
+	  extended.
+
+2010-05-14 Niall Power - <niall.power@oracle.com>
+
+	* etc/dbus-1/system.d/time-slider.conf:
+	  Add service and policy definitions for TimSlider.config
+	  service.
+
+	* usr/share/time-slider/lib/plugin/rsync/backup.py:
+	  Deal with backup device being mounted under variable
+	  removable media mount points if not found in it's expected
+	  location. Find and validate alternate mount points.
+
+	* usr/share/time-slider/lib/time_slider/applet.py:
+	  Refactored to allow more modular notification management.
+	  Improved rsync device monitoring by implementing both gio.File
+	  and gio.Volume monitors so we can track mounting/unmounting of
+	  static mounts like nfs/zfs and variable mount points for 
+	  hotpluggable devices. Validate rsync target is correct using
+	  SMF configuration key. Listen to TimeSlider.Config D-Bus events
+	  and refresh configuration when D-Bus notification is received.
+	  Add menu item to enable launching of setup GUI from the applet.
+
+	* usr/share/time-slider/lib/time_slider/dbussvc.py:
+	  Add class and method definition for TimeSlider Config service
+	  notifications.
+
+	* usr/share/time-slider/lib/time_slider/setupgui.py:
+	  Register with system D-Bus and send notification of changes
+	  to time-slider and rsync plugin services so the applet can
+	  refresh.
+
+2010-05-13 Niall Power - <niall.power@oracle.com>
+
+	* usr/share/time-slider/lib/plugin/rsync/backup.py:
+	  Fix list IndexError exception caused by looking
+	  for non-existent backups on an empty device.
+	
+2010-05-11 Niall Power - <niall.power@oracle.com>
+
+	* usr/share/time-slider/lib/plugin/rsync/backup.py:
+	  Tweak the space management of the rsync device for better
+	  performance:
+	  - don't scan for deleteables unless the device starts to 
+	    exceed threshhold capacity.
+	  - Rescan capacity periodically during rsync backup thread
+	    lifecycle and rescan for deleteable backups only if
+	    device exceeds threshold capacity level.
+
+2010-05-11 Niall Power - <niall.power@oracle.com>
+
+	* var/svc/manifest/system/filesystem/auto-snapshot.xml:
+	  Update service bundle name and version number to 
+	  SUNWtime-slider and 0.2.96 respectively.
+
+	* var/svc/manifest/application/time-slider-plugin.xml:
+	  Add 2 new properties to define cleanup threshhold level of
+	  rsync backup device and verbosity of rsync output for
+	  debugging purposes.
+
+	* usr/share/time-slider/lib/time_slider/util.py: Adjust
+	  signature of util.debug() to make the verbose argument 
+	  mandatory instead of automatic.
+
+	* usr/share/time-slider/lib/plugin/rsync/rsyncsmf.py:
+	  Add 2 new methods to retrieve cleanup threshhold and rsync
+	  verbosity properties from the rsync SMF service instance.
+
+	* usr/share/time-slider/lib/plugin/rsync/backup.py:
+	  Cleanup variable naming, making class private variables
+	  actually private using leading "_" character.
+	  Rename RsyncBackup class to RsyncProcess to me more descriptive.
+	  Add support for rsync verbosity in RsyncProcess class.
+	  Implement better cleanup and space management mechanism:
+	  - Removes old backups in parallel to new rsync backups running
+	    in a separate thread if space falls below threshhold level.
+	  - Identifies what backups can and can't be deleted for a given
+	    new rsync backup based on age and number of backups left for
+	    the associated filesystem.
+	  - Cleanup threshhold tuneable via SMF atic.
+
+	* usr/share/time-slider/lib/plugin/rsync/rsyncsmf.py:
+	  Add 2 new methods to retrieve cleanup threshhold and rsync
+	  verbosity properties from the rsync SMF service instance.
+
+	* usr/share/time-slider/lib/plugin/rsync/backup.py:
+	  Add check to make sure config key on target device matches that
+	  stored in SMF before commencing backups.
+	  Cleanup variable naming, making class private variables
+	  actually private using leading "_" character.
+	  Rename RsyncBackup class to RsyncProcess to me more descriptive.
+	  Add support for rsync verbosity in RsyncProcess class.
+	  Implement better cleanup and space management mechanism:
+	  - Removes old backups in parallel to new rsync backups running
+	    in a separate thread if space falls below threshhold level.
+	    Avoids having to make rough, inaccurate guesses about size 
+	    required for new backups because it responds in real time.
+	  - Identifies what backups can and can't be deleted for a given
+	    new rsync backup based on age and number of backups left for
+	    the associated filesystem.
+	  - Cleanup threshhold tuneable via SMF.
+	  - Doesn't try to backup snapshots older than what's already on
+	    the backup device if device is almost full.
+ 
+2010-05-05 Niall Power - <niall.power@oracle.com>
+	* usr/share/time-slider/lib/plugin/rsync/backup.py:
+	  Redesigned queue management and backlog mechanism. Backs up
+	  most recent snapshot set first, then works backwards through
+	  the queue. Stops backup mechanism falling too far behind while
+	  still allowing backup of older snapshots to take place if
+	  time and space permit.
+	  Enhancements to filesystem layout of backups - added seperate
+	  folders for partial transfers, log files, trash folder and lock
+	  files. Added file locking mechanism to prevent deletion by other
+	  tools of backups in use (eg during incremental backups).
+	  Added trash mechanism, replaces in place deletion of snapshots
+	  which messes up directory mtimes and incremental backups.
+	  Instead, expired backups are moved to a .trash folder and a new
+	  method: empty_trash_folders() cleans it up after before starting
+	  the next snapshot set backup.
+	  Fix bug in list_pending_snapshots() where ctime of snapshots was
+	  returned as a string instead of a long.
+
+	* usr/share/time-slider/lib/plugin/rsync/rsyncsmf.py: Add new 
+	  filesystem suffix definitions for partial backups, trash
+	  folders, backup lock files and backup log files.
+
+2010-05-03 Niall Power - <niall.power@oracle.com>
+
+	* usr/share/time-slider/lib/time_slider/timesliderd.py:
+	  Determine if <zpool/remedial-cleanup> SMF property is set to true.
+	  Do not perform remedial cleanups if it's value is false.
+
+	* usr/share/time-slider/lib/time_slider/timeslidersmf.py:
+	  Add new method: get_remedial_cleanup() to indicate the value of
+	  property <zpool/remedial-cleanup>
+
+	* var/svc/manifest/application/time-slider.xml:
+	  Add new SMF property: <zpool/remedial-cleanup> as boolean with
+	  default value of 'true'. Indicates that time-sliderd should
+	  perform remedial cleanups when snapshotted pool runs low on
+	  space.
+
+2010-05-03 Niall Power - <niall.power@oracle.com>
+
+	* Makefile:
+	  Install/uninstall time-slider.desktop into 
+	  $(DESTDIR)/usr/share/applications/
+
+2010-05-02 Niall Power - <niall.power@oracle.com>
+
+	* lib/svc/method/time-slider:
+	  Remove any legacy zfs-auto-snapshot cron jobs in
+	  zfssnap's crontab that may not have been removed
+	  if the old auto-snapshot services were not stopped
+	  cleanly.
+
+2010-05-02 Niall Power - <niall.power@oracle.com>
+
+	* usr/share/time-slider/lib/time_slider/timesliderd.py:
+	  Fix incorrect invocation of util.debug() that caused
+	  unconditional verbose output.
+ 
+2010-05-02 Niall Power - <niall.power@oracle.com>
+
+	* usr/share/time-slider/lib/time_slider/timesliderd.py:
+	  Fix small typo in monthly calculation.
+
+2010-05-02 Niall Power - <niall.power@oracle.com>
+
+	* usr/share/time-slider/lib/plugin/rsync/backup.py:
+	  Instantiate RsyncBackup objects with verbose flag
+	  passed through. Remove "--progress" argument from
+	  rsync and add "-vv" argument instead if verbose
+	  flag is set.
+
+2010-05-01 Niall Power - <niall.power@oracle.com>
+
+	* usr/share/time-slider/lib/plugin/plugin.py: Fix some
+	  incorrect invocations that didn't pass verbose
+	  parameter (and were therefore no-ops)
+
+	* usr/share/time-slider/lib/time_slider/timesliderd.py:
+	  Fix monthly period calculation. Now handles period
+	  increments > 12 months and period increments that
+	  land on december (originally logged as bugster
+	  CR #6904417)
+
+2010-05-01 Niall Power - <niall.power@oracle.com>
+
+	* usr/share/time-slider/lib/time_slider/setupgui.py:
+	  Cache all GUI configuration values at startup and
+	  use them later to compare changes in configuration
+	  state. Only apply the minimum set of configuration
+	  changes necessary instead of previous method of
+	  blindly applying everything, even if unchanged.
+	  Configuration is much much faster now, especially
+	  for minor configuration changes.
+	  Recognise previously configured backup devices and
+	  ask the user if they want to start using it again
+	  instead of rejecting it as belonging to another 
+	  system.
+	  Remove duplicate import of os.path modules.
+
+2010-04-28 Niall Power - <niall.power@oracle.com>
+
+	* usr/share/time-slider/lib/plugin/rsync/backup.py:
+	  Add removal of partial backups missing a  matching 
+	  snapshot in the backup queue. They are zombies.
+	  When catching an rsync exception, change directory
+	  to "/" so that pfexec doesn't freak out when trying
+	  to release the snapshot. pfexec bails out when it
+	  tries to add cwd to it's path if cwd is non-existent 
+	  which can be the case if the backup device suddenly
+	  goes offline.
+
+2010-04-27 Niall Power - <niall.power@oracle.com>
+
+	* usr/share/time-slider/lib/plugin/rsync/backup.py:
+	  Remember to also delete log files when deleting backups.
+
+2010-04-27 Niall Power - <niall.power@oracle.com>
+
+	* usr/share/time-slider/lib/plugin/rsync/backup.py:
+	  Exit if effective UID of process is not 0 (root)
+
+2010-04-27 Niall Power - <niall.power@oracle.com>
+
+	* usr/share/time-slider/lib/plugin/rsync/backup.py:
+	  Send rsync loggint to individual log files on the backup
+	  device. Delete log files when corresponding backup gets
+	  deleted.
+	  Create rsync backups in a temporary directory first and
+	  move to permanent location when completed. Prevents 
+	  incomplete backups appearing in backup view in Nautilus.
+	  Also use "--inplace" rsync option to allow resumption of
+	  partial (interrupted) backups.
+
+	* usr/share/time-slider/lib/plugin/rsync/rsyncsmf.py:
+	  Add shared key get/set methods for rsync SMF instance.
+	  Use new "set_string_prop" Smf class method for setting
+	  rsync target directory so that path names containing 
+	  spaces can be correctly set. Conversely, strip out '\ '
+	  space formatting characters returned by SMF in 
+	  get_target_dir() method.
+
+	* usr/share/time-slider/lib/plugin/rsync/trigger.py:
+	  Don't tag new snapshots whose filesystems are not mounted
+	  Prevents piling up of snapshots from unmounted BEs. Might
+	  be best to make this behaviour configurable via SMF.
+
+	* usr/share/time-slider/lib/time_slider/setupgui.py:
+	  Clean up OK button clicked callback by farming out several
+	  validation checks to separate methods. Add rsync config
+	  checking method to chek configuration/selection of rsync
+	  target device. Implement shared key checking to validate/
+	  identify pre-configured backup devices. Rejects devices
+	  configured for use on other systems. Add checks to ensure
+	  target device is writable by root and supports hard links
+	  as required for rsync incremental backups. Add a random
+	  key generation function. Perform basic space checking on
+	  rsync target device to see if it's big enough.
+
+	* usr/share/time-slider/lib/time_slider/smf.py:
+	  Implement set_string_prop() method that allows white space
+	  string characters.
+
+	* var/svc/manifest/application/time-slider-plugin.xml:
+	  Remove rsync plugin's property override of
+	  <plugin/trigger_on> and inherit defaults instead. Backing
+	  up frequent snapshots caused near constant backup disk
+	  churn.
+
+2010-04-16 Niall Power - <niall.power@sun.com>
+
+	* usr/share/time-slider/lib/time_slider/zfs.py: Fix bug in 
+	  method "create_auto_snapshot_set() where it would skip
+	  the entire pool if the root of the pool was tagged and 
+	  all datastets under the root inherited from it. Also,
+	  use sorted lists and binary searching to speed up the
+	  operation and avoid making repeated unnecessary calls
+	  to Dataset.list_children() (the data is already provided)
+
+2010-04-15 Niall Power - <niall.power@sun.com>
+
+	* usr/share/time-slider/lib/plugin/rsync/backup.py: Clean up 
+	  dangling holds on snapshots left by abnormally terminated
+	  rsync transfers from previous invocations. Also, release
+	  snapshot holds if an Rsync exception is caught during
+	  transfer. Allows time-sliderd to delete snapshots when they
+	  naturally expire.
+
+2010-04-13 Niall Power - <niall.power@sun.com>
+	* usr/share/time-slider/lib/time_slider/setupgui.py:
+	  Fix broken target directory retrieval from FileChooser button
+
+2010-04-13 Niall Power - <niall.power@sun.com>
+
+	* usr/share/time-slider/lib/plugin/rsync/backup.py: Create a
+	  RsyncBackup class to run rsync backup commands in a 
+	  separate thread. Define Rsync exception clases and map
+	  to expected rsync exit codes.
+	  Modify toplevel backup path for backups to begin with:
+	  <SMF defined target dir>/TIMESLIDER/<nodename>/
+	  Deal with rsync exceptions raised and place into maintenance
+	  state if non recoverable.
+	  Try to recover space on target directory (work in progress)
+	  Add debugging and error logging output.
+
+	* usr/share/time-slider/lib/plugin/rsync/rsyncsmf.py: define
+	  backup RSYNCDIRPREFIX to "TIMESLIDER".
+
+	* usr/share/time-slider/lib/time_slider/applet.py:
+	  Use new backup path format as described above.
+
+	* usr/share/time-slider/lib/time_slider/setupgui.py:
+	  Use new backup path format as described above.
+
+	* usr/share/time-slider/lib/time_slider/util.py:
+	  Add general purpose syslog wrapper function.
+
+	* var/svc/manifest/application/time-slider-plugin.xml:
+	  remove accidental definition of <plugin/target_dir>
+	  Set to empty string value "" instead of a directory on my
+	  own system. Doh.
+
+2010-04-01 Niall Power - <niall.power@sun.com>
+
+	* usr/share/time-slider/lib/time_slider/timesliderd.py: insert a
+	  'h' character between hour and minute values of auto snapshot
+	  labels as a subsitute for the previously removed ':' character
+	  used in time stamps. Makes life easier for nautilus component
+	  and plays nicely with strptime()
+
+2010-04-01 Niall Power - <niall.power@sun.com>
+
+	* usr/share/time-slider/lib/time_slider/applet.py: gio FileMonitor
+	  events are inconsistent between UFS/ZFS filesystem mounting.
+	  Ignore event type from gio FileMonitor and verify backup target
+	  status manually using os.stat()
+
+2010-04-01 Niall Power - <niall.power@sun.com>
+
+	* usr/share/time-slider/lib/time_slider/applet.py: Improve string
+	  formatting on notifications and tooltips. Stop the status icon
+	  blinking once the notification has been closed.
+	* usr/share/time-slider/lib/time_slider/setupgui.py: Forgot to
+	  connect rsync folder selection to rsync SMF instance
+	  configuration. Added. Also use get_current_folder() instead of
+	  get_filename() to get correct folder from FileChooserButton
+	  widget.
+
+2010-03-31 Niall Power - <niall.power@sun.com>
+
+	* usr/share/time-slider/lib/time_slider/applet.py: Restrict manual
+	  synchronisation menu item to priviliged users only (root or
+	  users assigned Primary Administrator profile). Also, don't
+	  bother popping up a right click menu if it's empty.
+
+2010-03-31 Niall Power - <niall.power@sun.com>
+
+	* usr/share/time-slider/lib/plugin/rsync/backup.py: Implement cleanup
+	  of expired backups on rsync target directory. Uses same rules as
+	  time-slider as defined by each auto-snapshot schedule's SMF instance
+	* usr/share/time-slider/lib/plugin/rsync/rsyncsmf.py: Add a method to
+	  return the list of archived schedules (ie. ones that don't get 
+	  cleaned according to the normal schedule retention rules)
+	* usr/share/time-slider/lib/time_slider/applet.py: add a 
+	  'Synchronize Now' menu item to the applet. Added gio based file
+	  monitoring to keep track of when the rsync backup target directory
+	  is mounted/unmounted and adjust menu sensitivty accordingly.
+	* usr/share/time-slider/lib/time_slider/autosnapsmf.py: Define 
+	  SNAPLABELPREFIX as a constant for snapshot label names
+	* usr/share/time-slider/lib/time_slider/setupgui.py: Modify RBAC
+	  rules to ensure that setup GUI is run with euid of root which is
+	  necessary for validation and initialisation of rsync backup target
+	  directory
+	* usr/share/time-slider/lib/time_slider/timesliderd.py: use 
+	  SNAPLABELPREFIX constant instead of local multiply defined values.
+	* var/svc/manifest/application/time-slider-plugin.xml: Override
+	  "plugin/trigger_on" value in rsync plugin manifest. Add a new
+	  property "rsync/archived_schedules" to define snapshot schedules
+	  that are archived as long as possible and not purged according
+	  to the normal schule retention rules.
+
+2010-03-25 Niall Power - <niall.power@sun.com>
+
+	* etc/dbus-1/system.d/time-slider.conf: add policies for
+	  rsync plugin's dbus service and methods.
+	* usr/share/time-slider/lib/plugin/rsync/backup.py: restructure script
+	  to perform backups via a Gobject mainloop which is necessary to allow
+	  it to send dbus notifications correctly. Adjust backup target dir
+	  to use a rsync plugin specific subdirectory on the target dir
+	  (.time-slider/rsync) - prevents borkage of mount points with 
+	  unmounted filesystems. Use "-a" option with rsync command which 
+	  covers all the desired arguments fo our rsync usage case (archival)
+	  Add dbus method invocations. General cleanup and removal of commented
+	  out code. Use lockfile to prevent multiple instances running at once.
+	* usr/share/time-slider/lib/plugin/rsync/rsyncsmf.py: Add definitions
+	  for backup subdirectory and filesystem property tag constants.
+	* usr/share/time-slider/lib/plugin/rsync/trigger.py: Use constants as
+	  defined in rsyncsmf.py
+	* usr/share/time-slider/lib/time_slider/applet.py: Incorporate new 
+	  RsyncNote class and other pieces from Krishnan Parthasarathi. Thanks
+	  Krishan. Added signal handlers and tooltips/popups for dbus events 
+	  sent from rsync plugin.
+	* usr/share/time-slider/lib/time_slider/dbussvc.py: New dbus signal
+	  definitions added, including a few from Krishnan.
+	* usr/share/time-slider/lib/time_slider/setupgui.py: Perform validation
+	  on target directory for rsync. Not exhaustive yet. Checks that target
+	  directory isn't on a file system or pool that's been selected for
+	  automatic snapshots.
+
+2010-03-11 Niall Power - <niall.power@sun.com>
+
+	Add rsync plugin (WORK IN PROGRESS), restructure SMF related code
+	and restructure file/directory layout to provide seperate 
+	subdirectories for plugins.
+
+	* Makefile: Add/remove files to (un)install rules.
+	* usr/lib/time-sliderd: Fix script invocation to invoke python2.6
+	  explicitly (ie. do not use /usr/bin/env to source it)
+	* usr/share/time-slider/glade/time-slider-setup.glade: Add in UI
+	  features to enable rsync backup configuration
+	* usr/share/time-slider/lib/time_slider/__init__.py: adjust sys.path
+	  to allow importation from the plugin directory
+	* usr/share/time-slider/lib/time_slider/autosnapsmf.py: Refactor to
+	  inehrit from the smf base object class (smf.py)
+	* usr/share/time-slider/lib/time_slider/deletegui.py: Remove import
+	  of smfmanager module.
+	* usr/share/time-slider/lib/time_slider/setupgui.py: Remove import of
+	  smfmanager module. Implement UI logic and view for rsync
+	  configuration (filechooser, list view check buttons etc.)
+	  Tie in with rsync plugin SMF backend. WORK IN  PROGRESS.
+	* usr/share/time-slider/lib/time_slider/timesliderd.py: Drop use of old
+	  smfmanager class and replace with new smf and timeslidersmf  modules
+	* usr/share/time-slider/lib/time_slider/zfs.py: Misc. cleanups. Define
+	  proper Exception classes for ZFS and ZPool errors and raise them when
+	  appropriate. Old style string based exceptions not supported in python
+	  2.6
+	* var/svc/manifest/application/time-slider-plugin.xml: Define rsync
+	  plugin SMF instance and properties.
+	* usr/lib/time-slider-zfssend: Removed. Replaced by:
+	  usr/lib/time-slider/plugins/zfssend/zfssend
+	* usr/share/time-slider/lib/time_slider/plugin.py: Removed. Replaced by:
+	  usr/share/time-slider/lib/plugin/plugin.py
+	* usr/share/time-slider/lib/time_slider/zfssend.py: Removed. Replaced by:
+	  usr/share/time-slider/lib/plugin/zfssend/zfssend.py
+	* lib/svc/method/time-slider-rsync: Added. Starts stops rsync plugin SMF
+	  instance and sets up cron job for rsync-backup script.
+	* usr/lib/time-slider/plugins/rsync/rsync-backup: Added. Performs
+	  asynchronouse rsync backup of zfs snapshots previously tagged for backup.
+	  WORK IN PROGRESS
+	* usr/lib/time-slider/plugins/rsync/rsync-trigger: Provides trigger
+	  mechanisem for time-slider to call when snapshots created. Queues up
+	  zfs snapshots for later backup using rsync-backup script.
+	* usr/lib/time-slider/plugins/zfssend/zfssend: Replacement of
+	  usr/lib/time-slider-zfssend
+	* usr/share/time-slider/lib/plugin/__init__.py: Added. Initialises new
+	  plugin module
+	* usr/share/time-slider/lib/plugin/plugin.py: Replacement of:
+	  usr/share/time-slider/lib/time_slider/plugin.py
+	* usr/share/time-slider/lib/plugin/pluginsmf.py: Added. Defines plugin
+	  SMF class specialised for time-slider plugin SMF instances
+	* usr/share/time-slider/lib/plugin/rsync/__init__.py: Added. Initialises
+	  new rsync plugin module.
+	* usr/share/time-slider/lib/plugin/rsync/backup.py: Added. Main code
+	  block for rsync-backup script.
+	* usr/share/time-slider/lib/plugin/rsync/rsyncsmf.py: Added. Defines
+	  SMF class specialised for rsync plugin SMF instance.
+	* usr/share/time-slider/lib/plugin/rsync/trigger.py: Added. Main code
+	  block for rsync-trigger script.
+	* usr/share/time-slider/lib/plugin/zfssend/__init__.py: Added.
+	  Initialises zfssend plugin module.
+	* usr/share/time-slider/lib/plugin/zfssend/zfssend.py: Replacement for
+	  usr/share/time-slider/lib/time_slider/zfssend.py
+	* usr/share/time-slider/lib/time_slider/smf.py: Added. Provides cleaner
+	  and more structured base class for generic SMF instances and and is
+	  inherited by timeslidersmf, pluginsmf, rsyncsmf derived classes.
+	  Provides common methods to enable/disable and get/set property values
+	  and refresh and query service state.
+	* usr/share/time-slider/lib/time_slider/timeslidersmf.py: Defines
+	  SMF class and methods specific to the time-slider SMF instances.
+
+2010-02-04 Niall Power - <niall.power@sun.com>
+
+	* Makefike: Add lib/svc/method/time-slider-plugin to
+	  install/uninstall rules.
+	* lib/svc/method/time-slider-plugin: Added.
+	  Provides simple, generic plugin start method.
+	* var/svc/manifest/application/time-slider-plugin.xml:
+	  Added comments for time-slider-plugin method, advising
+	  that non trivial plugin instances should provide their
+	  own specific methods.
+
+2010-02-03 Niall Power - <niall.power@sun.com>
+
+	* var/svc/manifest/application/time-slider.xml:
+	  Define new property "zfs/sep". Taken for zfs-auto-snapshot,
+	  allows custom definition of a separator character for snapshot
+	  datestamps that can work on filesystems that previously choked
+	  on the ":" characted such as CIFS, PCFS.
+	* usr/share/time-slider/lib/time_slider/smfmanager.py: Added new
+	  method to get zfs/sep property.
+	* usr/share/time-slider/lib/time_slider/timesliderd.py: modify
+	  snapshot creation and listing operations to use the new zfs/sep
+	  property, while maintaining compatibility with old snapshot
+	  datestamps that used the ":" character.
+
+2010-02-02 Niall Power - <niall.power@sun.com>
+
+	* usr/share/time-slider/lib/time_slider/plugin.py:
+	  Fix invalid function call "debug()" should be "util.debug()" when
+	  reporting disabled plugin in PluginManager.refresh()
+	  Missing "()" in method call Plugin.is_running() in Plugin.refresh()
+
+2010-01-26 Niall Power - <niall.power@sun.com>
+
+	* VERSION: bump to 0.2.96
+	* Use explicit path: "/usr/bin/python2.6" to reference python interpreter
+	  instead of relying on "/usr/bin/env" to find it.
+	* Add plugin framework to enable user defined plugins to be executed after
+	  snapshots get taken by time-sliderd. Plugins are based on the SMF service
+	  framework and plugins are defined as instances of the base SMV service:
+	  svc:/application/time-slider/plugin
+	* Provide a "zfs-send" plugin as a replacement for the zfs-auto-snapshot
+	  provided "backup-save-cmd" property.
+	* Add util.py to define two commoonly used utility functions: debug/logging
+	  and command spawning. Reduces lines of code and duplication.
+	* Refactor all python files to use util.run_command() convenience function
+	  where possible.
+	* Fix a bug where time-sliderd emits warnings and tries to cleanup pools
+	  upon which it creates no snapshots. Also make time-sliderd more descriminating
+	  in general and able to identify snapshots it created from backups of snapshots
+	  it create (via zfs send/receive) by checking for the auto-snapshot property
+	  corresponding to the filesystem/volume of snapshots.
+	* TODO: SMF code is a bit all over the place and could do with proper stucturing
+
+2009-11-27 Niall Power - <niall.power@sun.com>
+
+	* usr/share/time-slider/lib/time_slider/timesliderd.py: fixed a date
+	  calculation bug whereby a schedule with a period in months next falls
+	  due on December. Was getting incorrectly modulused to 0.
+
+2009-11-04 Niall Power - <niall.power@sun.com>
+
+	* VERSION: bump to 0.2.95
+	* Move to python2.6
+	* Drop dependency on zfs-auto-snapshot methods and implement our own
+	  snapshotting mechanism in the form of time-sliderd
+	* Add dbus system bus notification and notification applet, replacing
+	  the previous ugly hack of su to logged in user ID and running
+	  notify-send.
+	* Enhance all .py modules to use python subprocess module when spawning
+	  commands instead of os.popen.
+	* Add SMF manifest for system/filesystem/auto-snapshot to replace 
+	  systems snapshot configuration previously supplied by
+	  zfs-auto-snapshot. Generally compatible but cleaned up by dropping
+	  some of zfs-auto-snapshot's more quirky or deprecated configuration
+	  options.
+
+2009-07-08 Niall Power - <niall.power@sun.com>
+
+	* VERSION: bump to 0.2.10
+	* Fix defect 8667 in following source files:
+	* usr/share/time-slider/lib/time_slider/cleanupmanager.py: Refactor
+	  code to modified zfs.py APIs, remove some dead code, make capacity
+	  checks conditional where possible.
+	* usr/share/time-slider/lib/time_slider/deletegui.py: minor code 
+	  refactoring to match zfs.py API changes.
+	* usr/share/time-slider/lib/time_slider/setupgui.py: Remove references
+	  to zfscontroller module which has been removed. Uses zfs.py 
+	  exclusively now. Refactor for zfs.py changes
+	* usr/share/time-slider/lib/time_slider/zfscontroller.py: removed.
+	  Very little functionality and nothing that shouldn't be in zfs.py
+	* usr/share/time-slider/lib/time_slider/zfs/py: New class definition
+	  for "Datasets" which stores all system snapshots, filesystems and
+	  volumes in a cache. Existing Dataset, Filesystem, Snapshot and Volume
+	  class methods now use the global Datasets cache for querying and
+	  listing instead of making zfs(1m) spawned commands.
+
+2009-05-18 Niall Power - <niall.power@sun.com>
+
+        * usr/share/time-slider/lib/time_slider/cleanupmanager.py
+          Cleanup both Filesystem and Volume snapshots. Fixes d.o.o 8454
+        * usr/share/time-slider/lib/time_slider/setupgui.py: Prepend private
+          class methods with "__" in accordance with python coding standards.
+        * usr/share/time-slider/lib/time_slider/smfmanager.py: Use predefined
+          macros for ZFS commands instead of hardcoding path in the code.
+        * usr/share/time-slider/lib/time_slider/zfs.py: Improve object
+          hierarchy and inheritance tree. Rename some methods for improved
+          clarity of purpose. Improve method and function documentation.
+          Add capability to deal with ZFS volumes. Fixes d.o.o 8454 & 8685
+ 
+2009-05-13 Harry Fu - <harry.fu@sun.com>
+
+	* VERSION: bump to 0.2.9
+
+2009-04-10 Erwann Chenede - <erwann.chenede@sun.com>
+
+	* /usr/share/time-slider/lib/time_slider/fileversion.py:
+	  used gobject.idle_add instead of gtk.gdk.threads_* fixes
+	  7319
+
+2009-04-09 Erwann Chenede - <erwann.chenede@sun.com>
+
+	* /usr/share/time-slider/lib/time_slider/fileversion.py:
+	  removed hard dependency on external thumbnailer and meld 
+	  fixes #7502
+
+2009-04-07  Niall Power <niall.power@sun.com>
+
+	* usr/share/time-slider/lib/time_slider/cleanupmanager.py
+	* usr/share/time-slider/lib/time_slider/deletegui.py
+	* usr/share/time-slider/lib/time_slider/smfmanager.py
+	* usr/share/time-slider/lib/time_slider/zfs.py
+	* usr/share/time-slider/lib/time_slider/zfscontroller.py:
+	  Use macro substitution to specify full paths to all spawned
+	  commands (zfs, zpool, svcadm, svccfg, svcprop, pfexec) so that
+	  commands work independently of user's PATH environment.
+	  Fixes opensolaris defect #7396
+
+2009-03-01  Niall Power <niall.power@sun.com>
+
+	* VERSION: bump to 0.2.6
+	* Makefile: Pick up PYTHON environment variable. Enhancement for
+	  fix to 6754650
+	* usr/share/time-slider/lib/time_slider/setupgui.py: Allow filesystems
+	  to inherit properties from their parent instead of locally tagging
+	  every filesystem with the required property setting.
+	* usr/share/time-slider/lib/time_slider/zfs.py: Add an "inherit" argument
+	  to Filesystem.commit_state() to allow the fileystem to inherit from
+	  it's parent when setting the auto-snapshot property.
+
+2009-02-19  Takao Fujiwara  <takao.fujiwara@sun.com>
+
+	* usr/share/time-slider/lib/time_slider/deletegui.py: updated
+	the comments because translators are confused it.
+	* usr/share/time-slider/lib/time_slider/snapnowui.py: updated
+	the gettext "%s" so that translators can change the oder of "%s".
+
+2009-02-05 Niall Power - <niall.power@sun.com>
+
+	* VERSION: bump to 0.2.5
+	* Makefile: don't install .pyc files, but generate them as part
+	  of "install:" rule. Fixes bugster: 6754650
+	* py-compile.py: Prepend "DESTDIR" to compile python bytecode
+	  within the installed directory tree.
+	* usr/share/time-slider/lib/time_slider/__init__.pyc: removed
+	* usr/share/time-slider/lib/time_slider/cleanupmanager.pyc: removed
+	* usr/share/time-slider/lib/time_slider/deletegui.pyc: removed
+	* usr/share/time-slider/lib/time_slider/fileversion.pyc: removed
+	* usr/share/time-slider/lib/time_slider/notification.pyc: removed
+	* usr/share/time-slider/lib/time_slider/rbac.pyc: removed
+	* usr/share/time-slider/lib/time_slider/setupgui.pyc: removed
+	* usr/share/time-slider/lib/time_slider/smfmanager.pyc: removed
+	* usr/share/time-slider/lib/time_slider/snapnowui.pyc: removed
+	* usr/share/time-slider/lib/time_slider/zfs.pyc: removed
+	* usr/share/time-slider/lib/time_slider/zfscontroller.pyc: removed
+
+
+2009-01-23 Erwann Chenede - <erwann.chenede@sun.com>
+
+	* VERSION: bump version to 0.2.4
+	* Makefile : added new files
+	* usr/lib/time-slider-version
+	* usr/share/time-slider/glade/time-slider-version.glade
+	* usr/share/time-slider/lib/time_slider/fileversion.py
+	* usr/share/time-slider/lib/time_slider/fileversion.pyc :
+	  Initial implementation of the file version explorer app
+	
+2009-01-16  Takao Fujiwara  <takao.fujiwara@sun.com>
+
+	* po/POTFILES.in: Update with the latest files.
+	* usr/share/time-slider/glade/time-slider-delete.glade:
+	* usr/share/time-slider/glade/time-slider-setup.glade:
+	* usr/share/time-slider/glade/time-slider-snapshot.glade:
+	  Update to remove "translatable" tag for GTK textdomain.
+	* usr/share/time-slider/lib/time_slider/deletegui.py:
+	  Update to localize date and add the encoding conversion.
+	* usr/share/time-slider/lib/time_slider/setupgui.py:
+	  Update to localize "legacy".
+	* usr/share/time-slider/lib/time_slider/snapnowui.py:
+	  Update to add gettext.
+
+2009-01-09 Niall Power - <niall.power@sun.com>
+
+	* VERSION: bump version to 0.2.3
+	* usr/share/time-slider/glade/time-slider-delete.glade:
+	  add progress dialog for snapshot scanning feedback
+	* usr/share/time-slider/lib/time_slider/deletegui.py:
+	  restructure initialisation code and run snapshot scanning in it's
+	  own thread so that feedback can be give to user via a progress dialog
+	  Prevents the app appearing dead when dealing with huge numbers of
+	  snapshots.
+
+2009-01-09 Erwann Chenede - <erwann.chenede@sun.com>
+
+	* Makefile: added newly introduced file
+	* usr/share/time-slider/lib/time_slider/snapnowui.py: removed print
+
+2009-01-09 Erwann Chenede - <erwann.chenede@sun.com>
+
+	* usr/lib/time-slider-snapshot:
+	* usr/share/time-slider/glade/time-slider-snapshot.glade:
+	* usr/share/time-slider/lib/time_slider/snapnowui.py:
+	  Initial implementation of the snapshot now dialog
+
+2008-12-17 Niall Power - <niall.powr@sun.com>
+
+	* VERSION: bump version to 0.2.2
+	* lib/svc/method/time-slider: remove "set -x" command which errantly turns
+	  on debug mode. Fixes bugzilla defect #5067
+	* usr/share/time-slider/glade/time-slider-setup.glade: Change mnemonic key for
+	  "Custom" radio button from "C" to "u". C is already in use by "Cancel" button.
+	  Fixes bugzilla defect #3986
+	* usr/share/time-slider/lib/time_slider/setupgui.py: Change error dialog text to
+	  instruct user to consult "svcs -xv" instead of "svcs(1) man page" for more info
+	  when time-slider SMF instance is placed into offline state by SMF.
+	  Fixes bugzilla defect #5804
+
+2008-12-17 Niall Power - <niall.power@sun.com>
+
+	* usr/share/time-slider/lib/time_slider/cleanupmanager.py: Check
+	  ps commmand output before accessing it by catching IndexError
+	  exceptions. Prevents root's mailbox being spammed by cron.
+	  Fixes bugster #6758575
+
+2008-12-12 Niall Power - <niall.power@sun.com>
+
+	* usr/share/time-slider/lib/time_slider/cleanupmanager.py: Implement
+	  destruction of older snapshots since zfs-auto-snapshot only does
+	  snapshot destruction recursively and we break the recursion by
+	  deleting individual snapshots instead of recursive sets.
+
+2008-12-05 Niall Power - <niall.power@sun.com>
+	* usr/share/time-slider/lib/time_slider/setupgui.py
+	  Fixed a patch generation problem when launching time-slider-delete
+
+2008-12-05 Niall Power - <niall.power@sun.com>
+
+	* VERSION: bumped to 0.2.1
+	* Makefile: Minor cleanups
+	* usr/share/time-slider/lib/time_slider/cleanupmanager.py: add
+	  perform_purge method to clean up zero sized snapshots under 
+	  safe circumstances so that the system doesn't become cluttered
+	  with too many permanently zero sized snapshots.
+	  Rewrote emercency space makeing cleanup alogorithm in run_cleanup  
+	  to be more efficient and spawn far fewer shell commands. No longer
+	usr/share/time-slider/lib/time_slider/setupgui.py: Change error dialog text to
+	  instruct user to consult "svcs -xv" instead of "svcs(1) man page" for more info
+	  when time-slider SMF instance is placed into offline state by SMF.
+	  Fixes bugzilla defect #5804
+  does recursive snapshot deletion since the above changes will break
+	  the recursive snapshot chain in most cases and recursive deletion
+	  is now overkill since individual snapshots should be larger in size
+	  and yield larger space savings per snapshot deleted.
+	  Fixed notification bug where notification would happen twice if
+	  gnome-session is launched via dbus-launch.
+	* usr/share/time-slider/lib/time_slider/deletegui.py: move
+	  __get_cloned_snapshots() method to a public function in zfs.py
+	* usr/share/time-slider/lib/time_slider/notification.py: fix typo
+	  bug in send_to_desktop() where initial warning level was set to
+	  90000 which broke desktop notification. Should be 0.
+	* usr/share/time-slider/lib/time_slider/zfs.py: Add new function:
+	  list_cloned_snapshots() to list snapshots that have cloned filesystem
+	  based on them.
+
+2008-12-02 Niall Power - <niall.power@sun.com>
+
+	* Makefile: Fix install target error that didn't install both glade
+	  files
+
+2008-12-02 Niall Power - <niall.power@sun.com>
+
+	* VERSION: bumped to 0.2.0
+	* Makefile: added new files to install and uninstall targets
+	* data/Makefile: adjusted for renamed .desktop.in file
+	* usr/share/time-slider/glade/time-slider-setup.glade: Added launch
+	  button for snapshot deletion GUI. Rename window title from 
+	  "Time Slider Setup" to "Time Slider Manager"
+	* usr/share/time-slider/lib/time_slider/setupgui.py: add launch handler
+	  for time-slider-delete
+	* usr/share/time-slider/lib/time_slider/zfs.py: Add utility functions
+	  for time-slider-delete for listing and creating snapshot objects
+	* data/time-slider.desktop.in renamed from time-slider-setup.desktop.in
+	* usr/lib/time-slider-delete: Added new snapshot deleter program to
+	  allow snapshot browsing/deletion.
+	* usr/share/applications/time-slider.desktop: renamef from 
+	  time-slider-setup.desktop
+	* usr/share/time-slider/glade/time-slider-delete.glade: Added glade UI
+	  file for snapshot delete GUI
+	* usr/share/time-slider/lib/time_slider/deletegui.py: Added main python
+	  code for listing and deleting snapshots
+
+2008-12-02 Niall Power - <niall.power@sun.com>
+
+	* py-compile.py: Added to insure pyc files are in sync with
+	  .py sources. Fixes bugster #6754650
+	* VERSION: Added version file. Bump to 0.1.5
+	* SUNWgnome-time-slider.spec: removd because spec file is
+	  in spec-files-other repository on opensolaris.org
+	* Makefile: added "dist" target for creating dist bz2 tarballs
+
+2008-10-23 Erwann Chenede - <erwann.chenede@sun.com>
+
+	* usr/share/icons/hicolor/16x16/apps/time-slider-setup.png 
+	* usr/share/icons/hicolor/24x24/apps/time-slider-setup.png 
+	* usr/share/icons/hicolor/32x32/apps/time-slider-setup.png 
+	* usr/share/icons/hicolor/36x36/apps/time-slider-setup.png 
+	* usr/share/icons/hicolor/48x48/apps/time-slider-setup.png 
+	* usr/share/icons/hicolor/72x72/apps/time-slider-setup.png :
+	  new icon (4182)
+
+2008-10-20   Takao Fujiwara  <takao.fujiwara@sun.com>
+
+	* Makefile: Updated to load po/Makefile and data/Makefile.
+	* data/Makefile: Added to generate .desktop files.
+	* data/time-slider-setup.desktop.in: Added for intltool.
+	* po: Added for intltool.
+
+2008-09-11 Niall Power - <niall.power@sun.com>
+
+	* Initial import of Time Slider service
+

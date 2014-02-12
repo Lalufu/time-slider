@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<!DOCTYPE service_bundle SYSTEM "/usr/share/lib/xml/dtd/service_bundle.dtd.1">
+<!--
+    CDDL HEADER START
+
+    The contents of this file are subject to the terms of the
+    Common Development and Distribution License (the "License").
+    You may not use this file except in compliance with the License.
+
+    You can obtain a copy of the license at usr/src/OPENSOLARIS.LICENSE
+    or http://www.opensolaris.org/os/licensing.
+    See the License for the specific language governing permissions
+    and limitations under the License.
+
+    CDDL HEADER END
+
+    Copyright 2008 Sun Microsystems, Inc.  All rights reserved.
+    Use is subject to license terms.
+
+    NOTE:  This service manifest is not editable; its contents will
+    be overwritten by package or patch operations, including
+    operating system upgrade.  Make customizations in a different
+    file.
+-->
+
+<service_bundle type='manifest' name='SUNWgnome-time-slider'>
+
+<service
+	name='application/time-slider'
+	type='service'
+	version='0.2.95'>
+
+	<!-- This is the time-slider snapshot management service
+	     which is a simple monitor and configuration synchr-
+	     oniser for:
+	     svc:/system/filesystem/zfs/auto-snapshot:<schedule>
+	     instances. It combines these services to provide a
+	     useful range of snapshots for a stand alone system.
+	-->
+
+	<create_default_instance enabled='false' />
+
+	<single_instance />
+
+	<!-- we need to be multi-user  -->
+	<dependency
+		name='multi-user'
+		grouping='require_all'
+		restart_on='none'
+		type='service'>
+		<service_fmri value='svc:/milestone/multi-user' />
+	</dependency>
+
+    <!-- These are the service instances that specify
+         snapshot taking parameters
+
+	<dependency
+		name='auto-snapshot-svcs'
+		type='service'
+		grouping='optional_all'
+		restart_on='refresh'>
+		<service_fmri value='svc:/system/filesystem/zfs/auto-snapshot:frequent' />
+		<service_fmri value='svc:/system/filesystem/zfs/auto-snapshot:hourly' />
+		<service_fmri value='svc:/system/filesystem/zfs/auto-snapshot:daily' />
+		<service_fmri value='svc:/system/filesystem/zfs/auto-snapshot:weekly' />
+		<service_fmri value='svc:/system/filesystem/zfs/auto-snapshot:monthly' />
+	</dependency>
+    -->
+	<exec_method
+		type='method'
+		name='start'
+		exec='/lib/svc/method/time-slider start'
+		timeout_seconds='60'>
+		<method_context>
+			<method_credential user='zfssnap' group='daemon' />
+		</method_context>
+	</exec_method>
+
+	<exec_method
+		type='method'
+		name='stop'
+		exec=':kill'
+		timeout_seconds='60'>
+		<method_context>
+			<method_credential user='zfssnap' group='daemon' />
+		</method_context>
+	</exec_method>
+
+	<exec_method
+		type='method'
+		name='refresh'
+		exec=':kill -HUP'
+		timeout_seconds='60'>
+		<method_context>
+			<method_credential user='zfssnap' group='daemon' />
+		</method_context>
+	</exec_method>
+
+	<property_group name='startd' type='framework'>
+		<propval name='duration' type='astring'
+			value='contract' />
+	</property_group>
+
+	<property_group name='general' type='framework'>
+		<propval name='action_authorization' type='astring'
+			value='solaris.smf.manage.zfs-auto-snapshot' />
+		<propval name='value_authorization' type='astring'
+			value='solaris.smf.manage.zfs-auto-snapshot' />
+	</property_group>
+
+	<property_group name='daemon' type='application'>
+		<propval name='verbose' type='boolean' value='false'
+		   override='true'/>
+		<propval name='value_authorization' type='astring'
+			value='solaris.smf.manage.zfs-auto-snapshot' />
+	</property_group>
+
+	<property_group name='zfs' type='application'>
+		<propval name='custom-selection' type='boolean' value='false'
+            override='true'/>
+        <propval name='keep-empties' type='boolean' value='false'
+            override='true'/>
+        <!--
+        sep:    Set to '_' by default, this is the character used to
+        separate datestamps used in snapshot names.
+        -->
+        <propval name='sep' type='astring' value='_'
+            override='true'/>
+		<propval name='value_authorization' type='astring'
+			value='solaris.smf.manage.zfs-auto-snapshot' />
+	</property_group>
+
+	<property_group name='zpool' type='application'>
+	    <propval name='remedial-cleanup' type='boolean' value='true'
+	        override='true'/>
+		<propval name='warning-level' type='integer' value='80'
+            override='true'/>
+		<propval name='critical-level' type='integer' value='90'
+            override='true'/>
+		<propval name='emergency-level' type='integer' value='95'
+            override='true'/>
+		<propval name='value_authorization' type='astring'
+			value='solaris.smf.manage.zfs-auto-snapshot' />
+	</property_group>
+	
+	<stability value='Unstable' />
+
+	<template>
+		<common_name>
+			<loctext xml:lang='C'>GNOME Desktop Snapshot Management Service
+				</loctext>
+		</common_name>
+
+		<documentation>
+			<manpage
+				title='zfs'
+				section='1M'
+				manpath='/usr/share/man' />
+		</documentation>
+	</template>
+</service>
+
+</service_bundle>

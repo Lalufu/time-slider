@@ -1,0 +1,11 @@
+#!/usr/bin/env python2.6
+
+import sys
+from os.path import dirname, join, pardir, abspath
+sys.path.insert(0, join(dirname(__file__), pardir, 'share',
+                        'time-slider', 'lib'))
+
+from time_slider.fileversion import main
+
+main(abspath(__file__))
+

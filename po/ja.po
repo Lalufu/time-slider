@@ -1,0 +1,944 @@
+# Copyright (C) 2009 Sun Microsystems, Inc
+# This file is distributed under the same license as the time-slider package.
+#
+# Desktop Discuss <desktop-discuss@opensolaris.org>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: time-slider HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-12-07 22:37+0900\n"
+"PO-Revision-Date: 2008-10-01 21:35+0900\n"
+"Last-Translator: desktop-discuss@opensolaris.org\n"
+"Language-Team: desktop-discuss@opensolaris.org\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../data/time-slider.desktop.in.h:1
+msgid "Configure the system to take automatic snapshots of your data"
+msgstr "自動的にデータのスナップショットを作成するようにシステムを構成します"
+
+#
+# COMMUNITY MESSAGE
+# COMMUNITY FUZZY
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../data/time-slider.desktop.in.h:2
+#: ../usr/share/time-slider/lib/time_slider/applet.py:185
+msgid "Time Slider"
+msgstr "タイムスライダ"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:2
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:242
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:342
+#, no-c-format, python-format
+msgid "%d snapshots will be deleted."
+msgstr "%d 個のスナップショットが削除されます。"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:3
+msgid "<b>Summary</b>"
+msgstr "<b>要約</b>"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:4
+msgid "D_eselect All"
+msgstr "すべてを選択解除(_E)"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:5
+msgid "Delete Snapshots"
+msgstr "スナップショットの削除"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:6
+msgid "Deleting Snapshots"
+msgstr "スナップショットを削除しています"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:7
+msgid "Deleting snapshots..."
+msgstr "スナップショットを削除しています..."
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:8
+msgid "Exit when done. "
+msgstr "完了したら終了します。 "
+
+#
+# COMMUNITY MESSAGE
+# COMMUNITY FUZZY
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:9
+msgid "File System:"
+msgstr "ファイルシステム: "
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:10
+msgid "Name:"
+msgstr "名前: "
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:11
+msgid "Press Delete to continue."
+msgstr "続行するには「削除」を押します。"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:12
+msgid "Scanning snapshots..."
+msgstr "スナップショットをスキャンしています..."
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:13
+msgid "Select ZFS snapshots to delete from the list below."
+msgstr "下の一覧から削除する ZFS スナップショットを選択します。"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:1
+msgid "<b>Enable Time Slider</b>"
+msgstr "<b>タイムスライダを有効にする</b>"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:2
+msgid "<b>File Systems To Back Up</b>"
+msgstr "<b>バックアップするファイルシステム</b>"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:3
+msgid "Advanced Options"
+msgstr "詳細オプション"
+
+#
+# COMMUNITY MESSAGE
+# COMMUNITY FUZZY
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:4
+msgid "C_ustom:"
+msgstr "カスタム(_U): "
+
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:5
+msgid "Configuring Time Slider..."
+msgstr ""
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:6
+msgid "For advanced users"
+msgstr "上級ユーザー向け"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:7
+msgid "Recommended for most users"
+msgstr "ほとんどのユーザーに推奨"
+
+#
+# COMMUNITY MESSAGE
+# COMMUNITY FUZZY
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:8
+msgid "Reduce backups when storage space usage exceeds:"
+msgstr "ストレージスペースの使用量が超過したらバックアップを削減する:"
+
+#
+# COMMUNITY MESSAGE
+# COMMUNITY FUZZY
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:9
+msgid "Time Slider Manager"
+msgstr "タイムスライダマネージャー"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:10
+msgid "Time Slider backs up data regularly by taking timed ZFS Snapshots"
+msgstr ""
+"タイムスライダは、時刻指定の ZFS スナップショットを作成することによって定期的"
+"にデータをバックアップします"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:11
+msgid "_All"
+msgstr "すべて(_A)"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:12
+msgid "_Delete Snapshots..."
+msgstr "スナップショットの削除(_D)..."
+
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:13
+msgid "of file system capacity"
+msgstr "ファイルシステム容量"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-snapshot.glade.h:1
+msgid "Take a snapshot now"
+msgstr "今すぐスナップショットを取得する"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-snapshot.glade.h:2
+msgid "Take a snapshot of "
+msgstr "スナップショットを取得する対象 "
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-snapshot.glade.h:3
+msgid "with the name :"
+msgstr "名前: "
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:1
+msgid "10 Mo"
+msgstr "10 Mo"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:2
+msgid "19/01/09"
+msgstr "19/01/09"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:3
+msgid "<b>Current Version</b>"
+msgstr "<b>現在のバージョン</b>"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:4
+msgid "<b>Older Versions</b>"
+msgstr "<b>旧バージョン</b>"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:5
+msgid "Double click to open the file"
+msgstr "ダブルクリックしてファイルを開く"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:6
+msgid "Open the current version of the file"
+msgstr "ファイルの現在のバージョンを開く"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:7
+msgid "Scanning for older versions"
+msgstr "旧バージョンをスキャンしています"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:8
+msgid "Time Slider File Version Explorer"
+msgstr "タイムスライダファイルバージョンエクスプローラ"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:9
+msgid "compare"
+msgstr "比較"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:10
+msgid "filename"
+msgstr "ファイル名"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:11
+msgid "gtk-close"
+msgstr "gtk-close"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:12
+msgid "last modified : "
+msgstr "最終更新日付:  "
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:13
+msgid "name :"
+msgstr "名前: "
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:14
+msgid "size : "
+msgstr "サイズ:  "
+
+#
+# COMMUNITY MESSAGE
+# COMMUNITY FUZZY
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/applet.py:57
+#, fuzzy
+msgid "Time Slider: Low Space Warning"
+msgstr "タイムスライダマネージャー"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/applet.py:75
+#, python-format
+msgid "Emergency: '%s' is full!"
+msgstr "緊急: '%s' がいっぱいです。"
+
+#: ../usr/share/time-slider/lib/time_slider/applet.py:76
+#, python-format
+msgid "The file system: '%s', is over %s%% full."
+msgstr ""
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/applet.py:78
+#, python-format
+msgid ""
+"The file system: '%s', is over %s%% full.\n"
+"As an emergency measure, Time Slider has destroyed all of its backups.\n"
+"To fix this problem, delete any unnecessary files on '%s', or add disk space "
+"(see ZFS documentation)."
+msgstr ""
+"ファイルシステム: '%s' が総容量の %s%% を超えました。\n"
+"緊急の手段として、タイムスライダはすべてのバックアップを破棄しました。\n"
+"この問題を解決するために、'%s' 上の不必要なファイルをすべて削除するか、または"
+"ディスク容量を追加してください (ZFS のマニュアルを参照)。"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/applet.py:87
+#, python-format
+msgid "Emergency: '%s' is almost full!"
+msgstr "緊急: '%s' がほぼいっぱいです。"
+
+#: ../usr/share/time-slider/lib/time_slider/applet.py:88
+#: ../usr/share/time-slider/lib/time_slider/applet.py:103
+#: ../usr/share/time-slider/lib/time_slider/applet.py:118
+#, python-format
+msgid "The file system: '%s', exceeded %s%% of its total capacity"
+msgstr ""
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/applet.py:91
+#, fuzzy, python-format
+msgid ""
+"The file system: '%s', exceeded %s%% of its total capacity. As an emerency "
+"measure, Time Slider has has destroyed most or all of its backups to prevent "
+"the disk becoming full. To prevent this from happening again, delete any "
+"unnecessary files on '%s', or add disk space (see ZFS documentation)."
+msgstr ""
+"ファイルシステム: '%s' が総容量の %s%% を超えました。緊急の手段として、ディス"
+"クがいっぱいになることを避けるために、タイムスライダはほとんどまたはすべての"
+"バックアップを破棄しました。この問題がふたたび発生しないようにするために、'%"
+"s' 上の不必要なファイルをすべて削除するか、またはディスク容量を追加してくださ"
+"い (ZFS のマニュアルを参照)。\n"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/applet.py:102
+#, python-format
+msgid "Urgent: '%s' is almost full!"
+msgstr "緊急: '%s' がほぼいっぱいです。"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/applet.py:106
+#, python-format
+msgid ""
+"The file system: '%s', exceeded %s%% of its total capacity. As a remedial "
+"measure, Time Slider has destroyed some backups, and will destroy more, "
+"eventually all, as capacity continues to diminish.\n"
+"To prevent this from happening again, delete any unnecessary files on '%s', "
+"or add disk space (see ZFS documentation)."
+msgstr ""
+"ファイルシステム: '%s' が総容量の %s%% を超えました。是正手段として、タイムス"
+"ライダはすでに一部のバックアップを破棄しており、容量が減り続ければさらに多く"
+"のバックアップ、最終的にはすべてのバックアップを破棄します。\n"
+"この問題がふたたび発生しないようにするために、'%s' 上の不必要なファイルをすべ"
+"て削除するか、またはディスク容量を追加してください (ZFS のマニュアルを参照)。"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/applet.py:117
+#, python-format
+msgid "Warning: '%s' is getting full"
+msgstr "警告: '%s' がいっぱいになりつつあります"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/applet.py:121
+#, fuzzy, python-format
+msgid ""
+"'%s' exceeded %s%% of its total capacity. To fix this, Time Slider has "
+"destroyed some recent backups, and will destroy more as capacity continues "
+"to diminish.\n"
+"To prevent this from happening again, delete any unnecessary files on '%s', "
+"or add disk space (see ZFS documentation).\n"
+msgstr ""
+"'%s' が総容量の %s%% を超えました。この問題を解決するために、タイムスライダは"
+"すでに一部の最新のバックアップを破棄しており、容量が減り続ければさらに多くの"
+"バックアップを破棄します。\n"
+"この問題がふたたび発生しないようにするために、'%s' 上の不必要なファイルをすべ"
+"て削除するか、またはディスク容量を追加してください (ZFS のマニュアルを参照)。"
+
+#: ../usr/share/time-slider/lib/time_slider/applet.py:137
+msgid "Details..."
+msgstr ""
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:116
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:306
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:106
+msgid "Legacy"
+msgstr "旧バージョン"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:147
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:131
+msgid "Mount Point"
+msgstr "マウントポイント"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:155
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:134
+msgid "File System Name"
+msgstr "ファイルシステム名"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:163
+msgid "Snapshot Name"
+msgstr "スナップショット名"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:171
+msgid "Creation Time"
+msgstr "作成時間"
+
+#
+# COMMUNITY MESSAGE
+# COMMUNITY FUZZY
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#. Note to developers.
+#. The second element is for internal matching and should not
+#. be i18ned under any circumstances.
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:185
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:198
+msgid "All"
+msgstr "すべて"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:199
+msgid "Monthly"
+msgstr "毎月"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:200
+msgid "Weekly"
+msgstr "毎週"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:201
+msgid "Daily"
+msgstr "毎日"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:202
+msgid "Hourly"
+msgstr "毎時"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:203
+msgid "1/4 Hourly"
+msgstr "15 分ごと"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:223
+msgid "Snapshot can not be deleted"
+msgstr "スナップショットを削除できません"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:224
+#, python-format
+msgid ""
+"%s has one or more dependent clones and will not be deleted. To delete this "
+"snapshot, first delete all datasets and snapshots cloned from this snapshot."
+msgstr ""
+"%s には 1 つ以上の複製が依存しているため、削除されません。このスナップショッ"
+"トを削除するには、まず、このスナップショットから複製されたすべてのデータセッ"
+"トとスナップショットを削除してください。"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:240
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:340
+msgid "1 snapshot will be deleted."
+msgstr "1 つのスナップショットが削除されます。"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:381
+msgid "Some snapshots could not be read"
+msgstr "いくつかのスナップショットを読み取れませんでした"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:405
+msgid "Some snapshots could not be deleted"
+msgstr "いくつかのスナップショットを削除できませんでした"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:539
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:422
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:215
+msgid "Insufficient Priviliges"
+msgstr "権限が不足しています"
+
+#
+# COMMUNITY MESSAGE
+# COMMUNITY FUZZY
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:540
+msgid ""
+"Snapshot deletion requires administrative privileges to run. You have not "
+"been assigned the necessaryadministrative priviliges.\n"
+"\n"
+"Consult your system administrator "
+msgstr ""
+"スナップショットの削除を実行するには管理権限が必要です。必要な管理権限が割り"
+"当てられていません。\n"
+"\n"
+"システム管理者に問い合わせてください"
+
+#: ../usr/share/time-slider/lib/time_slider/fileversion.py:246
+#: ../usr/share/time-slider/lib/time_slider/fileversion.py:247
+msgid "Hint"
+msgstr ""
+
+#: ../usr/share/time-slider/lib/time_slider/fileversion.py:248
+msgid ""
+"Installing the optional meld package will enhance the file comparison "
+"visualization"
+msgstr ""
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/fileversion.py:316
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:179
+msgid "Invalid arguments count."
+msgstr "引数の数が無効です。"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/fileversion.py:318
+msgid ""
+"Version explorer requires 2 arguments :\n"
+"- The path of the root snapshot directory.\n"
+"- The filename to explore."
+msgstr ""
+"バージョンエクスプローラには次の 2 つの引数が必要です:\n"
+"- ルートスナップショットディレクトリのパス。\n"
+"- 調査するファイル名。"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:128
+msgid "Select"
+msgstr "選択"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:154
+msgid "Snapshot manager service dependency error"
+msgstr "スナップショットマネージャーサービスの依存関係エラー"
+
+# COMMUNITY MESSAGE
+# COMMUNITY FUZZY
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:155
+#, python-format
+msgid ""
+"The snapshot manager service has been placed offline due to a dependency "
+"problem. The following dependency problems were found:\n"
+"\n"
+"%s\n"
+"\n"
+"Run \"svcs -xv\" from a command prompt for more information about these "
+"dependency problems."
+msgstr ""
+"依存関係の問題が発生したために、スナップショットマネージャーサービスがオフラ"
+"インになりました。次の依存関係の問題が検出されました:\n"
+"\n"
+"%s\n"
+"\n"
+"これらの依存関係の問題の詳細を表示するには、コマンドプロンプトから \"svcs -xv"
+"\" を実行してください。"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:169
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:186
+msgid "Snapshot manager service error"
+msgstr "スナップショットマネージャーサービスのエラー"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:170
+msgid ""
+"The snapshot manager service has encountered a problem and has been disabled "
+"until the problem is fixed.\n"
+"\n"
+"See the svcs(1) man page for more information."
+msgstr ""
+"スナップショットマネージャーサービスが問題を検出し、この問題が解決されるまで"
+"無効になっています。\n"
+"\n"
+"詳細は、svcs(1) のマニュアルページを参照してください。"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:187
+msgid ""
+"The snapshot manager service does not appear to be installed on this "
+"system.\n"
+"\n"
+"See the svcs(1) man page for more information."
+msgstr ""
+"このシステムにはスナップショットマネージャーサービスがインストールされていな"
+"いようです。\n"
+"\n"
+"詳細は、svcs(1) のマニュアルページを参照してください。"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:423
+msgid ""
+"The snapshot manager service requires administrative privileges to run. You "
+"have not been assigned the necessaryadministrative priviliges.\n"
+"\n"
+"Consult your system administrator "
+msgstr ""
+"スナップショットマネージャーサービスを実行するには管理権限が必要です。必要な"
+"管理権限が割り当てられていません。\n"
+"\n"
+"システム管理者に問い合わせてください"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:116
+msgid "Invalid characters in snapshot name"
+msgstr "スナップショット名の文字が無効です"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:117
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:147
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:180
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:216
+msgid "Error"
+msgstr "エラー"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:118
+msgid ""
+"Allowed characters for snapshot names are :\n"
+"[a-z][A-Z][0-9][-_.:\n"
+"All invalid characters will be removed\n"
+msgstr ""
+"スナップショット名に許可されている文字は次のとおりです:\n"
+"[a-z][A-Z][0-9][-_.:\n"
+"無効な文字はすべて削除されます。\n"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:146
+msgid "Error occured while creating the snapshot"
+msgstr "スナップショットの作成中にエラーが発生しました"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:155
+msgid "Snapshot created successfully"
+msgstr "スナップショットが正常に作成されました"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:156
+msgid "Success"
+msgstr "成功"
+
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:157
+#, python-format
+msgid ""
+"A snapshot of zfs filesystem %(zfs_fs)s\n"
+"named %(valid_name)s\n"
+"has been created.\n"
+msgstr ""
+"zfs ファイルシステム %(zfs_fs)s のスナップショット\n"
+"(名前は %(valid_name)s)\n"
+"が作成されました。\n"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:181
+msgid ""
+"Snapshot Now requires 2 arguments :\n"
+"- The path of the directory to be snapshotted.\n"
+"- The zfs filesystem corresponding to this directory."
+msgstr ""
+"「今すぐスナップショット」には次の 2 つの引数が必要です:\n"
+"- スナップショットを取得するディレクトリのパス。\n"
+"- このディレクトリに対応する zfs ファイルシステム。"
+
+#
+# COMMUNITY MESSAGE
+# COMMUNITY FUZZY
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:217
+msgid ""
+"Snapshot Now requires administrative privileges to run. You have not been "
+"assigned the necessaryadministrative priviliges.\n"
+"\n"
+"Consult your system administrator "
+msgstr ""
+"「今すぐスナップショット」を実行するには管理権限が必要です。必要な管理権限が"
+"割り当てられていません。\n"
+"\n"
+"システム管理者に問い合わせてください"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#~ msgid ""
+#~ "A snapshot of zfs filesystem %s\n"
+#~ "named %s\n"
+#~ "has been created.\n"
+#~ msgstr ""
+#~ "zfs ファイルシステム %s のスナップショット\n"
+#~ "(名前は %s)\n"
+#~ "が作成されました。\n"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#~ msgid "Destroy oldest backups when storage space usage exceeds:"
+#~ msgstr ""
+#~ "ストレージスペースの使用量が超過したらもっとも古いバックアップを破棄する:"
+
+# COMMUNITY UNTRANS
+# SUN CHANGED MESSAGE
+# SUN TECH REVIEWED
+# SUN LING REVIEWED
+#~ msgid "of pool capacity"
+#~ msgstr "プール容量"

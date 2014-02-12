@@ -1,0 +1,533 @@
+# Copyright (C) 2009 Sun Microsystems, Inc
+# This file is distributed under the same license as the time-slider package.
+#
+# Desktop Discuss <desktop-discuss@opensolaris.org>
+#
+msgid ""
+msgstr ""
+       "Project-Id-Version: time-slider HEAD\n"
+       "Report-Msgid-Bugs-To: \n"
+       "POT-Creation-Date: 2009-12-07 22:37+0900\n"
+       "PO-Revision-Date: 2010-01-20 20:31+0100\n"
+       "Last-Translator: Hosam Al Ali\n"
+       "Language-Team: Arabic language team <i18n-discuss@opensolaris.org>\n"
+       "MIME-Version: 1.0\n"
+       "Content-Type: text/plain; charset=UTF-8\n"
+       "Content-Transfer-Encoding: 8bit\n"
+
+#: ../data/time-slider.desktop.in.h:1
+msgid "Configure the system to take automatic snapshots of your data"
+msgstr "تاكيد النظام على أخذ صورة عن النظام عن البيانات "
+
+#: ../data/time-slider.desktop.in.h:2
+#: ../usr/share/time-slider/lib/time_slider/applet.py:185
+msgid "Time Slider"
+msgstr "شريط تمرير الوقت "
+
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:2
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:242
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:342
+#, no-c-format, python-format
+msgid "%d snapshots will be deleted."
+msgstr "%d الصورة سوف تمحى "
+
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:3
+msgid "<b>Summary</b>"
+msgstr "<b> ملخص </b>"
+
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:4
+msgid "D_eselect All"
+msgstr "D_eselect All"
+
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:5
+msgid "Delete Snapshots"
+msgstr "حذف صور النظام  "
+
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:6
+msgid "Deleting Snapshots"
+msgstr "حذف صور النظام "
+
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:7
+msgid "Deleting snapshots..."
+msgstr "حذف صور النظام..."
+
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:8
+msgid "Exit when done. "
+msgstr "الخروج عن الإنتهاء "
+
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:9
+msgid "File System:"
+msgstr "نظام الملفات : "
+
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:10
+msgid "Name:"
+msgstr "إسم : "
+
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:11
+msgid "Press Delete to continue."
+msgstr "إضغط على حذف للإستمرار "
+
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:12
+msgid "Scanning snapshots..."
+msgstr "فحص صور النظام "
+
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:13
+msgid "Select ZFS snapshots to delete from the list below."
+msgstr "إختر ZFS صور النظام لحذف من اسفل القائمة "
+
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:1
+msgid "<b>Enable Time Slider</b>"
+msgstr "<b>تفعيل شريط تمرير الوقت</b>"
+
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:2
+msgid "<b>File Systems To Back Up</b>"
+msgstr "<b> ملف النظام للنسخة الإحتياطية </b>"
+
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:3
+msgid "Advanced Options"
+msgstr "خيارات إضافية "
+
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:4
+msgid "C_ustom:"
+msgstr "C_ustom:"
+
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:5
+msgid "Configuring Time Slider..."
+msgstr "إعدادات شريط التوقيت..."
+
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:6
+msgid "For advanced users"
+msgstr "من أجل المستخدمين المتقدمين "
+
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:7
+msgid "Recommended for most users"
+msgstr "المطلوب من كل المستخدمين "
+
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:8
+msgid "Reduce backups when storage space usage exceeds:"
+msgstr "تخفيض النسخة الإحتياطية عند تجاوز المساحة النخزينية "
+
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:9
+msgid "Time Slider Manager"
+msgstr "إدارة شريط تمرير الوقت "
+
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:10
+msgid "Time Slider backs up data regularly by taking timed ZFS Snapshots"
+msgstr "شريط تمرير الوقت يقوم بنسخ إحتياطي للبيانات بشكل منتظم "
+       "بأخذ صورة للنظام "
+
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:11
+msgid "_All"
+msgstr "_الكل "
+
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:12
+msgid "_Delete Snapshots..."
+msgstr "_حذف صور النظام ...."
+
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:13
+msgid "of file system capacity"
+msgstr "قدرة نظام ملفات النظام "
+
+#: ../usr/share/time-slider/glade/time-slider-snapshot.glade.h:1
+msgid "Take a snapshot now"
+msgstr "خذ نسخة من صورة النظام الأن "
+
+#: ../usr/share/time-slider/glade/time-slider-snapshot.glade.h:2
+msgid "Take a snapshot of "
+msgstr "خذ نسخة من صورة النظام "
+
+#: ../usr/share/time-slider/glade/time-slider-snapshot.glade.h:3
+msgid "with the name :"
+msgstr "بإسم :"
+
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:1
+msgid "10 Mo"
+msgstr "10 Mo"
+
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:2
+msgid "19/01/09"
+msgstr "19/01/09"
+
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:3
+msgid "<b>Current Version</b>"
+msgstr "<b>الإصدار الحالي</b>"
+
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:4
+msgid "<b>Older Versions</b>"
+msgstr "<b>الإصدارات السابقة</b>"
+
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:5
+msgid "Double click to open the file"
+msgstr "إضغط مرتين لفتح الملف "
+
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:6
+msgid "Open the current version of the file"
+msgstr "إفتح نفس إصدار الملف "
+
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:7
+msgid "Scanning for older versions"
+msgstr "الفحص للإصدارات الأقدم "
+
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:8
+msgid "Time Slider File Version Explorer"
+msgstr "متصفح ملف إصدار شريط تمرير الوقت "
+
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:9
+msgid "compare"
+msgstr "مقارنة "
+
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:10
+msgid "filename"
+msgstr "إسم الملف "
+
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:11
+msgid "gtk-close"
+msgstr "gtk-إغلاق "
+
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:12
+msgid "last modified : "
+msgstr "أخر تعديل : "
+
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:13
+msgid "name :"
+msgstr "إسم : "
+
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:14
+msgid "size : "
+msgstr "الحجم : "
+
+#: ../usr/share/time-slider/lib/time_slider/applet.py:57
+msgid "Time Slider: Low Space Warning"
+msgstr "شريط التوقيت : تحذير بإنخفاض المساحة"
+
+#: ../usr/share/time-slider/lib/time_slider/applet.py:75
+#, python-format
+msgid "Emergency: '%s' is full!"
+msgstr "الخطر : '%s' ممتلئ!"
+
+#: ../usr/share/time-slider/lib/time_slider/applet.py:76
+#, python-format
+msgid "The file system: '%s', is over %s%% full."
+msgstr "نظام الملفات: '%s', كامل  %s%% ممتلئ."
+
+#: ../usr/share/time-slider/lib/time_slider/applet.py:78
+#, python-format
+msgid ""
+"The file system: '%s', is over %s%% full.\n"
+"As an emergency measure, Time Slider has destroyed all of its backups.\n"
+"To fix this problem, delete any unnecessary files on '%s', or add disk space "
+"(see ZFS documentation)."
+msgstr ""
+       "نظام الملفات : `%s`  وكامل %s%%. ممتلى \n"
+       "والتدبير الإحترازي, شريط تمرير الوقت سوف يحذف كامل النسخ الإحتياطي . \n"
+       "ولإصلاح هذه المشكلة , إحذف أي ملفات غير ضرورية '%s', أو أضف قرص أخر "
+
+#: ../usr/share/time-slider/lib/time_slider/applet.py:87
+#, python-format
+msgid "Emergency: '%s' is almost full!"
+msgstr "الخظر : '%s'  على الأغلب كامل "
+
+#: ../usr/share/time-slider/lib/time_slider/applet.py:88
+#: ../usr/share/time-slider/lib/time_slider/applet.py:103
+#: ../usr/share/time-slider/lib/time_slider/applet.py:118
+#, python-format
+msgid "The file system: '%s', exceeded %s%% of its total capacity"
+msgstr "نظام الملفات: '%s', تجاوز %s%% فوق كل السعة الكلية "
+
+#: ../usr/share/time-slider/lib/time_slider/applet.py:91
+#, python-format
+msgid ""
+"The file system: '%s', exceeded %s%% of its total capacity. As an emerency "
+"measure, Time Slider has has destroyed most or all of its backups to prevent "
+"the disk becoming full. To prevent this from happening again, delete any "
+"unnecessary files on '%s', or add disk space (see ZFS documentation)."
+msgstr ""
+       "نظام الملفات: '%s', تجاوز %s%% من اجمالي قدرتها. باعتبارها emerency"
+       "قياس ، شريط الوقت سوف يلغي معظم ا كل ملفات النسخة الإحتياطي لمنع ملئ القرص . لمنع حدوث ذلك مرة أخرى, يجب عليك , delete any, حذف كل الملفات الغير مفيدة ضمنه '%s', أو أضف قرص جديد(إنظر ZFS دليل)."
+
+#: ../usr/share/time-slider/lib/time_slider/applet.py:102
+#, python-format
+msgid "Urgent: '%s' is almost full!"
+msgstr "عاجل : '%s' على الإغلب ممتلئ "
+
+#: ../usr/share/time-slider/lib/time_slider/applet.py:106
+#, python-format
+msgid ""
+"The file system: '%s', exceeded %s%% of its total capacity. As a remedial "
+"measure, Time Slider has destroyed some backups, and will destroy more, "
+"eventually all, as capacity continues to diminish.\n"
+"To prevent this from happening again, delete any unnecessary files on '%s', "
+"or add disk space (see ZFS documentation)."
+msgstr ""
+"The file system: '%s', exceeded %s%% of its total capacity. As a remedial "
+"measure, Time Slider has destroyed some backups, and will destroy more, "
+"eventually all, as capacity continues to diminish.\n"
+"To prevent this from happening again, delete any unnecessary files on '%s', "
+"or add disk space (see ZFS documentation)."
+
+#: ../usr/share/time-slider/lib/time_slider/applet.py:117
+#, python-format
+msgid "Warning: '%s' is getting full"
+msgstr "تحذير : '%s' الحصول على الكامل "
+
+#: ../usr/share/time-slider/lib/time_slider/applet.py:121
+#, python-format
+msgid ""
+"'%s' exceeded %s%% of its total capacity. To fix this, Time Slider has "
+"destroyed some recent backups, and will destroy more as capacity continues "
+"to diminish.\n"
+"To prevent this from happening again, delete any unnecessary files on '%s', "
+"or add disk space (see ZFS documentation).\n"
+msgstr ""
+       "'%s' تجاوزت %s%% كامل المساحة المتاحة. لحل المشكلة, شريط الوقت يحذف كل ويزيل أخر ملفات النسخ الإحتياطي, وسوف يستمر بعملية الحذف الإزالة من أجل التقليص .\n"
+       "لمنع حدوث ذلك مرة أخرى , يجب عليك حذف الملفات الغير مفيدة ضمنه'%s', "
+       "أو اضف قرص جديد (إنظر ZFS دليل).\n"
+
+#: ../usr/share/time-slider/lib/time_slider/applet.py:137
+msgid "Details..."
+msgstr "تفاصيل..."
+
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:116
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:306
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:106
+msgid "Legacy"
+msgstr "إرث "
+
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:147
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:131
+msgid "Mount Point"
+msgstr "نقطة التحميل "
+
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:155
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:134
+msgid "File System Name"
+msgstr "إسم ملف النظام "
+
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:163
+msgid "Snapshot Name"
+msgstr "إسم صورة النظام "
+
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:171
+msgid "Creation Time"
+msgstr "إنشاء الوقت "
+
+#. Note to developers.
+#. The second element is for internal matching and should not
+#. be i18ned under any circumstances.
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:185
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:198
+msgid "All"
+msgstr "الكل "
+
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:199
+msgid "Monthly"
+msgstr "شهريا "
+
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:200
+msgid "Weekly"
+msgstr "إسبوعيا "
+
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:201
+msgid "Daily"
+msgstr "يومي "
+
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:202
+msgid "Hourly"
+msgstr "ساعي "
+
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:203
+msgid "1/4 Hourly"
+msgstr "1/4 ساعي "
+
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:223
+msgid "Snapshot can not be deleted"
+msgstr "صور النظام لا يمكن حذفها "
+
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:224
+#, python-format
+msgid ""
+"%s has one or more dependent clones and will not be deleted. To delete this "
+"snapshot, first delete all datasets and snapshots cloned from this snapshot."
+msgstr ""
+       "%s هناك وأحد او أكثر من نسخ معتمدة على بعضها لا يمكن خذفها . "
+       "لحذف صورة النظام , أولا أحذف كل datasetes ونسخ صور النظام من صور النظام "
+
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:240
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:340
+msgid "1 snapshot will be deleted."
+msgstr "1 صورة نظام سوف تحذف "
+
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:381
+msgid "Some snapshots could not be read"
+msgstr "بعض صور النظام لايمكن أن تقرأ "
+
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:405
+msgid "Some snapshots could not be deleted"
+msgstr "بعض صور النظام لايمكن أن تحذف "
+
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:539
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:422
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:215
+msgid "Insufficient Priviliges"
+msgstr "الإمتيازات غير كافية "
+
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:540
+msgid ""
+"Snapshot deletion requires administrative privileges to run. You have not "
+"been assigned the necessaryadministrative priviliges.\n"
+"\n"
+"Consult your system administrator "
+msgstr ""
+       "حذف صورة النظام تطلب إمتيازات المدراء لتتم ."
+       "أنت لم تنقل أو تعرف على إمتيازات المدراء الضرورية . \n \n "
+
+#: ../usr/share/time-slider/lib/time_slider/fileversion.py:246
+#: ../usr/share/time-slider/lib/time_slider/fileversion.py:247
+msgid "Hint"
+msgstr "ملحوظة "
+
+#: ../usr/share/time-slider/lib/time_slider/fileversion.py:248
+msgid ""
+"Installing the optional meld package will enhance the file comparison "
+"visualization"
+msgstr ""
+       "تنصيب إضافات meld الحزم سوف تحسن من عملية المقارنة المرئية "
+
+#: ../usr/share/time-slider/lib/time_slider/fileversion.py:316
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:179
+msgid "Invalid arguments count."
+msgstr "فشل بعد الحجج "
+
+#: ../usr/share/time-slider/lib/time_slider/fileversion.py:318
+msgid ""
+"Version explorer requires 2 arguments :\n"
+"- The path of the root snapshot directory.\n"
+"- The filename to explore."
+msgstr ""
+       "إصدار المستكشف يتطلب طلبين :\n"
+       "- مسار مجلد صورة نظام حساب root"
+       "- إسم الملف للإستعراض  "
+
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:128
+msgid "Select"
+msgstr "إختر "
+
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:154
+msgid "Snapshot manager service dependency error"
+msgstr "خدمة إدارة صورة النظام  تعتمد خطأ "
+
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:155
+#, python-format
+msgid ""
+"The snapshot manager service has been placed offline due to a dependency "
+"problem. The following dependency problems were found:\n"
+"\n"
+"%s\n"
+"\n"
+"Run \"svcs -xv\" from a command prompt for more information about these "
+"dependency problems."
+msgstr ""
+       "خدمة إدارة صورة النظام تكون بحالة غير فعالة ويستحق الإعتمادية. اخطاء الإرتباطات التالية ممكن إيجادها:\n"
+       "\n"
+       "%s\n"
+       "\n"
+       "شغل الأمر التالي \"svcs -xv\" من خلال موجه الأوامر لمزيد من المعلومات حول أخطاء الإعتمادية."
+
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:169
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:186
+msgid "Snapshot manager service error"
+msgstr "خطأ خدمة إدارة صورة النظام "
+
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:170
+msgid ""
+"The snapshot manager service has encountered a problem and has been disabled "
+"until the problem is fixed.\n"
+"\n"
+"See the svcs(1) man page for more information."
+msgstr ""
+       "خدمة إدارة صورة النظام تواجه المشاكل ولذلك هي غير فعالة حتى تحل المشكلة .\n "
+       "\n "
+
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:187
+msgid ""
+"The snapshot manager service does not appear to be installed on this "
+"system.\n"
+"\n"
+"See the svcs(1) man page for more information."
+msgstr ""
+       "خدمة إدارة صورة التظام لا تظهر على أنها منصبة ضمن النظام . \n "
+       "إنظر الى svcs(1) man page for more information."
+
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:423
+msgid ""
+"The snapshot manager service requires administrative privileges to run. You "
+"have not been assigned the necessaryadministrative priviliges.\n"
+"\n"
+"Consult your system administrator "
+msgstr ""
+       "خدمة إدارة صورة النظام تحتاج الى صلاحيات المدير لكي تعمل , وأنت لم تعرف على أساس الإمتيازات الضرورية كمدير . \n "
+       "\n "
+
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:116
+msgid "Invalid characters in snapshot name"
+msgstr "خطأ برموز إسم صورة النظام "
+
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:117
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:147
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:180
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:216
+msgid "Error"
+msgstr "خطأ "
+
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:118
+msgid ""
+"Allowed characters for snapshot names are :\n"
+"[a-z][A-Z][0-9][-_.:\n"
+"All invalid characters will be removed\n"
+msgstr ""
+       "الرموز المتاحة بإسم صورة النظام  :\n"
+       "[a-z][A-Z][0-9][-_.:\n"
+       "وكل الرموز الغير متاحة قد أزيلت \n"
+
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:146
+msgid "Error occured while creating the snapshot"
+msgstr "الخطأ حدث عند إنشاء صورة النظام "
+
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:155
+msgid "Snapshot created successfully"
+msgstr "صورة النظام قد أنشأت بنجاح "
+
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:156
+msgid "Success"
+msgstr "نجاح "
+
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:157
+#, python-format
+msgid ""
+"A snapshot of zfs filesystem %(zfs_fs)s\n"
+"named %(valid_name)s\n"
+"has been created.\n"
+msgstr ""
+       "الصورة ضمن نظام ملفات ZFS %(zfs_fs)s\n"
+       "مسماه %(valid_name)s\n"
+       "قد أنشأ .\n"
+
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:181
+msgid ""
+"Snapshot Now requires 2 arguments :\n"
+"- The path of the directory to be snapshotted.\n"
+"- The zfs filesystem corresponding to this directory."
+msgstr ""
+       "صورة النظام تحتاج طلبين : \n"
+       "-	مسار المجلد الخاص بصور النظام .\n"
+       "-	نظام ملفات zfs متطابق مع مع المجلد "
+
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:217
+msgid ""
+"Snapshot Now requires administrative privileges to run. You have not been "
+"assigned the necessaryadministrative priviliges.\n"
+"\n"
+"Consult your system administrator "
+msgstr ""
+       "صورة النظام الأن تحتاج الى صلاحيات مدير للعمل , وأنت لم تعرف على أساس الإمتيازات الضرورية كمدير . \n \n"
+       "راجع مدير النظام "

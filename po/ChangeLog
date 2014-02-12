@@ -1,0 +1,27 @@
+2010-01-21  Harry Fu  <harry.fu@sun.com
+
+	* LINGUAS: new languages are added - ca
+	* *.po: Updated with the latest translations.
+	
+2009-05-12  Harry Fu  <harry.fu@sun.com>
+
+	* LINGUAS: new languages are added - ar,id,nl
+	* *.po: Updated cs/hu/pl with the latest translations.
+
+2009-02-19  Takao Fujiwara  <takao.fujiwara@sun.com>
+
+	* POTFILES.in: Added time-slider-version.glade and fileversion.py
+	* *.po: Updated with the latest strings.
+
+2008-11-04  Takao Fujiwara  <takao.fujiwara@sun.com>
+
+	* *.po: Updated with the latest strings.
+
+2008-10-20  Takao Fujiwara  <takao.fujiwara@sun.com>
+
+	* LINGUAS: Added to compile .mo files.
+	* Makefile: Added.
+	* POTFILES.in: Added for intltool.
+	* cs.po de.po es.po fr.po hu.po it.po ja.po ko.po pl.po pt_BR.po ru.po
+	  sv.po zh_CN.po zh_HK.po zh_TW.po: Added .po files.
+

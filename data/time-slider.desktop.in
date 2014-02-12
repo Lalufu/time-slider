@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+_Name=Time Slider
+_Comment=Configure the system to take automatic snapshots of your data
+Terminal=false
+Type=Application
+StartupNotify=true
+Exec=time-slider-setup
+Icon=time-slider-setup
+Categories=Application;System;Settings

@@ -1,0 +1,538 @@
+# Copyright (C) 2009 Sun Microsystems, Inc
+# This file is distributed under the same license as the time-slider package.
+#
+# Desktop Discuss <desktop-discuss@opensolaris.org>
+#
+msgid ""
+msgstr ""
+       "Project-Id-Version: time-slider HEAD\n"
+       "Report-Msgid-Bugs-To: \n"
+       "POT-Creation-Date: 2009-12-07 22:37+0900\n"
+       "PO-Revision-Date: 2010-01-20 22:37+0900\n"
+       "Last-Translator: bartus11, geek85\n"
+       "Language-Team: Polish language team <i18n-discuss@opensolaris.org>\n"
+       "MIME-Version: 1.0\n"
+       "Content-Type: text/plain; charset=UTF-8\n"
+       "Content-Transfer-Encoding: 8bit\n"
+
+#: ../data/time-slider.desktop.in.h:1
+msgid "Configure the system to take automatic snapshots of your data"
+msgstr "Skonfiguruj system do automatycznego wykonywania migawek twoich danych "
+
+#: ../data/time-slider.desktop.in.h:2
+#: ../usr/share/time-slider/lib/time_slider/applet.py:185
+msgid "Time Slider"
+msgstr "Time Slider"
+
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:2
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:242
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:342
+#, no-c-format, python-format
+msgid "%d snapshots will be deleted."
+msgstr "%d migawki zostaną usunięte"
+
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:3
+msgid "<b>Summary</b>"
+msgstr "<b>Podsumowanie</b>"
+
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:4
+msgid "D_eselect All"
+msgstr "O_dznacz wszystkie"
+
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:5
+msgid "Delete Snapshots"
+msgstr "Usuwam migawki"
+
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:6
+msgid "Deleting Snapshots"
+msgstr "Usuwanie migawki"
+
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:7
+msgid "Deleting snapshots..."
+msgstr "Usuwanie migawek..."
+
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:8
+msgid "Exit when done. "
+msgstr "Wyjdź kiedy skończysz. "
+
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:9
+msgid "File System:"
+msgstr "System plików:"
+
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:10
+msgid "Name:"
+msgstr "Nazwa:"
+
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:11
+msgid "Press Delete to continue."
+msgstr "Naciśnij Delete żeby kontynuować. "
+
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:12
+msgid "Scanning snapshots..."
+msgstr "Wyszukuje migawki..."
+
+#: ../usr/share/time-slider/glade/time-slider-delete.glade.h:13
+msgid "Select ZFS snapshots to delete from the list below."
+msgstr "Wybierz migawki ZFS do usunięcia z listy poniżej."
+
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:1
+msgid "<b>Enable Time Slider</b>"
+msgstr "<b>Włącz Time Slider</b>"
+
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:2
+msgid "<b>File Systems To Back Up</b>"
+msgstr "<b>System plików do Back Up</b>"
+
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:3
+msgid "Advanced Options"
+msgstr "Zaawansowane opcje"
+
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:4
+msgid "C_ustom:"
+msgstr "C_ustom:"
+
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:5
+msgid "Configuring Time Slider..."
+msgstr "Configuring Time Slider..."
+
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:6
+msgid "For advanced users"
+msgstr "Dla zaawansowanych użytkowników"
+
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:7
+msgid "Recommended for most users"
+msgstr "Rekomendowane dla większości użytkowników"
+
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:8
+msgid "Reduce backups when storage space usage exceeds:"
+msgstr "Zmniejsz liczbę backupów kiedy przestrzeń przechowywania przekroczy:"
+
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:9
+msgid "Time Slider Manager"
+msgstr "Menadżer Time Slider"
+
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:10
+msgid "Time Slider backs up data regularly by taking timed ZFS Snapshots"
+msgstr "Time Slider regularnie robi kopię zapasową danych poprzez migawkę ZFS"
+
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:11
+msgid "_All"
+msgstr "_Wszystkie"
+
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:12
+msgid "_Delete Snapshots..."
+msgstr "_Usuwanie Migawki..."
+
+#: ../usr/share/time-slider/glade/time-slider-setup.glade.h:13
+msgid "of file system capacity"
+msgstr "możliwości systemu plików"
+
+#: ../usr/share/time-slider/glade/time-slider-snapshot.glade.h:1
+msgid "Take a snapshot now"
+msgstr "Zrób migawkę teraz"
+
+#: ../usr/share/time-slider/glade/time-slider-snapshot.glade.h:2
+msgid "Take a snapshot of "
+msgstr "Zrób migawkę "
+
+#: ../usr/share/time-slider/glade/time-slider-snapshot.glade.h:3
+msgid "with the name :"
+msgstr "z nazwą:"
+
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:1
+msgid "10 Mo"
+msgstr "10 Mo"
+
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:2
+msgid "19/01/09"
+msgstr "19/01/09"
+
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:3
+msgid "<b>Current Version</b>"
+msgstr "<b> Wersja bieżąca</b>"
+
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:4
+msgid "<b>Older Versions</b>"
+msgstr "</b>Starsza Wersja</b>"
+
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:5
+msgid "Double click to open the file"
+msgstr "Kliknij dwa razy, żeby otworzyć plik"
+
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:6
+msgid "Open the current version of the file"
+msgstr "Otwórz bieżącą wersję pliku"
+
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:7
+msgid "Scanning for older versions"
+msgstr "Wyszukuje starsze wersje"
+
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:8
+msgid "Time Slider File Version Explorer"
+msgstr "Time Slider File Version Explorer"
+
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:9
+msgid "compare"
+msgstr "porównaj"
+
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:10
+msgid "filename"
+msgstr "nazwa pliku"
+
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:11
+msgid "gtk-close"
+msgstr "gtk-zamknij"
+
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:12
+msgid "last modified : "
+msgstr "ostatnia modyfikacja : "
+
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:13
+msgid "name :"
+msgstr "nazwa:"
+
+#: ../usr/share/time-slider/glade/time-slider-version.glade.h:14
+msgid "size : "
+msgstr "rozmiar: "
+
+#: ../usr/share/time-slider/lib/time_slider/applet.py:57
+msgid "Time Slider: Low Space Warning"
+msgstr "Time Slider: Low Space Warning"
+
+#: ../usr/share/time-slider/lib/time_slider/applet.py:75
+#, python-format
+msgid "Emergency: '%s' is full!"
+msgstr "Uwaga: '%s' jest zapełniony"
+
+#: ../usr/share/time-slider/lib/time_slider/applet.py:76
+#, python-format
+msgid "The file system: '%s', is over %s%% full."
+msgstr "The file system: '%s', is over %s%% full."
+
+#: ../usr/share/time-slider/lib/time_slider/applet.py:78
+#, python-format
+msgid ""
+"The file system: '%s', is over %s%% full.\n"
+"As an emergency measure, Time Slider has destroyed all of its backups.\n"
+"To fix this problem, delete any unnecessary files on '%s', or add disk space "
+"(see ZFS documentation)."
+msgstr ""
+       "System plików: '%s', jest zapełniony w %s%%.\n"
+       "Jako środek zaradczy, Time Slider usunął wszystkie migawki tego systemu plików.\n"
+       "Aby rozwiązać ten problem, usuń niepotrzebne pliki z '%s' lub dodaj przestrzeń dyskową"
+       "(zobacz dokumentację ZFS)"
+
+#: ../usr/share/time-slider/lib/time_slider/applet.py:87
+#, python-format
+msgid "Emergency: '%s' is almost full!"
+msgstr "Uwaga: '%s' jest prawie zapełniony"
+
+#: ../usr/share/time-slider/lib/time_slider/applet.py:88
+#: ../usr/share/time-slider/lib/time_slider/applet.py:103
+#: ../usr/share/time-slider/lib/time_slider/applet.py:118
+#, python-format
+msgid "The file system: '%s', exceeded %s%% of its total capacity"
+msgstr "The file system: '%s', exceeded %s%% of its total capacity"
+
+#: ../usr/share/time-slider/lib/time_slider/applet.py:91
+#, python-format
+msgid ""
+"The file system: '%s', exceeded %s%% of its total capacity. As an emerency "
+"measure, Time Slider has has destroyed most or all of its backups to prevent "
+"the disk becoming full. To prevent this from happening again, delete any "
+"unnecessary files on '%s', or add disk space (see ZFS documentation)."
+msgstr ""
+       "The file system: '%s', exceeded %s%% of its total capacity. As an emerency "
+       "measure, Time Slider has has destroyed most or all of its backups to prevent "
+       "the disk becoming full. To prevent this from happening again, delete any "
+       "unnecessary files on '%s', or add disk space (see ZFS documentation)."
+
+#: ../usr/share/time-slider/lib/time_slider/applet.py:102
+#, python-format
+msgid "Urgent: '%s' is almost full!"
+msgstr "Pilne: '%s' jest prawie zapełniony!"
+
+#: ../usr/share/time-slider/lib/time_slider/applet.py:106
+#, python-format
+msgid ""
+"The file system: '%s', exceeded %s%% of its total capacity. As a remedial "
+"measure, Time Slider has destroyed some backups, and will destroy more, "
+"eventually all, as capacity continues to diminish.\n"
+"To prevent this from happening again, delete any unnecessary files on '%s', "
+"or add disk space (see ZFS documentation)."
+msgstr ""
+       "System plików: '%s', przekroczył %s%% jego całkowitej pojemności. Jako środek zaradczy Time Slider usunął kilka migawek tego systemu i w końcu usunie wszystkie, jeżeli wolne miejsce będzie nadal ubywać. Aby ta sytuacja się nie powtórzyła, usuń niepotrzebne pliki z '%s' lub dodaj przestrzeń dyskową (zobacz dokumentację ZFS)"
+
+#: ../usr/share/time-slider/lib/time_slider/applet.py:117
+#, python-format
+msgid "Warning: '%s' is getting full"
+msgstr "Ostrzeżenie: '%s' staje się pełny"
+
+#: ../usr/share/time-slider/lib/time_slider/applet.py:121
+#, python-format
+msgid ""
+"'%s' exceeded %s%% of its total capacity. To fix this, Time Slider has "
+"destroyed some recent backups, and will destroy more as capacity continues "
+"to diminish.\n"
+"To prevent this from happening again, delete any unnecessary files on '%s', "
+"or add disk space (see ZFS documentation).\n"
+msgstr ""
+       "'%s' exceeded %s%% of its total capacity. To fix this, Time Slider has "
+       "destroyed some recent backups, and will destroy more as capacity continues "
+       "to diminish.\n"
+       "To prevent this from happening again, delete any unnecessary files on '%s', "
+       "or add disk space (see ZFS documentation).\n"
+
+#: ../usr/share/time-slider/lib/time_slider/applet.py:137
+msgid "Details..."
+msgstr "Details..."
+
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:116
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:306
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:106
+msgid "Legacy"
+msgstr "Legacy"
+
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:147
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:131
+msgid "Mount Point"
+msgstr "Punkt montowania"
+
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:155
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:134
+msgid "File System Name"
+msgstr "Nazwa systemu plików"
+
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:163
+msgid "Snapshot Name"
+msgstr "Nazwa migawki"
+
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:171
+msgid "Creation Time"
+msgstr "Czas utworzenia"
+
+#. Note to developers.
+#. The second element is for internal matching and should not
+#. be i18ned under any circumstances.
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:185
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:198
+msgid "All"
+msgstr "Wszystkie"
+
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:199
+msgid "Monthly"
+msgstr "Miesięcznie"
+
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:200
+msgid "Weekly"
+msgstr "Tygodniowo"
+
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:201
+msgid "Daily"
+msgstr "Dziennie"
+
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:202
+msgid "Hourly"
+msgstr "Co godzinę"
+
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:203
+msgid "1/4 Hourly"
+msgstr "Co 15 minut"
+
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:223
+msgid "Snapshot can not be deleted"
+msgstr "Migawka nie może byś usunięta"
+
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:224
+#, python-format
+msgid ""
+"%s has one or more dependent clones and will not be deleted. To delete this "
+"snapshot, first delete all datasets and snapshots cloned from this snapshot."
+msgstr ""
+       "%s posiada jeden lub więcej zależnych klonów i nie zostanie usunięty. Aby usunąc tą"
+       "migawkę, najpierw usuń wszystkie datasety i migawki sklonowane z tej migawki."
+
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:240
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:340
+msgid "1 snapshot will be deleted."
+msgstr "1 migawka będzie usunięta"
+
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:381
+msgid "Some snapshots could not be read"
+msgstr "Nie można odczytać niektórych migawek"
+
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:405
+msgid "Some snapshots could not be deleted"
+msgstr "Nie można usunąć niektórych migawek"
+
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:539
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:422
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:215
+msgid "Insufficient Priviliges"
+msgstr "Niewystarczające uprawnienia"
+
+#: ../usr/share/time-slider/lib/time_slider/deletegui.py:540
+msgid ""
+"Snapshot deletion requires administrative privileges to run. You have not "
+"been assigned the necessaryadministrative priviliges.\n"
+"\n"
+"Consult your system administrator "
+msgstr ""
+       "Usunięcie migawki wymaga uprawnień administratora. Nie masz przypisanych niezbędnych uprawnień administracyjnych.\n"
+       "\n"
+       "Skontaktuj się ze swoim administratorem systemu. "
+
+#: ../usr/share/time-slider/lib/time_slider/fileversion.py:246
+#: ../usr/share/time-slider/lib/time_slider/fileversion.py:247
+msgid "Hint"
+msgstr "Hint"
+
+#: ../usr/share/time-slider/lib/time_slider/fileversion.py:248
+msgid ""
+"Installing the optional meld package will enhance the file comparison "
+"visualization"
+msgstr ""
+       "Installing the optional meld package will enhance the file comparison "
+       "visualization"
+
+#: ../usr/share/time-slider/lib/time_slider/fileversion.py:316
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:179
+msgid "Invalid arguments count."
+msgstr "Niepoprawna liczba argumentów."
+
+#: ../usr/share/time-slider/lib/time_slider/fileversion.py:318
+msgid ""
+"Version explorer requires 2 arguments :\n"
+"- The path of the root snapshot directory.\n"
+"- The filename to explore."
+msgstr ""
+       "Wersja przeglądarki potrzebuje 2 argumenty :\n"
+       "-Ścieżkę do głównego katalogu migawek.\n"
+       "Nazwę pliku do zbadania."
+
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:128
+msgid "Select"
+msgstr "Wybierz"
+
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:154
+msgid "Snapshot manager service dependency error"
+msgstr "Błąd usługi menadżera migawek"
+
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:155
+#, python-format
+msgid ""
+"The snapshot manager service has been placed offline due to a dependency "
+"problem. The following dependency problems were found:\n"
+"\n"
+"%s\n"
+"\n"
+"Run \"svcs -xv\" from a command prompt for more information about these "
+"dependency problems."
+msgstr ""
+       "Menadżer migawek został wyłączony z powodu problemu z zależnościami. Następujące problemy z zależnościami zostały wykryte:\n"
+       "\n"
+       "%s\n"
+       "\n"
+       "Wykonaj \"svcs -xv\" w terminalu aby uzyskać więcej informacji na temat tych problemów."
+
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:169
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:186
+msgid "Snapshot manager service error"
+msgstr "Błąd menadżera migawek"
+
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:170
+msgid ""
+"The snapshot manager service has encountered a problem and has been disabled "
+"until the problem is fixed.\n"
+"\n"
+"See the svcs(1) man page for more information."
+msgstr ""
+       "Menadżer migawek napotkał problem i został wyłączony dopóki problem nie zostanie rozwiązany.\n"
+       "\n"
+       "Zobacz stronę manuala svcs(1) aby uzyskać więcej informacji."
+
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:187
+msgid ""
+"The snapshot manager service does not appear to be installed on this "
+"system.\n"
+"\n"
+"See the svcs(1) man page for more information."
+msgstr ""
+       "Menadżer migawek nie jest zainstalowany na tym systemie.\n"
+       "\n"
+       "Zobacz stronę manuala svcs(1) aby uzyskać więcej informacji."
+
+#: ../usr/share/time-slider/lib/time_slider/setupgui.py:423
+msgid ""
+"The snapshot manager service requires administrative privileges to run. You "
+"have not been assigned the necessaryadministrative priviliges.\n"
+"\n"
+"Consult your system administrator "
+msgstr ""
+       "Usługa menadżera migawek wymaga uprawnień administratora do działania. Nie masz przypisanych niezbędnych uprawnień administracyjnych.\n"
+       "\n"
+       "Skontaktuj się ze swoim administratorem systemu. "
+
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:116
+msgid "Invalid characters in snapshot name"
+msgstr "Niedozwolone znaki w nazwie migawki"
+
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:117
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:147
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:180
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:216
+msgid "Error"
+msgstr "Błąd"
+
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:118
+msgid ""
+"Allowed characters for snapshot names are :\n"
+"[a-z][A-Z][0-9][-_.:\n"
+"All invalid characters will be removed\n"
+msgstr ""
+       "Dozwolone znaki w nazwie migawki :\n"
+       "[a-z][A-Z][0-9][-_.:\n"
+       "Wszystkie inne znaki zostaną usunięte\n"
+
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:146
+msgid "Error occured while creating the snapshot"
+msgstr "Wystąpił błąd podczas tworzenia migawki"
+
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:155
+msgid "Snapshot created successfully"
+msgstr "Migawka została utworzona"
+
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:156
+msgid "Success"
+msgstr "Powodzenie"
+
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:157
+#, python-format
+msgid ""
+"A snapshot of zfs filesystem %(zfs_fs)s\n"
+"named %(valid_name)s\n"
+"has been created.\n"
+msgstr ""
+       "Utworzono migawkę systemu plików zfs %(zfs_fs)s\n"
+       "o nazwie %(valid_name)s\n"
+
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:181
+msgid ""
+"Snapshot Now requires 2 arguments :\n"
+"- The path of the directory to be snapshotted.\n"
+"- The zfs filesystem corresponding to this directory."
+msgstr ""
+       "Migawka Teraz potrzebuje 2 argumenty :\n"
+       "- Ścieszkę dostępu do katalogu z którego migawka ma zostać utworzona.\n"
+       "- System plików zfs powiązany z katalogiem."
+
+#: ../usr/share/time-slider/lib/time_slider/snapnowui.py:217
+msgid ""
+"Snapshot Now requires administrative privileges to run. You have not been "
+"assigned the necessaryadministrative priviliges.\n"
+"\n"
+"Consult your system administrator "
+msgstr ""
+       "Migawka Teraz wymaga uprawnień administratora do działania. Nie masz przypisanych niezbędnych uprawnień administracyjnych.\n"
+       "\n"
+       "Skontaktuj się ze swoim administratorem systemu. "

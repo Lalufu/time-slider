@@ -1,0 +1,136 @@
+#!/bin/ksh
+#
+# CDDL HEADER START
+#
+# The contents of this file are subject to the terms of the
+# Common Development and Distribution License (the "License").
+# You may not use this file except in compliance with the License.
+#
+# You can obtain a copy of the license at usr/src/OPENSOLARIS.LICENSE
+# or http://www.opensolaris.org/os/licensing.
+# See the License for the specific language governing permissions
+# and limitations under the License.
+#
+# When distributing Covered Code, include this CDDL HEADER in each
+# file and include the License file at usr/src/OPENSOLARIS.LICENSE.
+# If applicable, add the following below this CDDL HEADER, with the
+# fields enclosed by brackets "[]" replaced with your own identifying
+# information: Portions Copyright [yyyy] [name of copyright owner]
+#
+# CDDL HEADER END
+#
+#
+# Copyright 2006 Sun Microsystems, Inc.  All rights reserved.
+# Use is subject to license terms.
+# A rather simple SMF method script for
+# svc:/application/time-slider:default
+# It's sole purpose is to set the correct SMF property value of it's
+# direct "auto-snapshot:<schedule>" dependencies: zfs/fs-name = '//'
+
+. /lib/svc/share/smf_include.sh
+
+RSYNC_PROG="/usr/lib/time-slider/plugins/rsync/rsync-backup"
+
+# This function sets the appropriate svc configuration property for all
+# dependent auto-snapshot:<schedule> instances if necessary
+function update_service_props {
+	DEPENDENCIES=$(svcs -d  -H -o fmri $SMF_FMRI|grep auto-snapshot)
+	for dependency in ${DEPENDENCIES} ; do
+		if [ "$(svcprop -p zfs/fs-name $dependency)" != "//" ] ; then
+			svccfg -s $dependency setprop zfs/fs-name = astring: "//"
+			svcadm refresh $dependency
+		fi
+	done
+}
+
+# Given the exit status of a command, an integer, 0 if the command completed
+# without errors. If the command exited with errors we degrade the
+# state of this service into maintenance mode. If a 3rd argument is presented
+# we don't degrade the service. We also log an error message as passed into
+# this function.
+#
+function check_failure { # integer exit status, error message to display, be fatal
+
+	typeset RESULT=$1
+	typeset ERR_MSG=$2
+	typeset NON_FATAL=$3
+
+	if [ $RESULT -ne 0 ] ; then
+	    print_log "Error: $ERR_MSG"
+	    print_log "Moving service $SMF_FMRI to maintenance mode."
+	    if [ -z "${NON_FATAL}" ] ; then
+		print_log "Moving service $SMF_FMRI to maintenance mode."
+	        svcadm mark maintenance $SMF_FMRI
+	    fi
+	fi
+
+}
+
+# A function we use to emit output. Right now, this goes to syslog via logger(1)
+function print_log { # message to display
+	logger -t time-slider -p daemon.notice $*
+}
+
+
+function add_rsync_cronjob {
+	# Call every 30 minutes, 15 and 45 minutes after the hour.
+	SCHEDULE="15,45 * * * *"
+
+	# adding a cron job is essentially just looking for an existing entry,
+	# removing it, and appending a new one. Neato.
+	crontab -l | grep -v "${RSYNC_PROG} $SMF_FMRI" \
+	    > /tmp/saved-crontab.$$
+
+	echo "${SCHEDULE} ${RSYNC_PROG} $SMF_FMRI" \
+	    >> /tmp/saved-crontab.$$
+
+	crontab /tmp/saved-crontab.$$
+	check_failure $? "Unable to add cron job!"
+
+	rm /tmp/saved-crontab.$$
+	return 0
+}
+
+function remove_rsync_cronjob {
+
+	crontab -l | grep -v "${RSYNC_PROG} $SMF_FMRI$" \
+	    > /tmp/saved-crontab.$$
+	crontab /tmp/saved-crontab.$$
+	check_failure $? "Unable to unschedule cron job for $SMF_FMRI"
+
+	rm /tmp/saved-crontab.$$
+
+	# finally, check our status before we return
+	STATE=$(svcprop -p restarter/state $SMF_FMRI)
+	if [ "${STATE}" == "maintenance" ] ; then
+	    STATE=1
+	else
+	    STATE=0
+	fi
+}
+
+case $SMF_METHOD in
+"start")
+    #FIXME - This HAS to be == rsync-trigger program
+	PLUGIN_CMD="$(svcprop -p plugin/trigger_command $SMF_FMRI)"
+	if [ $? -ne 0 ] ; then
+		echo "Unable to obtain plugin invocation command"
+		exit $SMF_EXIT_ERR_CONFIG
+	fi
+
+	if [ ! -x $PLUGIN_CMD ] ; then
+	    echo "\"$PLUGIN_CMD\" is not an executable path"
+	    exit $SMF_EXIT_ERR_CONFIG
+	fi
+	add_rsync_cronjob
+	;;
+"stop")
+	remove_rsync_cronjob
+	;;
+*)
+	echo "Command line invocation of ${0} unsupported."
+	echo "This script is intended for smf(5) invocation only"
+	exit $SMF_EXIT_ERR_NOSMF
+	;;
+esac
+exit $SMF_EXIT_OK

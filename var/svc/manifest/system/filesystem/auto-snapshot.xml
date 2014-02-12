@@ -1,0 +1,262 @@
+<?xml version="1.0"?>
+<!DOCTYPE service_bundle SYSTEM "/usr/share/lib/xml/dtd/service_bundle.dtd.1">
+<!--
+
+ CDDL HEADER START
+
+ The contents of this file are subject to the terms of the
+ Common Development and Distribution License, Version 1.0 only
+ (the "License").  You may not use this file except in compliance
+ with the License.
+
+ You can obtain a copy of the license at usr/src/OPENSOLARIS.LICENSE
+ or http://www.opensolaris.org/os/licensing.
+ See the License for the specific language governing permissions
+ and limitations under the License.
+
+ When distributing Covered Code, include this CDDL HEADER in each
+ file and include the License file at usr/src/OPENSOLARIS.LICENSE.
+ If applicable, add the following below this CDDL HEADER, with the
+ fields enclosed by brackets "[]" replaced with your own identifying
+ information: Portions Copyright [yyyy] [name of copyright owner]
+
+ CDDL HEADER END
+
+ Copyright 2009 Sun Microsystems, Inc.  All rights reserved.
+ Use is subject to license terms.
+
+-->
+
+<service_bundle type='manifest' name='SUNWtime-slider'>
+
+<service
+	name='system/filesystem/zfs/auto-snapshot'
+	type='service'
+	version='0.2.96'>
+
+	<!-- we need time-slider  -->
+	<dependency
+		name='time-slider'
+		grouping='require_all'
+		restart_on='refresh'
+		type='service'>
+		<service_fmri value='svc:/application/time-slider' />
+	</dependency>
+
+        <exec_method
+                type='method'
+                name='start'
+                exec=':true'
+                timeout_seconds='10'>
+        </exec_method>
+
+        <exec_method
+                type='method'
+                name='stop'
+                exec=':true'
+                timeout_seconds='10'>
+        </exec_method>
+
+        <exec_method
+                type='method'
+                name='refresh'
+                exec=':true'
+                timeout_seconds='10'>
+        </exec_method>
+
+	<property_group name='startd' type='framework'>
+		<propval name='duration' type='astring' value='transient' />
+	</property_group>
+
+        <property_group name='general' type='framework'>
+            <propval name='action_authorization' type='astring'
+                value='solaris.smf.manage.zfs-auto-snapshot' />
+            <propval name='value_authorization' type='astring'
+                value='solaris.smf.manage.zfs-auto-snapshot' />
+        </property_group>
+
+
+    <!-- The properties we expect that any instance will define:
+
+	interval : minutes | hours | days | months
+
+	period : How many (m,h,d,m) to wait between snapshots
+
+	keep : How many snapshots we should keep, otherwise, we
+		delete the oldest when we hit this threshold
+	 -->
+
+	<property_group name="zfs" type="application">
+	  <propval name="interval" type="astring" value="Not set" override="true"/>
+	  <propval name="keep" type="astring" value="all" override="true"/>
+	</property_group>
+
+
+	<!-- We now define a set of default instances to take frequent,
+	     hourly, daily, weekly and monthly snapshots --> 
+
+
+	<!-- This instance recursively snapshots all
+     	     filesystems marked with the ZFS User Property 
+     	     com.sun:auto-snapshot:frequent=true every
+     	     15 minutes, and keeps 3 of these snapshots into the past.
+	-->
+
+	<instance name='frequent' enabled='false' >
+
+	<property_group name='general' type='framework'>
+		<propval name='action_authorization' type='astring'
+		value='solaris.smf.manage.zfs-auto-snapshot' />
+		<propval name='value_authorization' type='astring'
+		value='solaris.smf.manage.zfs-auto-snapshot' />
+	</property_group>
+
+	<property_group name="zfs" type="application">
+
+	  <propval name="interval" type="astring" value="minutes"
+		   override="true"/>
+	  <propval name="period" type="astring" value="15"
+		   override="true"/>
+	  <propval name="keep" type="astring" value="3"
+		   override="true"/>
+
+	</property_group>
+
+	</instance>
+
+	<!-- This instance recursively snapshots all
+     	     filesystems marked with the ZFS User Property 
+     	     com.sun:auto-snapshot:hourly=true every
+     	     hour, and keeps 23 of these snapshots into the past.
+	-->
+
+	<instance name='hourly' enabled='false' >
+
+	<property_group name='general' type='framework'>
+		<propval name='action_authorization' type='astring'
+		value='solaris.smf.manage.zfs-auto-snapshot' />
+		<propval name='value_authorization' type='astring'
+		value='solaris.smf.manage.zfs-auto-snapshot' />
+	</property_group>
+
+	<property_group name="zfs" type="application">
+
+	  <propval name="interval" type="astring" value="hours"
+		   override="true"/>
+	  <propval name="period" type="astring" value="1"
+		   override="true"/>
+	  <propval name="keep" type="astring" value="23"
+		   override="true"/>
+
+	</property_group>
+
+	</instance>
+
+
+	<!-- This instance recursively snapshots all
+     	     filesystems marked with the ZFS User Property 
+     	     com.sun:auto-snapshot:daily=true every
+     	     day, and keeps 6 of these snapshots into the past.
+	-->
+
+	<instance name='daily' enabled='false' >
+
+	<property_group name='general' type='framework'>
+		<propval name='action_authorization' type='astring'
+		value='solaris.smf.manage.zfs-auto-snapshot' />
+		<propval name='value_authorization' type='astring'
+		value='solaris.smf.manage.zfs-auto-snapshot' />
+	</property_group>
+
+	<property_group name="zfs" type="application">
+
+	  <propval name="interval" type="astring" value="days"
+		   override="true"/>
+	  <propval name="period" type="astring" value="1"
+		   override="true"/>
+	  <propval name="keep" type="astring" value="6"
+		   override="true"/>
+
+	</property_group>
+
+	</instance>
+
+	<!-- This instance recursively snapshots all
+     	     filesystems marked with the ZFS User Property 
+     	     com.sun:auto-snapshot:weekly=true every
+     	     7 days, and keeps 4 of these snapshots into the past.
+	-->
+
+	<instance name='weekly' enabled='false' >
+
+	<property_group name='general' type='framework'>
+		<propval name='action_authorization' type='astring'
+		value='solaris.smf.manage.zfs-auto-snapshot' />
+		<propval name='value_authorization' type='astring'
+		value='solaris.smf.manage.zfs-auto-snapshot' />
+	</property_group>
+
+	<property_group name="zfs" type="application">
+
+	  <propval name="interval" type="astring" value="days"
+		   override="true"/>
+	  <propval name="period" type="astring" value="7"
+		   override="true"/>
+	  <propval name="keep" type="astring" value="4"
+		   override="true"/>
+
+	</property_group>
+
+	</instance>
+
+
+	<!-- This instance recursively snapshots all
+     	     filesystems marked with the ZFS User Property 
+     	     com.sun:auto-snapshot:monthly=true every
+     	     month, and keeps 12 of these snapshots into the past.
+	-->
+
+	<instance name='monthly' enabled='false' >
+
+	<property_group name='general' type='framework'>
+		<propval name='action_authorization' type='astring'
+		value='solaris.smf.manage.zfs-auto-snapshot' />
+		<propval name='value_authorization' type='astring'
+		value='solaris.smf.manage.zfs-auto-snapshot' />
+	</property_group>
+
+	<property_group name="zfs" type="application">
+
+	  <propval name="interval" type="astring" value="months"
+		   override="true"/>
+	  <propval name="period" type="astring" value="1"
+		   override="true"/>
+	  <propval name="keep" type="astring" value="12"
+		   override="true"/>
+
+	</property_group>
+
+	</instance>
+
+	<stability value='Unstable' />
+
+	<template>
+		<common_name>
+			<loctext xml:lang='C'>ZFS automatic snapshots</loctext>
+		</common_name>
+		<description>
+			<loctext xml:lang='C'>
+This service provides system configuration for taking automatic snapshots of ZFS
+filesystems.
+
+In order to use this service, you must enable the time-slider service plus at least one auto-snapshot
+instance per set of automatic snapshots you want to take.
+The time-slider service will manage the creation and destruction of snapshots according to the definitions
+of each auto-snapshot service instance.
+
+On stopping the service, time-slider will cease to take snapshots for the specific instance.
+			</loctext>
+		</description>
+	</template>
+</service>
+</service_bundle>

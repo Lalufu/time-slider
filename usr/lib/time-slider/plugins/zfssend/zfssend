@@ -1,0 +1,10 @@
+#!/usr/bin/python2.6
+import sys
+from os.path import dirname, join, pardir, abspath
+sys.path.insert(0, join(dirname(__file__), pardir, pardir, pardir, pardir,
+                        'share', 'time-slider', 'lib', 'plugin'))
+
+from zfssend.zfssend import main
+# Pass through the executable path in case it needs to
+# be invoked via gksu (user has insufficient priviliges) 
+main(abspath(__file__))

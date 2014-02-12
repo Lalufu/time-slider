@@ -1,0 +1,543 @@
+ca<b>Summary</b><b>Resum</b>idScanning for older versionsPemindaian untuk versi lamacsConfigure the system to take automatic snapshots of your dataNakonfigurujte si systém tak, aby vytvářel automatické snímky Vašich datzh_TW19/01/0919/01/09zh_HKSnapshot Now requires 2 arguments :
+- The path of the directory to be snapshotted.
+- The zfs filesystem corresponding to this directory.[立即擷取快照] 需要 2 個引數：
+- 要進行快照擷取的目錄的路徑。
+- 與此目錄對應的 zfs 檔案系統。zh_CNA snapshot of zfs filesystem %(zfs_fs)s
+named %(valid_name)s
+has been created.
+已创建了一个名为 %(valid_name)s 的 zfs 文件
+系统 %(zfs_fs)s
+的快照。
+zh_CNThe snapshot manager service requires administrative privileges to run. You have not been assigned the necessaryadministrative priviliges.
+
+Consult your system administrator 该快照管理器服务需要管理权限才能运行。没有为您指定必要的管理权限。
+
+请咨询您的系统管理员 itTime Slider File Version ExplorerExplorer versione del file Time SliderjaSome snapshots could not be readいくつかのスナップショットを読み取れませんでしたitSnapshot deletion requires administrative privileges to run. You have not been assigned the necessaryadministrative priviliges.
+
+Consult your system administrator Per l'esecuzione dell’eliminazione delle istantanee sono necessari privilegi amministrativi. Non si dispone di privilegi amministrativi necessari.
+
+Rivolgersi all'amministratore di sistema. idTime Slider ManagerPengendali Time Sliderzh_CNError错误pt_BRConfigure the system to take automatic snapshots of your dataConfigurar o sistema para realizar instantâneos automáticos dos dadoszh_TWLegacy原來的plInvalid characters in snapshot nameNiedozwolone znaki w nazwie migawkiidCreation TimeWaktu PembuatancaTime Slider: Low Space WarningTime Slider: Advertència poc espaicsEmergency: '%s' is almost full!Stav nouze: '%s' je skoro plný!pl_All_WszystkiedeSome snapshots could not be readEinige Schnappschüsse konnten nicht gelesen werdenpl1 snapshot will be deleted.1 migawka będzie usuniętadeAllowed characters for snapshot names are :
+[a-z][A-Z][0-9][-_.:
+All invalid characters will be removed
+Folgende Zeichen sind für den Schnappschussnamen zulässig:
+[a-z][A-Z][0-9][-_.:
+Alle ungültigen Zeichen werden entfernt
+csDailyDennědewith the name :mit dem Namen:esThe snapshot manager service has encountered a problem and has been disabled until the problem is fixed.
+
+See the svcs(1) man page for more information.El servicio de administrador de instantáneas ha detectado un problema y se ha desactivado hasta que se solucione el problema.
+
+Para obtener más información, consulte la página de comando man svcs(1).arInvalid arguments count.فشل بعد الحجج huMount PointFelcsatolási pontidD_eselect AllD_eselect Allpt_BR19/01/0919/01/09koTake a snapshot now지금 스냅샷 실행caFile System NameNom Sistema de FitxerscsSome snapshots could not be deletedNěkteré snímky nemohou být smazánykoSelect ZFS snapshots to delete from the list below.다음 목록에서 삭제할 ZFS 스냅샷을 선택하십시오.jaTime Slider backs up data regularly by taking timed ZFS Snapshotsタイムスライダは、時刻指定の ZFS スナップショットを作成することによって定期的にデータをバックアップしますpt_BRSnapshot Now requires administrative privileges to run. You have not been assigned the necessaryadministrative priviliges.
+
+Consult your system administrator Efetuar instantâneo agora requer privilégios administrativos para ser executado. Os privilégios administrativos necessários não lhe foram atribuídos.
+
+Consulte o administrador de sistema jaSnapshot Nameスナップショット名zh_CNThe file system: '%s', is over %s%% full.
+As an emergency measure, Time Slider has destroyed all of its backups.
+To fix this problem, delete any unnecessary files on '%s', or add disk space (see ZFS documentation).文件系统 '%s' 的占满程度已超过 %s%%。
+作为一种紧急措施，时间滑块已销毁了它的所有备份。
+要修复此问题，请删除 '%s' 上所有不必要的文件，或增加磁盘空间（请参见 ZFS 文档）。jaSnapshot Now requires administrative privileges to run. You have not been assigned the necessaryadministrative priviliges.
+
+Consult your system administrator 「今すぐスナップショット」を実行するには管理権限が必要です。必要な管理権限が割り当てられていません。
+
+システム管理者に問い合わせてくださいarDailyيومي arSnapshot can not be deletedصور النظام لا يمكن حذفها deOpen the current version of the fileDie aktuelle Version der Datei öffnenjaAllowed characters for snapshot names are :
+[a-z][A-Z][0-9][-_.:
+All invalid characters will be removed
+スナップショット名に許可されている文字は次のとおりです:
+[a-z][A-Z][0-9][-_.:
+無効な文字はすべて削除されます。
+caSelect ZFS snapshots to delete from the list below.Seleccioneu les instantànies ZFS a eliminar del següent llistat.idWeeklyMingguankoDelete Snapshots스냅샷 삭제esVersion explorer requires 2 arguments :
+- The path of the root snapshot directory.
+- The filename to explore.El explorador de versiones necesita 2 argumentos:
+- La ruta del directorio raíz de las instantáneas.
+- El nombre del archivo que se va a explorar.ca<b>Enable Time Slider</b><b>Activar Time Slider</b>frOpen the current version of the fileOuvrez la version actuelle du fichierzh_TWTake a snapshot of 擷取以下項目的快照 koInsufficient Priviliges권한 부족nlSnapshot created successfullyMomentopname gemaaktcasize : mida : ja_Delete Snapshots...スナップショットの削除(_D)...huWarning: '%s' is getting fullFigyelmeztetés: '%s' megteliknlRecommended for most usersAanbevolen voor de meeste gebruikerszh_HKThe snapshot manager service does not appear to be installed on this system.
+
+See the svcs(1) man page for more information.快照管理員服務似乎並未安裝於此系統上。
+
+請參閱「svcs(1) 線上手冊」，以取得更多資訊。pt_BRInvalid characters in snapshot nameCaracteres inválidos no nome do instantâneocsScanning for older versionsSkenuji pro starší verzezh_TW<b>Enable Time Slider</b><b>啟用時間調整器</b>ja_Allすべて(_A)deEmergency: '%s' is almost full!Notfall: '%s' ist fast voll!zh_CNSnapshot Name快照名称zh_HKAll全部plPress Delete to continue.Naciśnij Delete żeby kontynuować. esSnapshot manager service errorError del servicio de administrador de instantáneaspt_BRSnapshot manager service errorErro do serviço do gerenciador de instantâneoshu<b>Older Versions</b><b>Régebbi Verziók</b>zh_TW%d snapshots will be deleted.將刪除 %d 個快照。pt_BRMount PointPonto de montagemhuDouble click to open the fileDupla kattintás a fájl megnyitásáhozca10 Mo10 DldeReduce backups when storage space usage exceeds:Sicherungen reduzieren, wenn Speicherplatznutzung Folgendes überschreitet:zh_HK1/4 Hourly每 1/4 小時jaOpen the current version of the fileファイルの現在のバージョンを開くdegtk-closegtk-closeplSuccessPowodzeniefrFile System NameNom de système de fichiersarLegacyإرث zh_CNSnapshot manager service error快照管理器服务错误esname :nombre:pt_BR<b>Older Versions</b><b>Versões mais antigas</b>hu19/01/0919/01/09deDeleting snapshots...Schnappschüsse werden gelöscht...ko<b>Enable Time Slider</b><b>시간 슬라이더 활성화</b>koReduce backups when storage space usage exceeds:저장소 공간 사용량이 초과되는 경우 백업 줄이기:jaAdvanced Options詳細オプションjaTime SliderタイムスライダarExit when done. الخروج عن الإنتهاء zh_CNInsufficient Priviliges权限不足csMount PointMísto připojenícaUrgent: '%s' is almost full!Urgent: '%s' gairebé està ple!idDelete SnapshotsMenghapus SnapshotsplErrorBłądpt_BRSome snapshots could not be readAlguns instantâneos não podem ser lidoszh_CNPress Delete to continue.按“删除”以继续。de<b>Current Version</b><b>Aktuelle Version</b>arAdvanced Optionsخيارات إضافية nl%d snapshots will be deleted.%d momentopnamen zullen worden verwijdertplLegacyLegacyid%d snapshots will be deleted.%d snapshots akan dihapusdefilenameDateinamezh_HKC_ustom:自訂(_U)：koSuccess성공idTime SliderTime Sliderzh_HKThe file system: '%s', is over %s%% full.
+As an emergency measure, Time Slider has destroyed all of its backups.
+To fix this problem, delete any unnecessary files on '%s', or add disk space (see ZFS documentation).檔案系統：「%s」已超過 %s%%。
+時間調整器所採取的緊急措施是銷毀其所有的備份。
+若要修正此問題，請刪除「%s」上所有不必要的檔案，或增加磁碟空間 (請參閱 ZFS 文件)。huwith the name :névvel :zh_CNThe snapshot manager service has been placed offline due to a dependency problem. The following dependency problems were found:
+
+%s
+
+Run "svcs -xv" from a command prompt for more information about these dependency problems.由于相关性问题，快照管理器服务已被置于脱机。已发现以下相关性问题：
+
+%s
+
+有关这些相关性问题的更多信息，请从命令提示符下运行 "svcs -xv"。frA snapshot of zfs filesystem %(zfs_fs)s
+named %(valid_name)s
+has been created.
+Un instantané d'un système de fichiers zfs %(zfs_fs)s
+nommé %(valid_name)s
+a été créé.
+koSnapshot Now requires administrative privileges to run. You have not been assigned the necessaryadministrative priviliges.
+
+Consult your system administrator 지금 스냅샷 기능을 실행하려면 관리 권한이 필요합니다. 필요한 관리 권한이 할당되지 않았습니다.
+
+시스템 관리자에게 문의하십시오. plname :nazwa:jaThe snapshot manager service does not appear to be installed on this system.
+
+See the svcs(1) man page for more information.このシステムにはスナップショットマネージャーサービスがインストールされていないようです。
+
+詳細は、svcs(1) のマニュアルページを参照してください。ja%d snapshots will be deleted.%d 個のスナップショットが削除されます。pt_BRInvalid arguments count.Total de argumentos inválidos.esInvalid arguments count.Recuento de argumentos no válidos.zh_HKFor advanced users適用於進階使用者nl<b>Older Versions</b><b>Oudere versies</b>csExit when done. Ukončit po dokončení. koEmergency: '%s' is almost full!긴급: '%s'이(가) 거의 찼습니다!itC_ustom:Personali_zzato:zh_HKA snapshot of zfs filesystem %(zfs_fs)s
+named %(valid_name)s
+has been created.
+已建立一個名為 %(valid_name)s 的
+ zfs 檔案系統 %(zfs_fs)s
+的快照。
+idReduce backups when storage space usage exceeds:Mengurangi ruang penyimpanan backup bila melebihi kapasitas :esDouble click to open the fileHaga doble clic para abrir este archivopt_BRSnapshot deletion requires administrative privileges to run. You have not been assigned the necessaryadministrative priviliges.
+
+Consult your system administrator A exclusão de instantâneos requer privilégios administrativos para ser executada. Os privilégios administrativos necessários não lhe foram atribuídos.
+
+Consulte o administrador de sistema zh_TWSnapshot Name快照名稱jaDouble click to open the fileダブルクリックしてファイルを開くdeAllAllezh_CNlast modified : 上次修改时间： arDeleting snapshots...حذف صور النظام...csLegacyOdkazdeMonthlyMonatlichkoWarning: '%s' is getting full경고: '%s'이(가) 꽉 찼습니다.zh_CNOpen the current version of the file打开文件的当前版本jalast modified : 最終更新日付:  nlwith the name :met de naam :plAllWszystkieplsize : rozmiar: frName:Nom :zh_HKAdvanced Options進階選項esSuccessCorrectofrSnapshot manager service dependency errorErreur de dépendance du service de gestionnaire d'instantanésdeFile System NameDateisystemnamenlConfigure the system to take automatic snapshots of your dataConfigureer het systeem om automatische momentopnamen van je gegevens te nemenzh_CNLegacy传统plSnapshot created successfullyMigawka została utworzonazh_CNInvalid arguments count.参数计数无效。frThe snapshot manager service does not appear to be installed on this system.
+
+See the svcs(1) man page for more information.Le service de gestionnaire d'instantanés ne semble pas être installé sur ce système.
+
+Pour de plus amples informations, reportez-vous à la page de manuel svcs(1).pt_BRSelectSelecionezh_TWC_ustom:自訂(_U)：ar<b>Enable Time Slider</b><b>تفعيل شريط تمرير الوقت</b>nl_Delete Snapshots..._Verwijder momentopnames...zh_CNTake a snapshot of 捕获以下项的快照 plTime Slider File Version ExplorerTime Slider File Version Explorerde<b>Summary</b><b>Zusammenfassung</b>idTake a snapshot nowMengambil snapshot sekarangzh_HKCreation Time建立時間pt_BREmergency: '%s' is almost full!Emergência: '%s' está quase cheio!koThe file system: '%s', exceeded %s%% of its total capacity. As a remedial measure, Time Slider has destroyed some backups, and will destroy more, eventually all, as capacity continues to diminish.
+To prevent this from happening again, delete any unnecessary files on '%s', or add disk space (see ZFS documentation).파일 시스템 '%s'이(가) 총 용량의 %s%%을(를) 초과했습니다. 해결 조치로시간 슬라이더가 일부 백업을 삭제했으며, 용량이 계속 줄어들 때 좀 더 삭제할 예정이며 결국 모두 삭제합니다.
+이러한 문제가 다시 발생하지 않도록 '%s'에서 불필요한 파일을 삭제하거나 디스크 공간을 추가합니다(ZFS 설명서 참조).pt_BRSnapshot can not be deletedO instantâneo não pode ser excluídoplWeeklyTygodniowocsReduce backups when storage space usage exceeds:Zmenšit zálohy pokud úložný prostor překročí:es<b>Enable Time Slider</b><b>Habilitar deslizador de tiempo</b>pt_BRPress Delete to continue.Pressione Delete para continuar.jaFor advanced users上級ユーザー向けar1 snapshot will be deleted.1 صورة نظام سوف تحذف pt_BRExit when done. Sair ao concluir. esDeleting SnapshotsEliminación de instantáneasjaThe file system: '%s', is over %s%% full.
+As an emergency measure, Time Slider has destroyed all of its backups.
+To fix this problem, delete any unnecessary files on '%s', or add disk space (see ZFS documentation).ファイルシステム: '%s' が総容量の %s%% を超えました。
+緊急の手段として、タイムスライダはすべてのバックアップを破棄しました。
+この問題を解決するために、'%s' 上の不必要なファイルをすべて削除するか、またはディスク容量を追加してください (ZFS のマニュアルを参照)。esDailyCada díaarHintملحوظة frSnapshot deletion requires administrative privileges to run. You have not been assigned the necessaryadministrative priviliges.
+
+Consult your system administrator Pour supprimer des instantanés, vous devez posséder des privilèges administratifs.  Vous ne possédez pas les privilèges administratifs requis.
+
+Consultez votre administrateur système  frThe file system: '%s', is over %s%% full.
+As an emergency measure, Time Slider has destroyed all of its backups.
+To fix this problem, delete any unnecessary files on '%s', or add disk space (see ZFS documentation).Le système de fichiers %s est rempli à plus de %s %%.
+Par mesure d'urgence, le curseur temporel a détruit toutes ses sauvegardes.
+Pour résoudre ce problème, supprimez tout fichier non indispensable sur %s ou ajoutez de l'espace disque (voir la documentation ZFS).koRecommended for most users대부분의 사용자에게 권장itEmergency: '%s' is almost full!Attenzione: '%s' è quasi pieno.csname :jméno :jaEmergency: '%s' is almost full!緊急: '%s' がほぼいっぱいです。huDeleting snapshots...Pillanatképek törlése...pt_BRSome snapshots could not be deletedAlguns instantâneos não podem ser excluídosplReduce backups when storage space usage exceeds:Zmniejsz liczbę backupów kiedy przestrzeń przechowywania przekroczy:zh_HKInsufficient Priviliges權限不足arErrorخطأ csPress Delete to continue.Stiskněte Smazat pro pokračování.huDetails...Részletek...plDailyDzienniezh_TWFile System:檔案系統：esTake a snapshot nowTomar una instantánea ahoranlTime SliderTijd glijderitAllTuttofrLegacyHéritédeSnapshot created successfullySchnappschuss wurde erfolgreich erstelltesSnapshot can not be deletedLa instantánea no se puede eliminardeName:Name:idAllSemuaesCreation TimeMomento de creaciónde%s has one or more dependent clones and will not be deleted. To delete this snapshot, first delete all datasets and snapshots cloned from this snapshot.%s hat einen oder mehrere abhängige Klone und wird nicht gelöscht.  Um diesen Schnappschuss zu löschen, löschen Sie zunächst alle Datensätze und Schnappschüsse, die aus diesem Schnappschuss geklont wurden.zh_CNcompare比较frConfigure the system to take automatic snapshots of your dataConfigurer le système de manière à prendre des instantanés automatiques des donnéesesMonthlyCada mesarThe file system: '%s', exceeded %s%% of its total capacity. As a remedial measure, Time Slider has destroyed some backups, and will destroy more, eventually all, as capacity continues to diminish.
+To prevent this from happening again, delete any unnecessary files on '%s', or add disk space (see ZFS documentation).The file system: '%s', exceeded %s%% of its total capacity. As a remedial measure, Time Slider has destroyed some backups, and will destroy more, eventually all, as capacity continues to diminish.
+To prevent this from happening again, delete any unnecessary files on '%s', or add disk space (see ZFS documentation).koDaily매일ko1/4 Hourly매25분itSnapshot NameNome istantaneakoPress Delete to continue.계속하려면 삭제를 누르십시오.idSelectPilihde_All_AllecaReduce backups when storage space usage exceeds:Reduir les còpies de seguretat quan l'espai d'emmagatzemament excedeixi:plSome snapshots could not be readNie można odczytać niektórych migawekzh_HKSuccess成功deCreation TimeErstellungszeitfrTake a snapshot of Prenez un instantané de  huInvalid characters in snapshot nameÉrvénytelen karakterek a pillanatkép nevébenitVersion explorer requires 2 arguments :
+- The path of the root snapshot directory.
+- The filename to explore.L’explorer della versione richiede 2 argomenti :
+- La path della directory radice dell’istantanea .
+- Il nome file da ricercare.zh_TW<b>Older Versions</b><b>較舊版本</b>itUrgent: '%s' is almost full!Avviso: '%s' è quasi pieno.zh_HKSnapshot manager service error快照管理員服務錯誤kocompare비교pt_BR10 Mo10 ModeHourlyStündlichnlSuccessSucceshuAllMindfr_Delete Snapshots...Supprimer _des instantanés...idSnapshot created successfullySukses membuat snapshotkoA snapshot of zfs filesystem %(zfs_fs)s
+named %(valid_name)s
+has been created.
+zfs 파일 시스템 %(zfs_fs)s의 스냅샷
+%(valid_name)s이(가)
+생성되었습니다.
+zh_TWA snapshot of zfs filesystem %(zfs_fs)s
+named %(valid_name)s
+has been created.
+已建立一個名為 %(valid_name)s 的
+ zfs 檔案系統 %(zfs_fs)s
+的快照。
+zh_HKTake a snapshot now立即擷取快照zh_HKsize : 大小： csD_eselect AllV_yřadit všecs<b>Older Versions</b><b>Starší verze</b>pt_BRUrgent: '%s' is almost full!Urgente: '%s' está quase cheio!huSnapshot manager service dependency errorPillanatkép kezelő szolgáltatás függőségi hibacsDetails...Podrobnosti...zh_TWSnapshot can not be deleted無法刪除快照pt_BRError occured while creating the snapshotErro ocorrido durante a criação do instantâneoitTime Slider backs up data regularly by taking timed ZFS SnapshotsTime Slider consente di eseguire regolarmente backup dei dati mediante l'acquisizione di istantanee ZFS a intervalli regolarizh_CN%s has one or more dependent clones and will not be deleted. To delete this snapshot, first delete all datasets and snapshots cloned from this snapshot.%s 具有一个或多个相关克隆，不会被删除。要删除此快照，请首先删除从此快照克隆的所有数据集和快照。plSelect ZFS snapshots to delete from the list below.Wybierz migawki ZFS do usunięcia z listy poniżej.plTime Slider backs up data regularly by taking timed ZFS SnapshotsTime Slider regularnie robi kopię zapasową danych poprzez migawkę ZFSnl<b>File Systems To Back Up</b><b>Bestand systemen voor backup</b>plCreation TimeCzas utworzeniakoTime Slider backs up data regularly by taking timed ZFS Snapshots시간 슬라이더는 시간이 지정된 ZFS 스냅샷을 가져와 데이터를 정기적으로 백업합니다.kosize : 크기: huTime Slider backs up data regularly by taking timed ZFS SnapshotsTime Slider rendszeresen végez mentéseket időzített ZFS pillanatképek készítésével.csError occured while creating the snapshotVyskytla se chyba při vytváření snímkuit_Delete Snapshots..._Elimina istantanee…arTime Slider backs up data regularly by taking timed ZFS Snapshotsشريط تمرير الوقت يقوم بنسخ إحتياطي للبيانات بشكل منتظم pl<b>Summary</b><b>Podsumowanie</b>zh_CNof file system capacity关于文件系统容量zh_TWof file system capacity檔案系統容量nlTime Slider: Low Space WarningTime Slider: Low Space Warningcs%d snapshots will be deleted.%d snímky budou smazány.idFile System:File Sistem:itInvalid characters in snapshot nameCaratteri invalidi nel nome dell’istantaneaidMount PointMount Pointitcompareconfrontadeof file system capacityder Dateisystemkapazitätzh_TWThe file system: '%s', is over %s%% full.
+As an emergency measure, Time Slider has destroyed all of its backups.
+To fix this problem, delete any unnecessary files on '%s', or add disk space (see ZFS documentation).檔案系統：「%s」已超過 %s%%。
+時間調整器所採取的緊急措施是銷毀其所有的備份。
+若要修正此問題，請刪除「%s」上所有不必要的檔案，或增加磁碟空間 (請參閱 ZFS 文件)。huScanning snapshots...Pillanatképek keresése...nl10 Mo10 MOzh_CNEmergency: '%s' is full!紧急：'%s' 已满！pt_BR_All_Todosja10 Mo10 Mozh_TWEmergency: '%s' is almost full!緊急：「%s」幾乎已滿！pt_BRThe snapshot manager service requires administrative privileges to run. You have not been assigned the necessaryadministrative priviliges.
+
+Consult your system administrator O serviço do gerenciador de instantâneos requer privilégios administrativos para ser executado. Os privilégios administrativos necessários não lhe foram atribuídos.
+
+Consulte o administrador de sistema arD_eselect AllD_eselect AllcaHourlyCada horajaSelect選択frInsufficient PriviligesPrivilèges insuffisantsitD_eselect AllD_eseleziona tuttozh_CNDeleting Snapshots正在删除快照idDetails...Rincian...zh_TWDeleting snapshots...正在刪除快照...huFor advanced usersTapasztalt felhasználóknakzh_TWThe snapshot manager service requires administrative privileges to run. You have not been assigned the necessaryadministrative priviliges.
+
+Consult your system administrator 快照管理員服務需要有管理權限才能執行。您尚未被指定必要的管理權限。
+
+請洽詢您的系統管理員 idSuccessSuksesde<b>File Systems To Back Up</b><b>Dateisystem zur Sicherung</b>zh_CN<b>Current Version</b><b>当前版本</b>zh_HKError occured while creating the snapshot建立快照時發生錯誤plSome snapshots could not be deletedNie można usunąć niektórych migawekitSnapshot manager service errorErrore del servizio di gestione delle istantaneedeError occured while creating the snapshotFehler beim Erstellen des SchnappschussescaEmergency: '%s' is full!Emergència: '%s' està ple!huTime Slider: Low Space WarningTime Slider: Kevés Tárhely FigyelmeztetésidPress Delete to continue.Tekan Delete untuk melanjutkan.pt_BRThe snapshot manager service has encountered a problem and has been disabled until the problem is fixed.
+
+See the svcs(1) man page for more information.O serviço do gerenciador de instantâneos encontrou um problema e ficará desativado até que o problema seja corrigido.
+
+Para obter mais informações, consulte a página do manual svcs(1).idDeleting snapshots...Menghapus snapshots...idDouble click to open the fileKlik dua kali untuk membuka filezh_TWMonthly每月zh_CNAllowed characters for snapshot names are :
+[a-z][A-Z][0-9][-_.:
+All invalid characters will be removed
+快照名称中允许使用的字符为：
+[a-z][A-Z][0-9][-_.:
+所有无效字符都会被删除
+de1/4 HourlyViertelstündlichitScanning for older versionsRicerca delle versioni precedenti in corso...huOpen the current version of the fileAz aktuális fájl verzió megnyitásajaUrgent: '%s' is almost full!緊急: '%s' がほぼいっぱいです。esLegacyAntiguokoThe file system: '%s', is over %s%% full.
+As an emergency measure, Time Slider has destroyed all of its backups.
+To fix this problem, delete any unnecessary files on '%s', or add disk space (see ZFS documentation).파일 시스템 '%s'이(가) %s%% 이상으로 꽉 찼습니다.
+긴급 조치로 시간 슬라이더가 모든 백업을 삭제했습니다
+이 문제를 해결하려면 '%s'에서 불필요한 파일을 삭제하거나 디스크 공간을 추가하십시오(ZFS 설명서 참조).zh_CNInvalid characters in snapshot name快照名称中存在无效字符idExit when done. Keluar ketika selesai zh_HKof file system capacity檔案系統容量zh_CNSnapshot can not be deleted无法删除快照essize : tamaño: hulast modified : Utoljára módosítva : jaThe snapshot manager service has encountered a problem and has been disabled until the problem is fixed.
+
+See the svcs(1) man page for more information.スナップショットマネージャーサービスが問題を検出し、この問題が解決されるまで無効になっています。
+
+詳細は、svcs(1) のマニュアルページを参照してください。deThe file system: '%s', is over %s%% full.
+As an emergency measure, Time Slider has destroyed all of its backups.
+To fix this problem, delete any unnecessary files on '%s', or add disk space (see ZFS documentation).Das Dateisystem: '%s', ist über %s%% voll.
+Der Zeit-Schieberegler hat im Zuge einer Notfallmaßnahme alle Sicherungsdateien gelöscht.
+Um dieses Problem zu beheben, löschen Sie alle nicht benötigten Dateien auf '%s', oder fügen Sie Speicherplatz hinzu (siehe ZFS-Dokumentation).pt_BRCreation TimeHora de criaçãocalast modified : última modificació : zh_TW10 Mo10 MojaDelete Snapshotsスナップショットの削除idThe file system: '%s', is over %s%% full.file sistem: '%s', melebihi %s%% penuh.frThe snapshot manager service has been placed offline due to a dependency problem. The following dependency problems were found:
+
+%s
+
+Run "svcs -xv" from a command prompt for more information about these dependency problems.Le service de gestionnaire d'instantané a été mis hors ligne en raison d'un problème de dépendance.  Les problèmes de dépendance suivants ont été détectés :
+
+%s
+
+Exécutez "svcs  -xv" à partir d'une invite de commande pour plus d'informations sur ces problèmes de dépendance.ar_Delete Snapshots..._حذف صور النظام ....plSnapshot can not be deletedMigawka nie może byś usuniętaca<b>File Systems To Back Up</b><b>Sistema de fitxers a fer Còpia de seguretat</b>frwith the name :nommé :pl10 Mo10 Mokoname :이름:esDeleting snapshots...Eliminando instantáneas...csTake a snapshot nowPořídit snímek nyníarInsufficient Priviligesالإمتيازات غير كافية koAll모두csSnapshot manager service dependency errorChyba v závislostech ve službě Správce snímkůpl<b>Older Versions</b></b>Starsza Wersja</b>zh_HKReduce backups when storage space usage exceeds:當儲存空間使用量超過下列大小時減少備份：esFile System NameNombre del sistema de archivositof file system capacitydella capacità del file systemko_All모두(_A)pt_BRDouble click to open the fileClicar duas vezes para abrir o arquivozh_HKConfigure the system to take automatic snapshots of your data將系統配置為自動對資料執行快照caPress Delete to continue.Premeu a Eliminar per a continuar.huFile System:Fájlrendszer:idname :nama :zh_TWScanning for older versions掃描較舊版本arSelectإختر itFor advanced usersPer utenti avanzatizh_TWWeekly每週deTake a snapshot of Einen Schnappschuss nehmen von  esSnapshot deletion requires administrative privileges to run. You have not been assigned the necessaryadministrative priviliges.
+
+Consult your system administrator La eliminación de la instantánea necesita privilegios administrativos. No se le ha asignado los correspondientes privilegios administrativos.
+
+Consulte al administrador del sistemacsInsufficient PriviligesNedostatečná právafrScanning snapshots...Analyse des instantanés...jaSome snapshots could not be deletedいくつかのスナップショットを削除できませんでしたzh_TWName:名稱：itFile System NameNome file systemcsName:Jméno:nlSnapshot manager service dependency errorMomentopname manager service afhankelijkheid foutitMonthlyMensilejaThe snapshot manager service has been placed offline due to a dependency problem. The following dependency problems were found:
+
+%s
+
+Run "svcs -xv" from a command prompt for more information about these dependency problems.依存関係の問題が発生したために、スナップショットマネージャーサービスがオフラインになりました。次の依存関係の問題が検出されました:
+
+%s
+
+これらの依存関係の問題の詳細を表示するには、コマンドプロンプトから "svcs -xv" を実行してください。pt_BRReduce backups when storage space usage exceeds:Reduzir os backups quando o espaço de armazenamento for excedido:itlast modified : ultima modifica : jacompare比較esScanning for older versionsBuscando versiones anterioresdeRecommended for most usersEmpfohlen für die meisten BenutzeresSnapshot created successfullyLa instantánea se creó correctamenteplSnapshot NameNazwa migawkiitInsufficient PriviligesPrivilegi insufficientipt_BRSnapshot manager service dependency errorErro de dependência do serviço do gerenciador de instantâneosesThe file system: '%s', exceeded %s%% of its total capacity. As a remedial measure, Time Slider has destroyed some backups, and will destroy more, eventually all, as capacity continues to diminish.
+To prevent this from happening again, delete any unnecessary files on '%s', or add disk space (see ZFS documentation).El sistema de archivos: '%s', ha sobrepasado un %s%% de su capacidad total. Como solución, el deslizador de tiempo ha destruido algunas copias de seguridad, y destruirá más, posiblemente todas, conforme siga disminuyendo la capacidad.
+Para impedir que se repita este problema, elimine todos los archivos innecesarios de '%s' o agregue espacio al disco (consulte la documentación de ZFS).csDouble click to open the fileDvojitým kliknutím na soubor tento soubor otevřetecaDeleting snapshots...Eliminant Instantànies...esfilenamenombre_archivofrSelectSélectionnerjaWeekly毎週caLegacyLlegates<b>Summary</b><b>Resumen</b>zh_HKThe snapshot manager service requires administrative privileges to run. You have not been assigned the necessaryadministrative priviliges.
+
+Consult your system administrator 快照管理員服務需要有管理權限才能執行。您尚未被指定必要的管理權限。
+
+請洽詢您的系統管理員 csTime Slider ManagerSprávce pro Time SlidercsSnapshot NameJméno snímkukoHourly매시간arConfiguring Time Slider...إعدادات شريط التوقيت...zh_HKSnapshot created successfully已成功建立快照huAdvanced OptionsSzakértői beállításokcaC_ustom:_Personalitzat:huWeeklyHetiko<b>Summary</b><b>요약</b>koCreation Time생성 시간cs<b>Summary</b><b>Shrnutí</b>zh_TWReduce backups when storage space usage exceeds:當儲存空間使用量超過下列大小時減少備份：ja<b>Older Versions</b><b>旧バージョン</b>plSnapshot manager service dependency errorBłąd usługi menadżera migawekkoDouble click to open the file파일을 열려면 두 번 누릅니다.zh_HK%s has one or more dependent clones and will not be deleted. To delete this snapshot, first delete all datasets and snapshots cloned from this snapshot.%s 具有一個或多個附屬複製，不會被刪除。要刪除此快照，請先刪除從此快照複製的所有資料集和快照。pl%d snapshots will be deleted.%d migawki zostaną usuniętehuUrgent: '%s' is almost full!Sürgős: '%s' majdnem megtelt!plDetails...Details...huTime Slider File Version ExplorerTime Slider Fájl Verzió IntézőhuTime SliderTime SliderarDouble click to open the fileإضغط مرتين لفتح الملف plMount PointPunkt montowaniacaSnapshot NameNom de la instantàniacaWeeklySetmanalfrPress Delete to continue.Cliquez sur Supprimer pour continuer.nlgtk-closegtk-sluitenfrVersion explorer requires 2 arguments :
+- The path of the root snapshot directory.
+- The filename to explore.L'explorateur de versions nécessite 2 arguments :
+- Chemin d'accès au répertoire d'instantanés racine.
+- Nom de fichier à explorer.itSome snapshots could not be readImpossibile leggere alcune istantaneeitLegacyLegacyarSnapshot Nameإسم صورة النظام plHourlyCo godzinęitDeleting SnapshotsEliminazione delle istantaneeesTime Slider backs up data regularly by taking timed ZFS SnapshotsEl deslizador de tiempo hace copias de seguridad de datos con regularidad tomando instantáneas de ZFS programadasnl<b>Current Version</b><b>Huidige versie</b>zh_HKTime Slider File Version Explorer時間滑動軸檔案版本檔案總管ko_Delete Snapshots...스냅샷 삭제(_D)...it1/4 HourlyOgni quarto d’oraca19/01/0919/01/09deDelete SnapshotsSchnappschüsse löschenca<b>Older Versions</b><b>Versions Anteriors</b>koFor advanced users고급 사용자용itTime SliderTime SliderkoSnapshot Now requires 2 arguments :
+- The path of the directory to be snapshotted.
+- The zfs filesystem corresponding to this directory.지금 스냅샷 기능에는 다음과 같은 2개의 인수가 필요합니다.
+- 스냅샷될 디렉토리의 경로
+- 이 디렉토리에 해당하는 zfs 파일 시스템nlInvalid arguments count.Ongeldige argumenten aantal.itInvalid arguments count.Calcolo degli argomenti non valido.huDailyNapijaSnapshot can not be deletedスナップショットを削除できませんitCreation TimeTempo di creazioneit<b>Current Version</b><b>Versione corrente</b>zh_CN1/4 Hourly每 1/4 小时esThe file system: '%s', is over %s%% full.
+As an emergency measure, Time Slider has destroyed all of its backups.
+To fix this problem, delete any unnecessary files on '%s', or add disk space (see ZFS documentation).El sistema de archivos: '%s', está %s%% por encima.
+Como medida de emergencia, el deslizador de tiempo ha destruido todas sus copias de seguridad.
+Para solventar este problema, elimine todos los archivos innecesarios de '%s' o agregue espacio al disco (consulte la documentación de ZFS).zh_TWSelect ZFS snapshots to delete from the list below.請從以下清單中選取要刪除的 ZFS 快照。kowith the name :이름:jaAllすべてcsTime Slider File Version ExplorerTime Slider - Průzkumník verzí zh_CNThe snapshot manager service has encountered a problem and has been disabled until the problem is fixed.
+
+See the svcs(1) man page for more information.该快照管理器服务出现了问题，并已被禁用，直至问题得以修复。
+
+有关更多信息，请参见 svcs(1) 手册页。zh_CN<b>Summary</b><b>摘要</b>frThe snapshot manager service requires administrative privileges to run. You have not been assigned the necessaryadministrative priviliges.
+
+Consult your system administrator Pour exécuter le service de gestionnaire d'instantanés, vous devez posséder des privilèges administratifs. Vous ne possédez pas les privilèges administratifs requis.
+
+Consultez votre administrateur système koEmergency: '%s' is full!긴급: '%s'이(가) 꽉 찼습니다!koUrgent: '%s' is almost full!중요: '%s'이(가) 거의 찼습니다!huSnapshot created successfullyPillanatkép sikeresen elkészítvezh_HK<b>Current Version</b><b>目前版本</b>fr<b>Summary</b><b>Résumé</b>koThe snapshot manager service has been placed offline due to a dependency problem. The following dependency problems were found:
+
+%s
+
+Run "svcs -xv" from a command prompt for more information about these dependency problems.스냅샷 관리자 서비스가 종속성 문제로 인해 오프라인 상태로 설정되었습니다. 다음과 같은 종속성 문제가 발견되었습니다.
+
+%s
+
+이러한 종속성 문제에 대한 자세한 내용을 보려면 명령 프롬프트에서 "svcs -xv"를 실행하십시오.zh_CNsize : 大小： idTime Slider File Version ExplorerTime Slider File Version ExploreridInvalid characters in snapshot nameInvalid karakter pada nama snapshotdeWeeklyWöchentlichplDeleting SnapshotsUsuwanie migawkiesSome snapshots could not be deletedNo se ha podido eliminar algunas instantáneasjaTake a snapshot now今すぐスナップショットを取得するde_Delete Snapshots..._Schnappschüsse löschen...arDelete Snapshotsحذف صور النظام  huFile System NameFájlrendszer NevecaSnapshot manager service errorS'ha produït un error al servei de gestió de instantàniesfrAllToutidcomparebandingkanidInsufficient PriviligesHak akses tidak mencukupihuSnapshot NamePillanatkép neveitThe file system: '%s', is over %s%% full.
+As an emergency measure, Time Slider has destroyed all of its backups.
+To fix this problem, delete any unnecessary files on '%s', or add disk space (see ZFS documentation).Spazio del file system '%s' occupato oltre il %s%%.
+Come misura di emergenza, Time Slider ha eliminato tutti i backup eseguiti.
+Per risolvere il problema, eliminare i file non necessari in '%s' oppure aggiungere spazio nel disco (vedere la documentazione di ZFS).huConfigure the system to take automatic snapshots of your dataA rendszer beállítása arra, hogy automatikusan mentse az Ön adataitcaMount PointPunt de Muntatgehu<b>File Systems To Back Up</b><b>Fájl Rendszer Mentése</b>jaof file system capacityファイルシステム容量caAllTotsplRecommended for most usersRekomendowane dla większości użytkownikówidErrorErroridOpen the current version of the fileBuka file dengan versi saat iniesFor advanced usersPara usuarios avanzadoszh_CNTime Slider backs up data regularly by taking timed ZFS Snapshots时间滑块通过定时拍摄 ZFS 快照来对数据进行定期备份zh_HKWeekly每週fr19/01/0919/01/09plUrgent: '%s' is almost full!Pilne: '%s' jest prawie zapełniony!zh_HKlast modified : 上次修改時間： zh_CNDeleting snapshots...正在删除快照...plC_ustom:C_ustom:frsize : taille :  jaReduce backups when storage space usage exceeds:ストレージスペースの使用量が超過したらバックアップを削減する:zh_HKwith the name :名稱為：decomparevergleichenplAdvanced OptionsZaawansowane opcjecsSelectVybratnl<b>Summary</b><b>Samenvatting</b>itTake a snapshot of Crea un’istantanea di cslast modified : Naposledy změněn : nlError occured while creating the snapshotFout opgetreden tijdens het maken van de momentopnamept_BRDelete SnapshotsExcluir instantâneoshuSome snapshots could not be readNéhány pillanatkép nem olvashatóid<b>Older Versions</b><b>Versi Lama</b>koof file system capacity- 파일 시스템 용량huThe file system: '%s', exceeded %s%% of its total capacityA fájlrendszer: '%s' túllépte teljes kapacitásának %s%%-átpt_BRTime Slider backs up data regularly by taking timed ZFS SnapshotsA barra deslizante de tempo faz backup de dados regularmente realizando instantâneos programados do ZFSarSome snapshots could not be deletedبعض صور النظام لايمكن أن تحذف csWeeklyTýdnězh_TWTime Slider時間滑動軸jaLegacy旧バージョンzh_HKWarning: '%s' is getting full警告：「%s」快要滿了arPress Delete to continue.إضغط على حذف للإستمرار zh_TW<b>Summary</b><b>摘要</b>esError occured while creating the snapshotError al crear la instantáneadeSnapshot NameSchnappschussnamearHourlyساعي husize : méret : itDeleting snapshots...Eliminazione delle istantanee in corso…ja19/01/0919/01/09caTime Slider ManagerGestor de Time SlidercaConfigure the system to take automatic snapshots of your dataConfigurar el sistema per a fer instantànies automàtiques de les vostres dadeszh_TWcompare對比caScanning snapshots...Escanejant instantànies....zh_CNSnapshot Now requires administrative privileges to run. You have not been assigned the necessaryadministrative priviliges.
+
+Consult your system administrator 需要有管理权限才能立即进行快照。没有为您指定必要的管理权限。
+
+请咨询您的系统管理员 pt_BRof file system capacityda capacidade do sistema de arquivoscaRecommended for most usersRecomanat per a la majoria d'usuarishuName:Név:esSelect ZFS snapshots to delete from the list below.Seleccione las instantáneas ZFS que desea eliminar de la siguiente lista.frname :nom :fr<b>Current Version</b><b>Version actuelle</b>cs<b>Current Version</b><b>Současná verze</b>zh_HK1 snapshot will be deleted.將刪除 1 個快照。deUrgent: '%s' is almost full!Dringend: '%s' ist fast voll!esAdvanced OptionsOpciones avanzadascaDelete SnapshotsEliminar instantàniescsDelete SnapshotsSmazat snímkypt_BRWeeklySemanalmentezh_HKTime Slider時間滑動軸jaDaily毎日csHintNápovědazh_CNSelect选择itfilenamenome filenlThe file system: '%s', is over %s%% full.The file system: '%s', is over %s%% full.it<b>Older Versions</b><b>Versioni precedenti</b>arSnapshot manager service errorخطأ خدمة إدارة صورة النظام zh_TWFor advanced users適用於進階使用者cafilenamenomfitxeridAdvanced OptionsPilihan LanjutanplConfigure the system to take automatic snapshots of your dataSkonfiguruj system do automatycznego wykonywania migawek twoich danych frScanning for older versionsRecherche d'anciennes versionscsAllVšecaFile System:Sistema de Fitxers:esPress Delete to continue.Pulse Suprimir para continuar.zh_HKPress Delete to continue.請按下 [刪除] 繼續。deSelect ZFS snapshots to delete from the list below.Wählen Sie aus der nachstehenden Liste die zu löschenden ZFS-Schnappschüsse aus.koName:이름:hucompareösszehasonlításfrSome snapshots could not be deletedCertains instantanés n'ont pas pu être supprimésarDeleting Snapshotsحذف صور النظام caErrorErrorzh_CNEmergency: '%s' is almost full!紧急：'%s' 几乎已满！koDeleting snapshots...스냅샷 삭제 중...zh_CNSnapshot manager service dependency error快照管理器服务相关性错误arlast modified : أخر تعديل : zh_CNC_ustom:自定义(_U)：pt_BRThe snapshot manager service does not appear to be installed on this system.
+
+See the svcs(1) man page for more information.O serviço do gerenciador de instantâneos parece não estar instalado neste sistema.
+
+Para obter mais informações, consulte a página do manual svcs(1).pt_BR<b>Current Version</b><b>Versão atual</b>jaDeleting snapshots...スナップショットを削除しています...de%d snapshots will be deleted.%d Schnappschüsse werden gelöscht.arwith the name :بإسم :zh_TW%s has one or more dependent clones and will not be deleted. To delete this snapshot, first delete all datasets and snapshots cloned from this snapshot.%s 具有一個或多個附屬複製，不會被刪除。要刪除此快照，請先刪除從此快照複製的所有資料集和快照。caTime Slider backs up data regularly by taking timed ZFS SnapshotsTime Slider fa còpies de seguretat regularment prenent Instantànies ZFS programadeszh_HKScanning for older versions掃描較舊版本zh_CNSome snapshots could not be read无法读取某些快照arSnapshot created successfullyصورة النظام قد أنشأت بنجاح frThe file system: '%s', exceeded %s%% of its total capacity. As a remedial measure, Time Slider has destroyed some backups, and will destroy more, eventually all, as capacity continues to diminish.
+To prevent this from happening again, delete any unnecessary files on '%s', or add disk space (see ZFS documentation).Le système de fichiers %s dépasse %s %% de sa capacité totale. Pour résoudre cette situation, le curseur temporel a détruit certaines sauvegardes, en détruira d'autres et finira par les détruire toutes, si la capacité continue de diminue.
+Pour éviter que cela se reproduise, supprimez tout fichier non indispensable sur %s ou ajoutez de l'espace disque (voir la documentation ZFS).caName:Nom:csSuccessÚspěchcs_All_VšehufilenamefájlnévjaSnapshot deletion requires administrative privileges to run. You have not been assigned the necessaryadministrative priviliges.
+
+Consult your system administrator スナップショットの削除を実行するには管理権限が必要です。必要な管理権限が割り当てられていません。
+
+システム管理者に問い合わせてくださいcaof file system capacityde la capacitat del sistema de fitxerscaDailyDiàriacaMonthlyMensualcaSnapshot can not be deletedLa instantània no pot ser eliminadafrDouble click to open the fileCliquez deux fois sur le fichier pour l'ouvrir.caConfiguring Time Slider...Configurant Time Slider...nlD_eselect AllD_eselecteer allezh_CNDaily每天huInsufficient PriviligesNem megfelelő jogosultságokpt_BRsize : tamanho : frAllowed characters for snapshot names are :
+[a-z][A-Z][0-9][-_.:
+All invalid characters will be removed
+Les caractères autorisés dans les noms d'instantané sont les suivants :
+[a-z][A-Z][0-9][-_.:
+Tous les caractères non autorisés seront supprimés
+frRecommended for most usersRecommandé pour la plupart des utilisateursitReduce backups when storage space usage exceeds:Ridurre i backup quando lo spazio di memorizzazione utilizzato supera:arName:إسم : caWarning: '%s' is getting fullAvís: '%s' s'està emplenantitAdvanced OptionsOpzioni avanzatehuHintJavaslatcsHourlyKaždou hodinucsTime Slider: Low Space WarningTime Slider: Varování - málo místaplDeleting snapshots...Usuwanie migawek...koMonthly매달huC_ustom:_Egyedi:zh_TWOpen the current version of the file開啟目前版本的檔案pt_BRC_ustom:P_ersonalizado:deAdvanced OptionsErweiterte Optionenar%d snapshots will be deleted.%d الصورة سوف تمحى idwith the name :dengan nama :deExit when done. Beenden Sie die Anwendung, wenn Sie fertig sind.  deC_ustom:B_enutzerdefiniert:plOpen the current version of the fileOtwórz bieżącą wersję plikupllast modified : ostatnia modyfikacja : idConfiguring Time Slider...Sedang mengkonfigurasi Time Slider...deSnapshot manager service errorSchnappschussverwaltungsdienst-FehlercaSnapshot created successfullyInstantània correctament creadaitOpen the current version of the fileApri la versione corrente del filecsSelect ZFS snapshots to delete from the list below.Vyberte ZFS snímek ze seznamu, který má být smazán.zh_TWSelect選取plwith the name :z nazwą:nlSome snapshots could not be deletedSommige momentopnames konden niet verwijdert wordenhuLegacyHagyományoskoTime Slider시간 슬라이더deSome snapshots could not be deletedEinige Schnappschüsse konnten nicht gelöscht werdenzh_HKDouble click to open the file連按兩下以開啟檔案pt_BRSnapshot NameNome do instantâneohuTime Slider ManagerTime Slider Vezérlőca_All_TotsitErrorErrorecs19/01/0919/01/09plInsufficient PriviligesNiewystarczające uprawnieniafr10 Mo10 MofrReduce backups when storage space usage exceeds:Réduire les sauvegardes lorsque l'espace de stockage utilisé dépasse :esInvalid characters in snapshot nameCaracteres no válidos en el nombre de la instantáneaarDetails...تفاصيل...deSnapshot Now requires 2 arguments :
+- The path of the directory to be snapshotted.
+- The zfs filesystem corresponding to this directory.„Schnappschuss jetzt“ erfordert 2 Argumente:
+-  Pfad des Verzeichnisses, von dem ein Schnappschuss genommen werden soll.
+-  Entsprechendes ZFS-Dateisystem für dieses Verzeichnis.nlname :name :deLegacyVeraltetzh_HKSome snapshots could not be read無法讀取某些快照plDouble click to open the fileKliknij dwa razy, żeby otworzyć plikzh_HKTime Slider Manager時間滑動軸管理員koSelect선택arConfigure the system to take automatic snapshots of your dataتاكيد النظام على أخذ صورة عن النظام عن البيانات cawith the name :amb el nom :frInvalid characters in snapshot nameLe nom de l'instantané contient des caractères non autorisésesInsufficient PriviligesLos privilegios no son suficientesidDeleting SnapshotsMenghapus Snapshotspt_BRlast modified : última modificação: itScanning snapshots...Scansione delle istantanee in corso…caThe file system: '%s', is over %s%% full.El sistema de fitxers: '%s', sobreexcedeix %s%%.huCreation TimeKészítés idejefrTime Slider File Version ExplorerExplorateur de versions du fichier de curseur temporelcsAdvanced OptionsRozšířené možnostiit<b>Summary</b><b>Riepilogo</b>nlOpen the current version of the fileOpen de huidige versie van het bestandzh_CNName:名称：itname :nome :pt_BRThe file system: '%s', is over %s%% full.
+As an emergency measure, Time Slider has destroyed all of its backups.
+To fix this problem, delete any unnecessary files on '%s', or add disk space (see ZFS documentation).O sistema de arquivos: '%s' está %s%% acima.
+Como medida de emergência, a barra deslizante de tempo eliminou todos os backups.
+Para corrigir este problema, exclua os arquivos desnecessários de '%s' ou adicione espaço em disco (consulte a documentação do ZFS).nlDeleting snapshots...Momentopnamen worden verwijdert...arReduce backups when storage space usage exceeds:تخفيض النسخة الإحتياطية عند تجاوز المساحة النخزينية argtk-closegtk-إغلاق plFile System NameNazwa systemu plikówzh_HK<b>Enable Time Slider</b><b>啟用時間調整器</b>itAllowed characters for snapshot names are :
+[a-z][A-Z][0-9][-_.:
+All invalid characters will be removed
+I caratteri ammessi per i nomi delle istantanee sono :
+[a-z][A-Z][0-9][-_.:
+Tutti i caratteri invalidi saranno rimossi
+pt_BR<b>File Systems To Back Up</b><b>Sistemas de arquivos dos quais fazer backup</b>zh_TWAdvanced Options進階選項zh_CND_eselect All取消全选(_E)plTake a snapshot of Zrób migawkę jaSuccess成功koSome snapshots could not be read일부 스냅샷을 읽을 수 없습니다.pt_BRA snapshot of zfs filesystem %(zfs_fs)s
+named %(valid_name)s
+has been created.
+Um instantâneo do sistema de arquivos zfs %(zfs_fs)s
+denominado %(valid_name)s
+foi criado.
+jagtk-closegtk-closeitTime Slider ManagerGestione Time Sliderzh_TWwith the name :名稱為：id<b>Current Version</b><b>Versi Saat Ini</b>frTime Slider ManagerGestionnaire de curseur temporelzh_TWDeleting Snapshots正在刪除快照csSnapshot created successfullySnímek byl vytvořen úspěšněplExit when done. Wyjdź kiedy skończysz. itSome snapshots could not be deletedImpossibile eliminare alcune istantanee nlfilenamebestand naamzh_CNThe file system: '%s', exceeded %s%% of its total capacity. As a remedial measure, Time Slider has destroyed some backups, and will destroy more, eventually all, as capacity continues to diminish.
+To prevent this from happening again, delete any unnecessary files on '%s', or add disk space (see ZFS documentation).文件系统 '%s' 已超过其总容量的 %s%%。作为一种补救措施，时间滑块已销毁了一些备份，并随着容量的不断减小，将销毁更多备份，最终销毁所有备份。
+要防止这种情况再次发生，请删除 '%s' 上所有不必要的文件，或增加磁盘空间（请参见 ZFS 文档）。csTime SliderTime Slidernl_All_AllearTime Slider File Version Explorerمتصفح ملف إصدار شريط تمرير الوقت arof file system capacityقدرة نظام ملفات النظام zh_HKSnapshot deletion requires administrative privileges to run. You have not been assigned the necessaryadministrative priviliges.
+
+Consult your system administrator 需要具有管理權限才能執行 [快照刪除] 操作。沒有為您指定所需的管理權限。
+
+請諮詢系統管理員 de1 snapshot will be deleted.1 Schnappschuss wird gelöscht.delast modified : Letzte Änderung:  caAdvanced OptionsOpcions avançadeskoSnapshot manager service error스냅샷 관리자 서비스 오류itDelete SnapshotsElimina istantaneezh_CN1 snapshot will be deleted.1 个快照将被删除。zh_CNSuccess成功koC_ustom:사용자 정의(_U):zh_CNSelect ZFS snapshots to delete from the list below.从以下列表中选择要删除的 ZFS 快照。hu%d snapshots will be deleted.%d pillanatkép törölve lesz.csInvalid arguments count.Neplatný počet argumentů.deThe snapshot manager service has encountered a problem and has been disabled until the problem is fixed.
+
+See the svcs(1) man page for more information.Der Schnappschussverwaltungsdienst ist von einem Problem betroffen und wurde bis zur Behebung des Problems deaktiviert.
+
+Weitere Informationen finden Sie in der Online-Dokumentation, svcs(1).pt_BRFor advanced usersPara usuários avançadosdeWarning: '%s' is getting fullWarnung: '%s' wird vollzh_CN19/01/0919/01/09deDeleting SnapshotsLöschen von SchnappschüssenarTake a snapshot nowخذ نسخة من صورة النظام الأن es1/4 HourlyCada cuarto de horafrSnapshot can not be deletedImpossible de supprimer l'instantanéplMonthlyMiesięczniekoSnapshot deletion requires administrative privileges to run. You have not been assigned the necessaryadministrative priviliges.
+
+Consult your system administrator 스냅샷 삭제 기능을 실행하려면 관리 권한이 필요합니다. 필요한 관리 권한이  할당되지 않았습니다.
+
+시스템 관리자에게 문의하십시오. deFile System:Dateisystem:pt_BRSnapshot Now requires 2 arguments :
+- The path of the directory to be snapshotted.
+- The zfs filesystem corresponding to this directory.Efetuar instantâneo agora requer 2 argumentos :
+- O caminho do diretório do qual será efetuado o instantâneo.
+- O sistema de arquivos zfs correspondente a este diretório.zh_TWThe file system: '%s', exceeded %s%% of its total capacity. As a remedial measure, Time Slider has destroyed some backups, and will destroy more, eventually all, as capacity continues to diminish.
+To prevent this from happening again, delete any unnecessary files on '%s', or add disk space (see ZFS documentation).檔案系統：「%s」超過了其總容量的 %s%%。時間調整器所採取的補救措施是銷毀部分備份，並將會銷毀更多備份，而最終會銷毀所有備份，因為容量一直不斷減少。
+若要避免再次發生這種情形，請刪除「%s」上所有不必要的檔案，或增加磁碟空間 (請參閱 ZFS 文件)。zh_CNScanning snapshots...正在扫描快照...pt_BR1 snapshot will be deleted.1 instantâneo será excluído.cssize : velikost : arSelect ZFS snapshots to delete from the list below.إختر ZFS صور النظام لحذف من اسفل القائمة ca1/4 HourlyCada 1/4 d'horaitDailyOgni giornocsInvalid characters in snapshot nameNeplatný znak v názvu snímkujaSnapshot manager service dependency errorスナップショットマネージャーサービスの依存関係エラーpt_BRAdvanced OptionsOpções avançadasar1/4 Hourly1/4 ساعي ca<b>Current Version</b><b>Versió Actual</b>jaInvalid arguments count.引数の数が無効です。esUrgent: '%s' is almost full!Urgente: '%s' se ha llenado casi del todokolast modified : 마지막 수정: nl19/01/0919/01/09deSnapshot Now requires administrative privileges to run. You have not been assigned the necessaryadministrative priviliges.
+
+Consult your system administrator "Schnappschuss jetzt" erfordert Administratorrechte.  Ihnen wurden nicht die nötigen Administratorrechte zugewiesen.
+
+Wenden Sie sich an Ihren Systemadministrator.  zh_HKD_eselect All全部取消選取(_E)dePress Delete to continue.Klicken Sie auf „Löschen“, um fortzufahren.jaDeleting Snapshotsスナップショットを削除していますzh_HKAllowed characters for snapshot names are :
+[a-z][A-Z][0-9][-_.:
+All invalid characters will be removed
+允許用於快照名稱的字元如下：
+[a-z]、[A-Z]、[0-9]、[、-、_、.、:
+將移除所有無效字元
+esSnapshot NameNombre de instantáneazh_TWSnapshot created successfully已成功建立快照nlHourlyIeder uurzh_HK<b>File Systems To Back Up</b><b>要備份的檔案系統</b>itTake a snapshot nowCrea un’istantaneaar_All_الكل nlDetails...Details...nllast modified : laatst bewerkt : arsize : الحجم : kogtk-closegtk-closezh_HKThe snapshot manager service has been placed offline due to a dependency problem. The following dependency problems were found:
+
+%s
+
+Run "svcs -xv" from a command prompt for more information about these dependency problems.由於相依性問題，已將快照管理員服務置為離線。發現以下相依性問題：
+
+%s
+
+請從指令提示符號下執行「svcs –xv」，以取得有關這些相依性問題的更多資訊。itExit when done. Chiudi al termine dell'operazione. itThe snapshot manager service has been placed offline due to a dependency problem. The following dependency problems were found:
+
+%s
+
+Run "svcs -xv" from a command prompt for more information about these dependency problems.Il servizio di gestione delle istantanee è stato disconnesso a causa di un problema di dipendenza. Sono stati riscontrati i seguenti problemi di dipendenza:
+
+%s
+
+Eseguire "svcs -xv" da un prompt di comando per ottenere maggiori informazioni su questi problemi di dipendenza.pt_BRInsufficient PriviligesPrivilégios insuficientescaInvalid arguments count.Nombre d'arguments incorrectes.zh_CNSnapshot created successfully已成功创建快照arTake a snapshot of خذ نسخة من صورة النظام frof file system capacityde la capacité du système de fichiersit%s has one or more dependent clones and will not be deleted. To delete this snapshot, first delete all datasets and snapshots cloned from this snapshot.%s possiede uno o più cloni dipendenti e non verrà eliminata. Per eliminare questa istantanea, eliminare prima tutti i set di dati e le istantanee clonate da questa istantanea.nlInvalid characters in snapshot nameOngeldige tekens in momentopname naamidSnapshot manager service errorLayanan pengendali Snapshot errorcsRecommended for most usersDoporučeno pro většinu uživatelůcaSelectSeleccionarar<b>Summary</b><b> ملخص </b>huTake a snapshot of Pillanatkép készítése a pl_Delete Snapshots..._Usuwanie Migawki...zh_TWInsufficient Priviliges權限不足pt_BRfilenamenome de arquivodeDailyTäglichdeDouble click to open the fileAuf die Datei doppelklicken, um sie zu öffnenkofilename파일 이름zh_TWSnapshot Now requires 2 arguments :
+- The path of the directory to be snapshotted.
+- The zfs filesystem corresponding to this directory.[立即擷取快照] 需要 2 個引數：
+- 要進行快照擷取的目錄的路徑。
+- 與此目錄對應的 zfs 檔案系統。esTake a snapshot of Tomar una instantánea de frlast modified : dernière modification :  ar<b>Current Version</b><b>الإصدار الحالي</b>de19/01/0919/01/09deA snapshot of zfs filesystem %(zfs_fs)s
+named %(valid_name)s
+has been created.
+Ein Schnappschuss des ZFS-Dateisystems %(zfs_fs)s
+mit dem Namen %(valid_name)s
+wurde erstellt.
+nlTake a snapshot nowNeem nu een momentopnamezh_CNwith the name :名称为：frEmergency: '%s' is almost full!Urgence : %s est presque plein !zh_TWInvalid arguments count.引數計數無效。arUrgent: '%s' is almost full!عاجل : '%s' على الإغلب ممتلئ esSome snapshots could not be readNo se ha podido leer algunas instantáneaspl<b>Current Version</b><b> Wersja bieżąca</b>deTime SliderZeit-SchiebereglernlSnapshot can not be deletedMomentopname kan niet gewist wordenhu10 Mo10 megabájtdeSelectAuswählenidDailyHariannlEmergency: '%s' is almost full!Noodgeval: '% s' is bijna vol!caInsufficient PriviligesPrivilegis insuficientsdeScanning snapshots...Suche nach Schnappschüssen wird ausgeführt...frHourlyToutes les heuresesSelectSeleccionarcaEmergency: '%s' is almost full!Emergència: '%s' gairebé està ple!pt_BRAllowed characters for snapshot names are :
+[a-z][A-Z][0-9][-_.:
+All invalid characters will be removed
+O caracteres permitidos em nomes de instantâneos são :
+[a-z][A-Z][0-9][-_.:
+Todos os caracteres inválidos serão removidos
+plInvalid arguments count.Niepoprawna liczba argumentów.zh_TWSnapshot Now requires administrative privileges to run. You have not been assigned the necessaryadministrative priviliges.
+
+Consult your system administrator 需要具有管理權限才能執行 [立即擷取快照] 操作。沒有為您指定所需的管理權限。
+
+請諮詢系統管理員 zh_HK19/01/0919/01/09zh_CNgtk-closegtk-closearError occured while creating the snapshotالخطأ حدث عند إنشاء صورة النظام deThe snapshot manager service requires administrative privileges to run. You have not been assigned the necessaryadministrative priviliges.
+
+Consult your system administrator Für die Ausführung des Schnappschussverwaltungsdienstes sind Administratorrechte erforderlich. Ihnen wurden nicht die nötigen Administratorrechte zugewiesen.
+
+Wenden Sie sich an den Systemadministrator zh_HKMonthly每月zh_TWUrgent: '%s' is almost full!緊要：「%s」幾乎已滿！zh_HK_Delete Snapshots...刪除快照(_D)...huSuccessEredménykoVersion explorer requires 2 arguments :
+- The path of the root snapshot directory.
+- The filename to explore.버전 탐색기에 다음과 같은 2개의 인수가 필요합니다.
+- 루트 스냅샷 디렉토리의 경로
+- 탐색할 파일 이름koExit when done. 완료 후 종료합니다. plTake a snapshot nowZrób migawkę terazjaSnapshot Now requires 2 arguments :
+- The path of the directory to be snapshotted.
+- The zfs filesystem corresponding to this directory.「今すぐスナップショット」には次の 2 つの引数が必要です:
+- スナップショットを取得するディレクトリのパス。
+- このディレクトリに対応する zfs ファイルシステム。caError occured while creating the snapshotS'ha produït un error mentre s'estava creant la instantàniazh_HK<b>Older Versions</b><b>較舊版本</b>frgtk-closegtk-closedesize : Größe:  zh_TWError錯誤deTime Slider File Version ExplorerTime  Slider  File  Version  Explorerzh_TWTime Slider File Version Explorer時間滑動軸檔案版本檔案總管ca_Delete Snapshots..._Eliminar Instantànies...deThe file system: '%s', exceeded %s%% of its total capacity. As a remedial measure, Time Slider has destroyed some backups, and will destroy more, eventually all, as capacity continues to diminish.
+To prevent this from happening again, delete any unnecessary files on '%s', or add disk space (see ZFS documentation).Das Dateisystem: '%s', %s%% der Gesamtkapazität überschritten. Der Zeit-Schieberegler hat im Zuge einer Abhilfemaßnahme einige Sicherungsdateien gelöscht und wird weitere und letztlich alle Sicherungsdateien löschen, wenn die Kapazität weiter abnimmt.
+Um zu verhindern, dass dieses Problem erneut auftritt, löschen Sie alle nicht benötigten Dateien auf '%s', oder fügen Sie Speicherplatz hinzu (siehe ZFS-Dokumentation).csFor advanced usersPro pokročilé uživatelezh_HKSnapshot Now requires administrative privileges to run. You have not been assigned the necessaryadministrative priviliges.
+
+Consult your system administrator 需要具有管理權限才能執行 [立即擷取快照] 操作。沒有為您指定所需的管理權限。
+
+請諮詢系統管理員 nlSome snapshots could not be readSommige momentopnames konden niet gelezen wordenfrWarning: '%s' is getting fullAvertissement : %s est presque pleinzh_CNVersion explorer requires 2 arguments :
+- The path of the root snapshot directory.
+- The filename to explore.版本资源管理器需要 2 个参数：
+- 根快照目录的路径。
+- 要浏览的文件名。koDeleting Snapshots스냅샷 삭제 중ko19/01/0919/01/09csThe file system: '%s', is over %s%% full.Souborový systém: %s', je z %s%% plný.esErrorErrorzh_HKThe file system: '%s', exceeded %s%% of its total capacity. As a remedial measure, Time Slider has destroyed some backups, and will destroy more, eventually all, as capacity continues to diminish.
+To prevent this from happening again, delete any unnecessary files on '%s', or add disk space (see ZFS documentation).檔案系統：「%s」超過了其總容量的 %s%%。時間調整器所採取的補救措施是銷毀部分備份，並將會銷毀更多備份，而最終會銷毀所有備份，因為容量一直不斷減少。
+若要避免再次發生這種情形，請刪除「%s」上所有不必要的檔案，或增加磁碟空間 (請參閱 ZFS 文件)。nlDouble click to open the fileDubbelklik om het bestand te openenzh_TWThe snapshot manager service has encountered a problem and has been disabled until the problem is fixed.
+
+See the svcs(1) man page for more information.快照管理員服務遇到了問題，而且在問題修正之前都處於停用狀態。
+
+請參閱「svcs(1) 線上手冊」，以取得更多資訊。hu1/4 HourlyNegyed óránkéntijaTime Slider File Version ExplorerタイムスライダファイルバージョンエクスプローラnlTake a snapshot of Neem een momentopname van pt_BROpen the current version of the fileAbrir a versão atual do arquivojaD_eselect Allすべてを選択解除(_E)plfilenamenazwa plikupt_BRThe snapshot manager service has been placed offline due to a dependency problem. The following dependency problems were found:
+
+%s
+
+Run "svcs -xv" from a command prompt for more information about these dependency problems.O serviço do gerenciador de instantâneos foi colocado off-line devido a um problema de dependência. Foram encontrados os seguintes problemas de dependência:
+
+%s
+
+Execute "svcs -xv" de um prompt de comando para obter mais informações sobre estes problemas de dependência.csSnapshot manager service errorChyba ve službě Správce snímkůesA snapshot of zfs filesystem %(zfs_fs)s
+named %(valid_name)s
+has been created.
+Una instantánea del sistema de archivos zfs %(zfs_fs)s
+llamada %(valid_name)s
+se ha creado.
+hu<b>Current Version</b><b>Jelenlegi Verzió</b>id_Delete Snapshots..._Menghapus Snapshots...fr1/4 HourlyTous les quarts d'heureitThe snapshot manager service does not appear to be installed on this system.
+
+See the svcs(1) man page for more information.Il servizio di gestione delle istantanee non sembra essere installato nel sistema corrente.
+
+Per ulteriori informazioni consultare la pagina man svcs(1).koAdvanced Options고급 옵션jaInvalid characters in snapshot nameスナップショット名の文字が無効ですdeScanning for older versionsNach älteren Versionen suchennlErrorFoutes_Delete Snapshots..._Eliminar instantáneas...itError occured while creating the snapshotErrore durante la creazione dell’istantaneanlName:Naam:huD_eselect AllKijelölések megszüntetésezh_CNError occured while creating the snapshot创建快照时发生错误caname :nom :deThe snapshot manager service does not appear to be installed on this system.
+
+See the svcs(1) man page for more information.Der Schnappschussverwaltungsdienst ist offenbar nicht auf diesem System installiert.
+
+Weitere Informationen finden Sie in der Online-Dokumentation, svcs(1).plSnapshot manager service errorBłąd menadżera migawekesConfigure the system to take automatic snapshots of your dataConfigurar el sistema para tomar instantáneas de manera automática de los datosnlTime Slider File Version ExplorerTijd slijder bestand versie onverzoekerfr1 snapshot will be deleted.1 instantané sera supprimé.pt_BRFile System NameNome do sistema de arquivoszh_TWfilename檔案名稱zh_HKSelect ZFS snapshots to delete from the list below.請從以下清單中選取要刪除的 ZFS 快照。jaScanning snapshots...スナップショットをスキャンしています...arname :إسم : idgtk-closegtk-closejaThe snapshot manager service requires administrative privileges to run. You have not been assigned the necessaryadministrative priviliges.
+
+Consult your system administrator スナップショットマネージャーサービスを実行するには管理権限が必要です。必要な管理権限が割り当てられていません。
+
+システム管理者に問い合わせてくださいidSome snapshots could not be readBeberapa snapshot tidak dapat dibacazh_TWWarning: '%s' is getting full警告：「%s」快要滿了zh_HKRecommended for most users建議大多數使用者採用itSnapshot Now requires 2 arguments :
+- The path of the directory to be snapshotted.
+- The zfs filesystem corresponding to this directory.Crea istantanea richiede 2 argomenti :
+- La path della directory di cui deve essere creata l’istantanea.
+- Il file system zfs corrispondente a questa directory.csScanning snapshots...Skenuji snímky...zh_TWlast modified : 上次修改時間： id<b>Summary</b><b>Hasil</b>idlast modified : modifikasi terakhir : dename :Name:es19/01/0919/01/09plgtk-closegtk-zamknijesHourlyCada horapt_BRDailyDiariamentehuDeleting SnapshotsPillanatképek törléseid_All_Semuajafilenameファイル名idTime Slider: Low Space WarningTime Slider: Peringatan Tempat Penyimpanan Hampir PenuhnlDelete SnapshotsVerwijder momentopnamenzh_TWSome snapshots could not be read無法讀取某些快照koTime Slider Manager시간 슬라이더 관리자pt_BRTime Slider File Version ExplorerExplorador de versões de arquivos da barra deslizante de tempozh_HKDelete Snapshots刪除快照zh_TWSnapshot manager service dependency error快照管理員服務相依性錯誤zh_TW1/4 Hourly每 1/4 小時frDailyJournalièrearSome snapshots could not be readبعض صور النظام لايمكن أن تقرأ zh_HKTake a snapshot of 擷取以下項目的快照 idInvalid arguments count.Kesalahan argumen bertambahja<b>Current Version</b><b>現在のバージョン</b>fr<b>File Systems To Back Up</b><b>Systèmes de fichiers à sauvegarder</b>arFor advanced usersمن أجل المستخدمين المتقدمين itDouble click to open the fileFare doppio clic per aprire il filezh_CNUrgent: '%s' is almost full!紧急：'%s' 几乎已满！csErrorChybadeSnapshot can not be deletedSchnappschuss kann nicht gelöscht werdenesRecommended for most usersRecomendado para la mayoría de los usuarioszh_TWSome snapshots could not be deleted無法刪除某些快照plSelectWybierzjaSnapshot manager service errorスナップショットマネージャーサービスのエラーzh_TWDaily每天esScanning snapshots...Buscando instantáneas...csWarning: '%s' is getting fullUpozornění: '% s' se zaplňujenlHintHintzh_TW<b>Current Version</b><b>目前版本</b>es<b>Older Versions</b><b>Versiones anteriores</b>koThe snapshot manager service requires administrative privileges to run. You have not been assigned the necessaryadministrative priviliges.
+
+Consult your system administrator 스냅샷 관리자 서비스를 실행하려면 관리 권한이 필요합니다. 필요한관리 권한이 지정되지 않았습니다.
+
+시스템 관리자에게 문의하십시오. zh_HKOpen the current version of the file開啟目前版本的檔案arSnapshot manager service dependency errorخدمة إدارة صورة النظام  تعتمد خطأ pt_BR1/4 HourlyCada 15 minutosarFile System Nameإسم ملف النظام esEmergency: '%s' is almost full!Emergencia: '%s' se ha llenado casi del todoidMonthlyBulanannlTime Slider ManagerTijd glijder beheerdercs10 MoPondělí 10zh_TWDouble click to open the file連按兩下以開啟檔案hugtk-closegtk-closekoTime Slider File Version Explorer시간 슬라이더 파일 버전 탐색기ko<b>File Systems To Back Up</b><b>백업할 파일 시스템</b>idfilenamenama filept_BRgtk-closegtk-closezh_HKEmergency: '%s' is almost full!緊急：「%s」幾乎已滿！jaInsufficient Priviliges権限が不足していますarRecommended for most usersالمطلوب من كل المستخدمين zh_HKVersion explorer requires 2 arguments :
+- The path of the root snapshot directory.
+- The filename to explore.版本檔案總管需要 2 個引數：
+- 快照根目錄的路徑。
+- 要瀏覽的檔案名稱。nlUrgent: '%s' is almost full!Urgent: '% s' is bijna vol!frInvalid arguments count.Nombre d'arguments incorrect.jaSnapshot created successfullyスナップショットが正常に作成されましたarThe file system: '%s', exceeded %s%% of its total capacityنظام الملفات: '%s', تجاوز %s%% فوق كل السعة الكلية csDeleting SnapshotsMažu snímkyzh_TWEmergency: '%s' is full!緊急：「%s」已滿！fr%d snapshots will be deleted.%d instantanés seront supprimés.ar<b>File Systems To Back Up</b><b> ملف النظام للنسخة الإحتياطية </b>idSnapshot NameNama SnapshotitConfigure the system to take automatic snapshots of your dataConfigurare il sistema per fare delle istantanee automatiche dei propri datihuExit when done. Kilépés, ha elkészült. zh_CNTime Slider File Version Explorer时间滑块文件版本资源管理器zh_TW1 snapshot will be deleted.將刪除 1 個快照。id<b>File Systems To Back Up</b><b>File Systems To Back Up</b>de10 Mo10  ModeInsufficient PriviligesNicht ausreichend Zugriffsrechteko%d snapshots will be deleted.%d개의 스냅샷이 삭제됩니다.zh_CNMount Point挂载点jaFile System:ファイルシステム: idC_ustom:C_ustom:esC_ustom:_Personalizar:idUrgent: '%s' is almost full!Mendesak: '%s' hampir penuh!es_All_Todoeswith the name :con el nombre:zh_TW_Delete Snapshots...刪除快照(_D)...huErrorHibaidEmergency: '%s' is almost full!Darurat: '%s' hampir penuh!nlPress Delete to continue.Druk delete om door te gaan.pt_BR<b>Enable Time Slider</b><b>Ativar a barra deslizante de tempo</b>fr<b>Older Versions</b><b>Anciennes versions</b>plThe file system: '%s', is over %s%% full.The file system: '%s', is over %s%% full.zh_TWSnapshot deletion requires administrative privileges to run. You have not been assigned the necessaryadministrative priviliges.
+
+Consult your system administrator 需要具有管理權限才能執行 [快照刪除] 操作。沒有為您指定所需的管理權限。
+
+請諮詢系統管理員 csDeleting snapshots...Mažu snímky...zh_HKcompare對比itSnapshot can not be deletedImpossibile eliminare l’istantaneaarC_ustom:C_ustom:huSelect ZFS snapshots to delete from the list below.Jelöljön ki ZFS pillanatképeket törlésre a listából.huname :név :arScanning for older versionsالفحص للإصدارات الأقدم koInvalid characters in snapshot name스냅샷 이름에 잘못된 문자가 있습니다.zh_TW<b>File Systems To Back Up</b><b>要備份的檔案系統</b>zh_HK<b>Summary</b><b>摘要</b>pt_BRAllTodosnlDeleting SnapshotsMomentopnames worden verwijdertcs<b>Enable Time Slider</b><b>Povolit Time Slider</b>esThe snapshot manager service has been placed offline due to a dependency problem. The following dependency problems were found:
+
+%s
+
+Run "svcs -xv" from a command prompt for more information about these dependency problems.El servicio de administrador de instantáneas se ha quedado sin conexión por un problema de dependencia. Se han detectado los siguientes problemas de dependencia:
+
+%s
+
+Ejecute "svcs -xv" desde un indicador de comandos para obtener más información sobre estos problemas de dependencia.pt_BRWarning: '%s' is getting fullAviso: '%s' está ficando cheiozh_TWHourly每小時zh_CN_All全部(_A)itFile System:File system:zh_HK%d snapshots will be deleted.將刪除 %d 個快照。huError occured while creating the snapshotHiba lépett fel pillanatkép készítésekorjaMount Pointマウントポイントar<b>Older Versions</b><b>الإصدارات السابقة</b>itWeeklySettimanalezh_HKUrgent: '%s' is almost full!緊要：「%s」幾乎已滿！zh_HKExit when done. 完成後結束。 pt_BRRecommended for most usersRecomendado para a maioria dos usuáriosid10 Mo10 Mohuof file system capacityfájlrendszer kapacitásánakcaTake a snapshot of Fer una instantània de esD_eselect AllD_eseleccionar todoitHourlyOgni oranlMonthlyMaandelijkshuSome snapshots could not be deletedNéhány pillanatkép nem törölhetőfrSelect ZFS snapshots to delete from the list below.Sélectionnez les instantanés ZFS à supprimer dans la liste suivante.csfilenamejméno souborues10 Mo10 Mopl<b>File Systems To Back Up</b><b>System plików do Back Up</b>arScanning snapshots...فحص صور النظام pt_BRName:Nome:zh_CNExit when done. 完成后退出。 huRecommended for most usersAjánlott az átlagfelhasználóknaknlConfiguring Time Slider...Configuring Time Slider...nlFor advanced usersVoor geavanceerde gebruikersit_All_Tuttozh_HKDeleting Snapshots正在刪除快照pt_BRMonthlyMensalmenteidFor advanced usersUntuk pengguna lanjutandeErrorFehlerzh_CNCreation Time创建时间fr_All_Touszh_TWTime Slider Manager時間滑動軸管理員idSnapshot can not be deletedSnapshot tidak dapat dihapusjaEmergency: '%s' is full!緊急: '%s' がいっぱいです。itPress Delete to continue.Premere Elimina per continuare.zh_CNAdvanced Options高级选项zh_TW_All全部(_A)zh_CNfilename文件名cscompareporovnathuSelectKiválasztásplThe file system: '%s', exceeded %s%% of its total capacityThe file system: '%s', exceeded %s%% of its total capacityzh_TWTake a snapshot now立即擷取快照koFile System Name파일 시스템 이름huEmergency: '%s' is full!Vészhelyzet: '%s' megtelt!nlReduce backups when storage space usage exceeds:Verminder back-ups als opslagruimte gebruik meer bedraagt dan:jaC_ustom:カスタム(_U): pt_BR<b>Summary</b><b>Resumo</b>itSelect ZFS snapshots to delete from the list below.Selezionare le istantanee ZFS da eliminare dall’elenco di seguito riportato.zh_CNTake a snapshot now立即捕获快照zh_CN10 Mo10 MoesTime Slider ManagerAdministrador del deslizador de tiempozh_CNname :名称：pt_BRTime SliderBarra deslizante de tempozh_HKFile System Name檔案系統名稱itThe file system: '%s', exceeded %s%% of its total capacity. As a remedial measure, Time Slider has destroyed some backups, and will destroy more, eventually all, as capacity continues to diminish.
+To prevent this from happening again, delete any unnecessary files on '%s', or add disk space (see ZFS documentation).La capacità totale del file system '%s' è stata superata del %s%%. Come rimedio, Time Slider ha eliminato alcuni backup e ne eliminerà altri o tutti man mano che la capacità diminuisce.
+Per evitare il ripetersi del problema, eliminare eventuali file non necessari in '%s' oppure aggiungere spazio sul disco (vedere la documentazione di ZFS).zh_HKError錯誤arOpen the current version of the fileإفتح نفس إصدار الملف cs1/4 HourlyKaždou 1/4 hodinufrAdvanced OptionsOptions avancéesitsize : dimensioni : zh_HKDeleting snapshots...正在刪除快照...pt_BRScanning for older versionsExplorando versões mais antigasfrTake a snapshot nowPrenez un instantanéplFile System:System plików:idWarning: '%s' is getting fullPeringatan: '%s' mulai penuhfrfilenamenom de fichierfrMonthlyMensuelleplWarning: '%s' is getting fullOstrzeżenie: '%s' staje się pełnyesSnapshot Now requires administrative privileges to run. You have not been assigned the necessaryadministrative priviliges.
+
+Consult your system administrator Tomar instantánea ahora necesita privilegios administrativos. No se le han asignado los correspondientes privilegios administrativos.
+
+Consulte al administrador del sistemafr<b>Enable Time Slider</b><b>Activer le curseur temporel</b>jaTime Slider Managerタイムスライダマネージャーcs<b>File Systems To Back Up</b><b>Záloha souborového systému</b>frFile System:Système de fichiers :caFor advanced usersPer a usuaris avançatsca1 snapshot will be deleted.1 instantània serà eliminada.nlInsufficient PriviligesOnvoldoende PrivilegesarTime Sliderشريط تمرير الوقت deSuccessErfolgfrTime SliderCurseur temporelzh_CNWeekly每周frC_ustom:Pers_onnalisé :frSnapshot NameNom de l'instantanécaDouble click to open the fileDoble clic per a obrir un fitxerzh_CNDouble click to open the file双击以打开文件arEmergency: '%s' is almost full!الخظر : '%s'  على الأغلب كامل jaTake a snapshot of スナップショットを取得する対象 caTake a snapshot nowFer una instantània aradeMount PointEinhängepunktcsEmergency: '%s' is full!Stav nouze: '%s' je plný!pt_BRTake a snapshot of Efetuar um instantâneo de huDelete SnapshotsPillanatképek törlésefrUrgent: '%s' is almost full!Urgent : %s est presque plein !it10 Mo10 MoesWarning: '%s' is getting fullAdvertencia: '%s' se está llenandocaTime Slider File Version ExplorerExplorador de Versions de Fitxer de Time SliderkoThe snapshot manager service has encountered a problem and has been disabled until the problem is fixed.
+
+See the svcs(1) man page for more information.스냅샷 관리자 서비스에 문제가 발생하여 문제가 수정될 때까지 비활성화되었습니다.
+
+자세한 내용은 svcs(1) 매뉴얼 페이지를 참조하십시오.plTime Slider: Low Space WarningTime Slider: Low Space WarningkoScanning for older versions이전 버전 검색 중itThe snapshot manager service requires administrative privileges to run. You have not been assigned the necessaryadministrative priviliges.
+
+Consult your system administrator Per l'esecuzione del servizio di gestione delle istantanee sono necessari privilegi amministrativi. Non si dispone di privilegi amministrativi sufficienti.
+
+Rivolgersi all'amministratore di sistema. pl1/4 HourlyCo 15 minutcs_Delete Snapshots..._Smazat snímek...ja<b>Summary</b><b>要約</b>arSuccessنجاح zh_CNFor advanced users适用于高级用户jaSelect ZFS snapshots to delete from the list below.下の一覧から削除する ZFS スナップショットを選択します。koConfigure the system to take automatic snapshots of your data사용자 데이터의 자동 스냅샷을 만들도록 시스템 구성esThe snapshot manager service requires administrative privileges to run. You have not been assigned the necessaryadministrative priviliges.
+
+Consult your system administrator El servicio de administrador de instantáneas necesita privilegios administrativos. No se le ha asignado los correspondientes privilegios administrativos.
+
+Consulte al administrador del sistema fr%s has one or more dependent clones and will not be deleted. To delete this snapshot, first delete all datasets and snapshots cloned from this snapshot.%s a un ou plusieurs clones dépendants et ne sera pas supprimé.  Supprimez au préalable tous les jeux de données et instantanés clonés à partir de cet instantané pour pouvoir supprimer ce dernier.nl<b>Enable Time Slider</b><b>Schakel tijd slijder in</b>zh_TWDelete Snapshots刪除快照ko<b>Current Version</b><b>현재 버전</b>zh_TWFile System Name檔案系統名稱idof file system capacitydari kapasitas file sistemjaPress Delete to continue.続行するには「削除」を押します。it<b>File Systems To Back Up</b><b>File system di cui eseguire il backup</b>frDeleting SnapshotsSuppression des instantanésdeTake a snapshot nowJetzt einen Schnappschuss nehmenarAllالكل zh_TWRecommended for most users建議大多數使用者採用pt_BRThe file system: '%s', exceeded %s%% of its total capacity. As a remedial measure, Time Slider has destroyed some backups, and will destroy more, eventually all, as capacity continues to diminish.
+To prevent this from happening again, delete any unnecessary files on '%s', or add disk space (see ZFS documentation).O sistema de arquivos: '%s' excedeu %s%% da capacidade total. Como medida de reforço, a barra deslizante de tempo eliminou alguns backups e eliminará mais, eventualmente todos, caso a capacidade continue diminuindo.
+Para evitar que isso acorra novamente, exclua os arquivos desnecessários de '%s' ou adicione espaço em disco (consulte a documentação do ZFS).zh_HK_All全部(_A)nlSnapshot manager service errorMomentopname manager service foutdeFor advanced usersFür erfahrene Benutzerid1 snapshot will be deleted.1 snapshot akan di hapusplEmergency: '%s' is full!Uwaga: '%s' jest zapełnionyzh_TWAll全部es1 snapshot will be deleted.Se eliminará 1 instantánea.caDeleting SnapshotsEliminant Instantànieszh_HKLegacy原來的zh_CNSnapshot deletion requires administrative privileges to run. You have not been assigned the necessaryadministrative priviliges.
+
+Consult your system administrator 需要有管理权限才能删除快照。没有为您指定必要的管理权限。
+
+请咨询您的系统管理员 pt_BRDeleting snapshots...Excluindo instantâneos...jaVersion explorer requires 2 arguments :
+- The path of the root snapshot directory.
+- The filename to explore.バージョンエクスプローラには次の 2 つの引数が必要です:
+- ルートスナップショットディレクトリのパス。
+- 調査するファイル名。nl1 snapshot will be deleted.1 momentopname zal niet verwijdert wordenhuMonthlyHaviplScanning for older versionsWyszukuje starsze wersjejaFile System Nameファイルシステム名itRecommended for most usersPer tutti gli utentinlScanning snapshots...Momentopnamen aan het scanderen...idLegacyLegacynlSelectSelecteeritSnapshot manager service dependency errorErrore di dipendenza del servizio di gestione delle istantaneekoThe snapshot manager service does not appear to be installed on this system.
+
+See the svcs(1) man page for more information.스냅샷 관리자 서비스가 이 시스템에 설치된 것으로 나타나지 않습니다.
+
+자세한 내용은 svcs(1) 매뉴얼 페이지를 참조하십시오.zh_CNSnapshot Now requires 2 arguments :
+- The path of the directory to be snapshotted.
+- The zfs filesystem corresponding to this directory.立即进行快照需要 2 个参数：
+- 要进行快照的目录的路径。
+- 与此目录相对应的 zfs 文件系统。pt_BRLegacyLegadoesWeeklyCada semanaplHintHintfrcomparecomparaisonidTime Slider backs up data regularly by taking timed ZFS SnapshotsTime Slider membackup data secara teratur berdasarkan waktu Snapshot ZFSit%d snapshots will be deleted.Verranno eliminate %d istantanee.esgtk-closegtk-cerraresThe snapshot manager service does not appear to be installed on this system.
+
+See the svcs(1) man page for more information.El servicio de administrador de instantáneas parece no estar instalado en este sistema.
+
+Para obtener más información, consulte la página de comando man svcs(1).caHintPistapt_BRFile System:Sistema de arquivos:huScanning for older versionsKeresés régebbi verziók utánjaConfigure the system to take automatic snapshots of your data自動的にデータのスナップショットを作成するようにシステムを構成しますhuEmergency: '%s' is almost full!Vészhelyzet: '%s' majdnem teli!csSnapshot can not be deletedSnímek nemůže být smazánhu1 snapshot will be deleted.1 pillanatkép kerül törlésre.pt_BRTake a snapshot nowEfetuar um instantâneo agorapt_BR_Delete Snapshots..._Excluir instantâneos...nlCreation TimeAanmaaktijddeThe snapshot manager service has been placed offline due to a dependency problem. The following dependency problems were found:
+
+%s
+
+Run "svcs -xv" from a command prompt for more information about these dependency problems.Der Schnappschussverwaltungsdienst wurde wegen eines Abhängigkeitsproblems offline geschaltet.  Folgende Abhängigkeitsprobleme wurden festgestellt:
+
+%s
+
+Führen Sie über eine Eingabeaufforderung den Befehl "svcs  -xv" aus, um weitere Informationen zu diesen Abhängigkeitsproblemen zu erhalten.nlScanning for older versionsZoeken naar oudere versiescsgtk-closegtk-closejaRecommended for most usersほとんどのユーザーに推奨pl19/01/0919/01/09zh_TWThe snapshot manager service has been placed offline due to a dependency problem. The following dependency problems were found:
+
+%s
+
+Run "svcs -xv" from a command prompt for more information about these dependency problems.由於相依性問題，已將快照管理員服務置為離線。發現以下相依性問題：
+
+%s
+
+請從指令提示符號下執行「svcs –xv」，以取得有關這些相依性問題的更多資訊。itSnapshot created successfullyIstantanea creata con successozh_CNFile System Name文件系统名称pt_BRname :nome :csTake a snapshot of Pořídit snímek idSnapshot manager service dependency errorKesalahan dependensi layanan pengendali SnapshotarInvalid characters in snapshot nameخطأ برموز إسم صورة النظام frSnapshot Now requires administrative privileges to run. You have not been assigned the necessaryadministrative priviliges.
+
+Consult your system administrator Pour utiliser l'option Prendre un instantané, vous devez posséder des privilèges administratifs.  Vous ne possédez pas les privilèges administratifs requis.
+
+Consultez votre administrateur système  hu<b>Enable Time Slider</b><b>Time Slider engedélyezése</b>zh_TWgtk-closegtk-closedeSnapshot deletion requires administrative privileges to run. You have not been assigned the necessaryadministrative priviliges.
+
+Consult your system administrator Die Löschung von Schnappschüssen erfordert Administratorrechte.  Ihnen wurden nicht die nötigen Administratorrechte zugewiesen.
+
+Wenden Sie sich an Ihren Systemadministrator.  jaThe file system: '%s', exceeded %s%% of its total capacity. As a remedial measure, Time Slider has destroyed some backups, and will destroy more, eventually all, as capacity continues to diminish.
+To prevent this from happening again, delete any unnecessary files on '%s', or add disk space (see ZFS documentation).ファイルシステム: '%s' が総容量の %s%% を超えました。是正手段として、タイムスライダはすでに一部のバックアップを破棄しており、容量が減り続ければさらに多くのバックアップ、最終的にはすべてのバックアップを破棄します。
+この問題がふたたび発生しないようにするために、'%s' 上の不必要なファイルをすべて削除するか、またはディスク容量を追加してください (ZFS のマニュアルを参照)。plof file system capacitymożliwości systemu plikówkoSnapshot manager service dependency error스냅샷 관리자 서비스 종속성 오류frThe snapshot manager service has encountered a problem and has been disabled until the problem is fixed.
+
+See the svcs(1) man page for more information.Le service de gestionnaire d'instantanés a rencontré un problème et a été désactivé jusqu'à la résolution du problème.
+
+Pour de plus amples informations, reportez-vous à la page de manuel svcs(1).zh_HKgtk-closegtk-closekoSnapshot can not be deleted스냅샷을 삭제할 수 없습니다.csC_ustom:V_lastníja1/4 Hourly15 分ごとkoAllowed characters for snapshot names are :
+[a-z][A-Z][0-9][-_.:
+All invalid characters will be removed
+스냅샷 이름에 사용할 수 있는 문자는 다음과 같습니다.
+[a-z][A-Z][0-9][-_.:
+잘못된 문자는 모두 제거됩니다.
+pt_BREmergency: '%s' is full!Emergência: '%s' está cheio!frDelete SnapshotsSupprimer des instantanésko<b>Older Versions</b><b>이전 버전</b>zh_TWPress Delete to continue.請按下 [刪除] 繼續。koScanning snapshots...스냅샷 검색 중...huSnapshot manager service errorPillanatkép kezelő szolgáltatás hibacaD_eselect AllDe-_seleccionar-ho TotarMonthlyشهريا nlLegacyLegaatkoFile System:파일 시스템:koError오류ca%d snapshots will be deleted.%d instantànies a ser eliminades.huConfiguring Time Slider...Time Slider konfigurációja...arCreation Timeإنشاء الوقت huInvalid arguments count.Érvénytelen argumentum szám.zh_TWsize : 大小： itSuccessOperazione riuscitafrSome snapshots could not be readCertains instantanés n'ont pas pu être luscsFile System NameJméno souborového systémuitThe snapshot manager service has encountered a problem and has been disabled until the problem is fixed.
+
+See the svcs(1) man page for more information.Il servizio di gestione delle istantanee ha riscontrato un problema ed è stato disabilitato fino alla risoluzione del problema.
+
+Per ulteriori informazioni consultare la pagina man svcs(1).deTime Slider ManagerZeit-Schieberegler-Managerpt_BRSnapshot created successfullyInstantâneo criado com êxitozh_CN_Delete Snapshots...删除快照(_D)...koTake a snapshot of 다음 항목의 스냅샷 실행 ko1 snapshot will be deleted.1개의 스냅샷이 삭제됩니다.itMount PointPunto di attivazionept_BRVersion explorer requires 2 arguments :
+- The path of the root snapshot directory.
+- The filename to explore.O explorador de versão requer 2 argumentos :
+- O caminho do diretório raiz do instantâneo.
+- O nome de arquivo para exploração.frSuccessTerminé sans erreuridFile System NameNama File SistemitWarning: '%s' is getting fullAvvertenza: lo spazio su '%s' sta per esaurirsiarfilenameإسم الملف frFor advanced usersPour les utilisateurs expérimentészh_HKHourly每小時nlof file system capacityvan bestand systeem capaciteitpt_BRErrorErronlC_ustom:C_ustom:zh_HKMount Point掛載點deTime Slider backs up data regularly by taking timed ZFS SnapshotsDer Zeit-Schieberegler sichert regelmäßig Daten durch Erfassung von zeitlich festgelegten ZFS-SchnappschüssencsSome snapshots could not be readNěkteré snímky nelze přečístzh_TWD_eselect All全部取消選取(_E)itA snapshot of zfs filesystem %(zfs_fs)s
+named %(valid_name)s
+has been created.
+Un’istantanea del file system zfs %(zfs_fs)s
+denominata %(valid_name)s
+è stata creata.
+zh_CNConfigure the system to take automatic snapshots of your data将系统配置为自动捕获数据的快照zh_TWSnapshot manager service error快照管理員服務錯誤zh_TWInvalid characters in snapshot name快照名稱中有無效字元plScanning snapshots...Wyszukuje migawki...nlSelect ZFS snapshots to delete from the list below.Kies de te verwijderen ZFS momentopnamen van de lijst beneden. arTime Slider: Low Space Warningشريط التوقيت : تحذير بإنخفاض المساحةesTime Slider File Version ExplorerExplorador de versiones de archivos del deslizador de tiempoesOpen the current version of the fileAbrir la versión actual del archivojaErrorエラーzh_HK10 Mo10 MofrDeleting snapshots...Suppression des instantanés...nlMount PointMonteer puntjaScanning for older versions旧バージョンをスキャンしていますpt_BR%d snapshots will be deleted.%d instantâneos serão excluídos.zh_TWThe snapshot manager service does not appear to be installed on this system.
+
+See the svcs(1) man page for more information.快照管理員服務似乎並未安裝於此系統上。
+
+請參閱「svcs(1) 線上手冊」，以取得更多資訊。idName:Nama:ja<b>Enable Time Slider</b><b>タイムスライダを有効にする</b>idSome snapshots could not be deletedBeberapa snapshot tidak dapat dihapuszh_HKScanning snapshots...正在掃描快照...plTime Slider ManagerMenadżer Time Sliderar10 Mo10 MoitName:Nome:zh_HKInvalid arguments count.引數計數無效。koLegacy레거시nlEmergency: '%s' is full!Alarm: '% s' is vol!csMonthlyMěsíčněja%s has one or more dependent clones and will not be deleted. To delete this snapshot, first delete all datasets and snapshots cloned from this snapshot.%s には 1 つ以上の複製が依存しているため、削除されません。このスナップショットを削除するには、まず、このスナップショットから複製されたすべてのデータセットとスナップショットを削除してください。zh_CNHourly每小时frD_eselect AllTout désél_ectionnercaThe file system: '%s', exceeded %s%% of its total capacityEl sistema de fitxers: '%s', excedeix %s%% de la seva capacitat totaljaName:名前: caSuccessRealitzatid1/4 HourlyTiap 1/4 jamjaCreation Time作成時間plDelete SnapshotsUsuwam migawkiarWeeklyإسبوعيا zh_HKThe snapshot manager service has encountered a problem and has been disabled until the problem is fixed.
+
+See the svcs(1) man page for more information.快照管理員服務遇到了問題，而且在問題修正之前都處於停用狀態。
+
+請參閱「svcs(1) 線上手冊」，以取得更多資訊。esAllowed characters for snapshot names are :
+[a-z][A-Z][0-9][-_.:
+All invalid characters will be removed
+Los caracteres permitidos en los nombres de las instantáneas son:
+[a-z][A-Z][0-9][-_.:
+Se suprimirán todos los caracteres no válidos
+pt_BRHourlyDe hora em horakoSnapshot created successfully스냅샷이 성공적으로 생성되었습니다.zh_TWAllowed characters for snapshot names are :
+[a-z][A-Z][0-9][-_.:
+All invalid characters will be removed
+允許用於快照名稱的字元如下：
+[a-z]、[A-Z]、[0-9]、[、-、_、.、:
+將移除所有無效字元
+plD_eselect AllO_dznacz wszystkiecaScanning for older versionsEscanejant per a versions antigueszh_CNRecommended for most users建议大多数用户采用plName:Nazwa:pt_BRD_eselect AllCancelar s_eleção de todoshu_All_Mindarcompareمقارنة idConfigure the system to take automatic snapshots of your data	zh_HKname :名稱：huTake a snapshot nowPillanatkép készítése mostes%s has one or more dependent clones and will not be deleted. To delete this snapshot, first delete all datasets and snapshots cloned from this snapshot.%s tiene uno o más duplicados y no se puede eliminar. Para eliminar esta instantánea, primero debe borrar todos sus conjuntos de datos e instantáneas duplicados.itwith the name :con il nome :zh_CNFile System:文件系统：idSelect ZFS snapshots to delete from the list below.Pilih ZFS snapshots untuk menghapus dari daftar dibawah ini.frSnapshot Now requires 2 arguments :
+- The path of the directory to be snapshotted.
+- The zfs filesystem corresponding to this directory.L'option Prendre un instantané nécessite 2 arguments :
+- Chemin d'accès au répertoire dont un instantané doit être pris.
+- Système de fichiers ZFS correspondant à ce répertoire.id<b>Enable Time Slider</b><b>Enable Time Slider</b>zh_CNScanning for older versions正在扫描早期版本esEmergency: '%s' is full!Emergencia: '%s' se ha llenadokoSome snapshots could not be deleted일부 스냅샷을 삭제할 수 없습니다.itEmergency: '%s' is full!Attenzione: '%s' è pieno.zh_HKFile System:檔案系統：jaA snapshot of zfs filesystem %(zfs_fs)s
+named %(valid_name)s
+has been created.
+zfs ファイルシステム %(zfs_fs)s のスナップショット
+(名前は %(valid_name)s)
+が作成されました。
+jawith the name :名前: nlDailyDagelijksko10 Mo10Moes<b>Current Version</b><b>Versión actual</b>itSelectSelezionanlcomparevergelijkcsTime Slider backs up data regularly by taking timed ZFS SnapshotsTime Slider zálohuje pravidelně data pomocí časových ZFS smínkůes<b>File Systems To Back Up</b><b>Sistemas de archivos de los que hacer copia de seguridad</b>zh_HKSome snapshots could not be deleted無法刪除某些快照idError occured while creating the snapshotTerjadi error ketika membuat snapshotzh_HKEmergency: '%s' is full!緊急：「%s」已滿！caOpen the current version of the fileObrir la versió actual del fitxerplcompareporównajzh_TWCreation Time建立時間idTake a snapshot of Mengambil snapshot dari zh_TWVersion explorer requires 2 arguments :
+- The path of the root snapshot directory.
+- The filename to explore.版本檔案總管需要 2 個引數：
+- 快照根目錄的路徑。
+- 要瀏覽的檔案名稱。jasize : サイズ:  ko%s has one or more dependent clones and will not be deleted. To delete this snapshot, first delete all datasets and snapshots cloned from this snapshot.%s에 하나 이상의 종속 복제가 있어 삭제되지 않습니다. 이 스냅샷을 삭제하려면 먼저 이 스냅샷에서 복제된 모든 데이터 집합과 스냅샷을 삭제하십시오.pt_BRcomparecompararcsof file system capacitykapacity souborového systémucaCreation TimeTemps de creacióplError occured while creating the snapshotWystąpił błąd podczas tworzenia migawkizh_CNSome snapshots could not be deleted无法删除某些快照huReduce backups when storage space usage exceeds:Csökkentse a mentések számát ha a tároló helyhasználata caInvalid characters in snapshot nameCaràcters no vàlids al nom de la instantàniafrExit when done. Quitter une fois l'opération terminée.  nlAdvanced OptionsGeavanceerde optiesarTime Slider Managerإدارة شريط تمرير الوقت frMount PointPoint de montagefrError occured while creating the snapshotUne erreur s'est produite lors de la création de l'instantanéfrSnapshot manager service errorErreur du service de gestionnaire d'instantanéscsConfiguring Time Slider...Konfiguruji Time Slider...koD_eselect All모두 선택 해제(_E)csUrgent: '%s' is almost full!Naléhavé: '%s' je skoro plný!deEmergency: '%s' is full!Notfall: '%s' ist voll!jaExit when done. 完了したら終了します。 es%d snapshots will be deleted.Se eliminarán %d instantáneas.jaError occured while creating the snapshotスナップショットの作成中にエラーが発生しましたpt_BR%s has one or more dependent clones and will not be deleted. To delete this snapshot, first delete all datasets and snapshots cloned from this snapshot.%s tem um ou mais clones dependentes e não será excluído. Para excluir este instantâneo, exclua primeiro todos os conjuntos de dados e instantâneos clonados deste instantâneo.zh_CNMonthly每月idEmergency: '%s' is full!Darurat: '%s' penuh!nl1/4 HourlyIeder kwartieridScanning snapshots...Memindai snapshots...deVersion explorer requires 2 arguments :
+- The path of the root snapshot directory.
+- The filename to explore.Versions-Explorer erfordert 2 Argumente:
+-  Pfad des Schnappschuss-Stammverzeichnisses.
+-  Dateiname, nach dem gesucht werden soll.zh_CNAll全部zh_HKSelect選取hu<b>Summary</b><b>Összesítés</b>cagtk-closetancar-gtkesAllTodoscsOpen the current version of the fileOtevřete soubor současné verzecacomparecompararzh_TWConfigure the system to take automatic snapshots of your data將系統配置為自動對資料執行快照frCreation TimePériode de créationzh_HKSnapshot can not be deleted無法刪除快照koOpen the current version of the file파일의 현재 버전을 엽니다.esTime SliderDeslizador de tiempozh_HKSnapshot manager service dependency error快照管理員服務相依性錯誤zh_CNThe snapshot manager service does not appear to be installed on this system.
+
+See the svcs(1) man page for more information.该快照管理器服务似乎没有安装在此系统上。
+
+有关更多信息，请参见 svcs(1) 手册页。nlAllAllecaTime SliderTime Slideridsize : ukuran : esMount PointPunto de montajept_BRScanning snapshots...Explorando instantâneos...huSnapshot can not be deletedNem törölhető pillanatképjaHourly毎時caSnapshot manager service dependency errorError de dependència del servei gestor de instantànieszh_HKName:名稱：frSnapshot created successfullyL'instantané a été créécaSome snapshots could not be deletedNo s'han pogut eliminar algunes instantàniespl<b>Enable Time Slider</b><b>Włącz Time Slider</b>esof file system capacityde capacidad de sistema de archivosjaMonthly毎月cs1 snapshot will be deleted.1 snímek bude smazánzh_CN%d snapshots will be deleted.%d 个快照将被删除。plFor advanced usersDla zaawansowanych użytkownikówzh_TWError occured while creating the snapshot建立快照時發生錯誤zh_CNReduce backups when storage space usage exceeds:当存储空间使用率超过以下值时减少备份：ar19/01/0919/01/09deInvalid arguments count.Ungültige Argumente.csFile System:Souborový systém:itSnapshot Now requires administrative privileges to run. You have not been assigned the necessaryadministrative priviliges.
+
+Consult your system administrator Per l’esecuzione del comando Crea istantanea sono necessari privilegi amministrativi. Non si dispone dei privilegi amministrativi necessari.
+
+Rivolgersi all'amministratore di sistema. nlThe file system: '%s', exceeded %s%% of its total capacityThe file system: '%s', exceeded %s%% of its total capacityhu_Delete Snapshots..._Pillanatkép törlése...pt_BRDeleting SnapshotsExcluindo instantâneoskoInvalid arguments count.잘못된 인수 카운트입니다.zh_TWSuccess成功nlExit when done. Sluit af als je klaar bent. csCreation TimeČas vytvořenízh_HKfilename檔案名稱zh_HKTime Slider backs up data regularly by taking timed ZFS Snapshots時間調整器會透過擷取定時的 ZFS 快照，定期備份資料nlWarning: '%s' is getting fullWaarschuwing: '%s' wordt voller en vollerzh_TWExit when done. 完成後結束。 esExit when done. Salir al terminar. zh_CNWarning: '%s' is getting full警告：'%s' 即将被占满nlTime Slider backs up data regularly by taking timed ZFS SnapshotsTijd glijder maakt reservekopie&#235;n van gegevens door het nemen van een regelmatige ZFS momentopnamenjaWarning: '%s' is getting full警告: '%s' がいっぱいになりつつありますkoError occured while creating the snapshot스냅샷 생성 중 오류가 발생했습니다.zh_TWname :名稱：zh_HKDaily每天huHourlyÓránkéntiid19/01/0919/01/09zh_HKSnapshot Name快照名稱idHourlyTiap JamarFile System:نظام الملفات : pt_BRSelect ZFS snapshots to delete from the list below.Selecione  na lista abaixo os instantâneos do ZFS que serão excluídos.arWarning: '%s' is getting fullتحذير : '%s' الحصول على الكامل ja<b>File Systems To Back Up</b><b>バックアップするファイルシステム</b>caDetails...Detalls...it1 snapshot will be deleted.1 istantanea verrà eliminata.itgtk-closegtk-closeit19/01/0919/01/09zh_CNTime Slider时间滑块frTime Slider backs up data regularly by taking timed ZFS SnapshotsLe curseur temporel sauvegarde les données régulièrement en prenant des instantanés ZFS différésescomparecompararfrErrorErreurnlsize : grootte : zh_CN<b>Enable Time Slider</b><b>启用时间滑块</b>esSnapshot manager service dependency errorError de dependencia del servicio de administrador de instantáneaspt_BRTime Slider ManagerGerenciador da barra deslizante de temponlFile System NameBestand systeem naamdeInvalid characters in snapshot nameSchnappschussname enthält ungültige Zeichenzh_CN<b>File Systems To Back Up</b><b>要备份的文件系统</b>caSome snapshots could not be readNo s'han pogut llegir algunes instantàniesplConfiguring Time Slider...Configuring Time Slider...arMount Pointنقطة التحميل deSnapshot manager service dependency errorAbhängigkeitsfehler im Zusammenhang mit dem SchnappschussverwaltungsdienstcaExit when done. Sortir quant estigui fet. idHintPetunjukdeConfigure the system to take automatic snapshots of your dataSystem für automatische Snapshots Ihrer Daten konfigurierenzh_HKInvalid characters in snapshot name快照名稱中有無效字元koWeekly매주esReduce backups when storage space usage exceeds:Destruir las copias de seguridad cuando se sobrepase el uso del espacio de almacenamiento:koSnapshot Name스냅샷 이름esFile System:Sistema de archivos:arEmergency: '%s' is full!الخطر : '%s' ممتلئ!ja1 snapshot will be deleted.1 つのスナップショットが削除されます。nlSnapshot NameMomentopname naamesDelete SnapshotsEliminar instantáneasnlWeeklyWekelijkszh_CNTime Slider Manager时间滑块管理器zh_TWMount Point掛載點eslast modified : última modificación: zh_CN<b>Older Versions</b><b>早期版本</b>pt_BRSuccessÊxitohuThe file system: '%s', is over %s%% full.A fájlrendszer: '%s' több mint %s%%-kal megtelve.csThe file system: '%s', exceeded %s%% of its total capacitySouborový systém:  '%s', překročil %s%% své celkové kapacitydeD_eselect AllA_uswahl aufhebenit<b>Enable Time Slider</b><b>Abilita Time Slider </b>cswith the name :s názvem:frWeeklyHebdomadaireplTime SliderTime SliderkoMount Point마운트 지점de<b>Older Versions</b><b>Ältere Versionen</b>pt_BRwith the name :com o nome:zh_TWTime Slider backs up data regularly by taking timed ZFS Snapshots時間調整器會透過擷取定時的 ZFS 快照，定期備份資料plEmergency: '%s' is almost full!Uwaga: '%s' jest prawie zapełnionynlFile System:Bestand systeem:esSnapshot Now requires 2 arguments :
+- The path of the directory to be snapshotted.
+- The zfs filesystem corresponding to this directory.Tomar instantánea ahora necesita 2 argumentos:
+- La ruta del directorio del que se va a tomar la instantánea.
+- El sistema de archivos zfs correspondiente a este directorio.frEmergency: '%s' is full!Urgence : %s est plein !esName:Nombre:zh_TWScanning snapshots...正在掃描快照...idRecommended for most usersDirekomendasikan untuk sebagian besar penggunaarThe file system: '%s', is over %s%% full.نظام الملفات: '%s', كامل  %s%% ممتلئ.zh_CNDelete Snapshots删除快照de<b>Enable Time Slider</b><b>Zeit-Schieberegler aktivieren</b>idThe file system: '%s', exceeded %s%% of its total capacityFile Sistem: '%s', melebihi %s%% dari kapasitas total.janame :名前: huPress Delete to continue.Nyomjon Delete-t a folytatáshoz.
