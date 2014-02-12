@@ -928,12 +928,6 @@ def create_daemon():
 
 def main(argv):
 
-    # Check SMF invocation environment
-    if os.getenv("SMF_FMRI") == None or os.getenv("SMF_METHOD") != "start":
-        sys.stderr.write("Command line invocation of %s unsupported.\n" \
-                         % (sys.argv[0]))
-        sys.stderr.write("This command is intended for smf(5) invocation only.\n")
-        sys.exit(smf.SMF_EXIT_ERR_NOSMF)
 
     # Daemonise the service.
     create_daemon()
