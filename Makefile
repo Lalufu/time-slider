@@ -102,6 +102,12 @@ install:
 		  $(INSTALL_DATA) $(DESTDIR)/usr/share/time-slider/lib/time_slider $$file; \
 		fi; \
 	done
+	$(mkinstalldirs) $(DESTDIR)/usr/share/time-slider/lib/time_slider/linux
+	for file in usr/share/time-slider/lib/time_slider/linux/*.py; do \
+		if test -f $$file ; then \
+		  $(INSTALL_DATA) $(DESTDIR)/usr/share/time-slider/lib/time_slider/linux $$file; \
+		fi; \
+	done
 	$(mkinstalldirs) $(DESTDIR)/usr/share/time-slider/lib/plugin
 	for file in usr/share/time-slider/lib/plugin/*.py; do \
 		if test -f $$file ; then \
