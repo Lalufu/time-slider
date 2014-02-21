@@ -1,4 +1,8 @@
-include VERSION
+ifeq ($(wildcard .git),)
+	include VERSION
+else
+	VERSION=$(shell git describe)
+endif
 
 mkinstalldirs = /usr/bin/mkdir -p
 INSTALL = /usr/bin/install
