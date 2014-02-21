@@ -120,25 +120,25 @@ class SMFInstance(Exception):
 
     def refresh_service(self):
         cmd = [SVCADMCMD, "refresh", self.instanceName]
-        p = subprocess.Popen(cmd, close_fds=True)
+        util.run_command(cmd)
 
     def disable_service (self):
         if self.svcstate == "disabled":
             return
         cmd = [SVCADMCMD, "disable", self.instanceName]
-        p = subprocess.Popen(cmd, close_fds=True)
+        util.run_command(cmd)
         self.svcstate = self.get_service_state()
 
     def enable_service (self):
         if (self.svcstate == "online" or self.svcstate == "degraded"):
             return
         cmd = [SVCADMCMD, "enable", self.instanceName]
-        p = subprocess.Popen(cmd, close_fds=True)
+        util.run_command(cmd)
         self.svcstate = self.get_service_state()
 
     def mark_maintenance (self):
         cmd = [SVCADMCMD, "mark", "maintenance", self.instanceName]
-        subprocess.Popen(cmd, close_fds=True)
+        util.run_command(cmd)
 
     def __str__(self):
         ret = "SMF Instance:\n" +\

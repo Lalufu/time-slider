@@ -229,12 +229,7 @@ class Datasets(Exception):
             cmd = [ZFSCMD, "list", "-H", "-t", "filesystem", \
                    "-o", "name,mountpoint", "-s", "name"]
             try:
-                p = subprocess.Popen(cmd,
-                                     stdout=subprocess.PIPE,
-                                     stderr=subprocess.PIPE,
-                                     close_fds=True)
-                outdata,errdata = p.communicate()
-                err = p.wait()
+                outdata,errdata = util.run_command(cmd, True)
             except OSError, message:
                 raise RuntimeError, "%s subprocess error:\n %s" % \
                                     (cmd, str(message))
@@ -274,19 +269,11 @@ class Datasets(Exception):
             cmd = [ZFSCMD, "list", "-H", "-t", "volume", \
                    "-o", "name", "-s", "name"]
             try:
-                p = subprocess.Popen(cmd,
-                                     stdout=subprocess.PIPE,
-                                     stderr=subprocess.PIPE,
-                                     close_fds=True)
-                outdata,errdata = p.communicate()
-                err = p.wait()
-            except OSError, message:
-                raise RuntimeError, "%s subprocess error:\n %s" % \
-                                    (cmd, str(message))
-            if err != 0:
+                outdata,errdata = util.run_command(cmd, True)
+            except RuntimeError, message:
                 Datasets._volumeslock.release()
-                raise RuntimeError, '%s failed with exit code %d\n%s' % \
-                                    (str(cmd), err, errdata)
+                raise RuntimeError, str(message)
+
             for line in outdata.rstrip().split('\n'):
                 Datasets.volumes.append(line.rstrip())
         Datasets._volumeslock.release()
@@ -319,20 +306,10 @@ class Datasets(Exception):
             snaps = []
             cmd = [ZFSCMD, "get", "-H", "-p", "-o", "value,name", "creation"]
             try:
-                p = subprocess.Popen(cmd,
-                                     stdout=subprocess.PIPE,
-                                     stderr=subprocess.PIPE,
-                                     close_fds=True)
-                outdata,errdata = p.communicate()
-                err= p.wait()
-            except OSError, message:
+                outdata,errdata = util.run_command(cmd, True)
+            except RuntimeError, message:
                 Datasets.snapshotslock.release()
-                raise RuntimeError, "%s subprocess error:\n %s" % \
-                                    (cmd, str(message))
-            if err != 0:
-                Datasets.snapshotslock.release()
-                raise RuntimeError, '%s failed with exit code %d\n%s' % \
-                                    (str(cmd), err, errdata)
+                raise RuntimeError, str(message)
             for dataset in outdata.rstrip().split('\n'):
                 if re.search("@", dataset):
                     insort(snaps, dataset.split())
@@ -626,18 +603,9 @@ class ReadableDataset:
         # simple zfs get command on the snapshot
         cmd = [ZFSCMD, "get", "-H", "-o", "name", "type", self.name]
         try:
-            p = subprocess.Popen(cmd,
-                                 stdout=subprocess.PIPE,
-                                 stderr=subprocess.PIPE,
-                                 close_fds=True)
-            outdata,errdata = p.communicate()
-            err = p.wait()
-        except OSError, message:
-            raise RuntimeError, "%s subprocess error:\n %s" % \
-                            (command, str(message))
-        if err != 0:
-            # Doesn't exist
-            return False
+            outdata,errdata = util.run_command(cmd)
+        except RuntimeError, message:
+            raise RuntimeError, str(message)
 
         result = outdata.rstrip()
         if result == self.name:
