@@ -45,7 +45,7 @@ import zfs
 import smf
 import time_slider.linux.timeslidersmf as timeslidersmf
 import time_slider.linux.autosnapsmf as autosnapsmf
-import plugin
+# import plugin
 from time_slider.linux.rbac import RBACprofile
 import util
 
@@ -99,7 +99,7 @@ class SnapshotManager(threading.Thread):
                                       '/org/opensolaris/TimeSlider/autosnap',
                                       self)
 
-        self._plugin = plugin.PluginManager(self.verbose)
+        # self._plugin = plugin.PluginManager(self.verbose)
         self.exitCode = smf.SMF_EXIT_OK
         self.refresh()
 
@@ -208,7 +208,7 @@ class SnapshotManager(threading.Thread):
             self._configure_svc_props()
             self._rebuild_schedules()
             self._update_schedules()
-            self._plugin.refresh()
+            # self._plugin.refresh()
             self._stale = False
         self._refreshLock.release()
 
@@ -451,7 +451,7 @@ class SnapshotManager(threading.Thread):
         now = long(time.time())
         while next != None and next <= now:
             label = self._take_snapshots(schedule)
-            self._plugin.execute_plugins(schedule, label)
+            # self._plugin.execute_plugins(schedule, label)
             self._refreshLock.acquire()
             self._update_schedules()
             next,schedule = self._next_due();
