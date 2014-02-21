@@ -49,6 +49,8 @@ import plugin
 from time_slider.linux.rbac import RBACprofile
 import util
 
+import time_slider.linux.timesliderconfig as timesliderconfig
+
 _MINUTE = 60
 _HOUR = _MINUTE * 60
 _DAY = _HOUR * 24
@@ -931,7 +933,10 @@ def main(argv):
 
     parser = argparse.ArgumentParser()
     parser.add_argument('--foreground', action='store_true', help='Do not daemonize', default=False)
+    parser.add_argument('--config', '-c', type=str, help='Configuration file', default='/etc/time-slider/timesliderd.conf')
     args, _ = parser.parse_known_args()
+
+    timesliderconfig.configfile = args.config
 
     # Daemonise the service.
     if not args.foreground:
