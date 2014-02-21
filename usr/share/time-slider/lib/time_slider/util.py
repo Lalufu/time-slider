@@ -35,6 +35,8 @@ def run_command(command, raise_on_try=True):
     Throws a RunTimeError if the command failed to execute or
     if the command returns a non-zero exit status.
     """
+
+    debug("Trying to run command %s" % (command), True)
     try:
         p = subprocess.Popen(command,
                              stdout=subprocess.PIPE,
