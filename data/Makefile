@@ -2,8 +2,8 @@
 top_builddir = ..
 top_srcdir = ..
 mkinstalldirs = /usr/bin/mkdir -p
-INSTALL = /usr/sbin/install
-INSTALL_DATA = ${INSTALL} -u root -g bin -m 644 -f
+INSTALL = /usr/bin/install
+INSTALL_DATA = ${INSTALL} -m 644 -t
 RM = /usr/bin/rm -f
 RMDIR = /usr/bin/rmdir
 INTLTOOL_MERGE = /usr/bin/intltool-merge

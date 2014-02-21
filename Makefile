@@ -1,10 +1,10 @@
 include VERSION
 
 mkinstalldirs = /usr/bin/mkdir -p
-INSTALL = /usr/sbin/install
-INSTALL_DATA = ${INSTALL} -u root -g bin -m 644 -f
-INSTALL_PROGRAM = ${INSTALL} -u root -g bin -f
-INSTALL_SCRIPT = ${INSTALL} -f
+INSTALL = /usr/bin/install
+INSTALL_DATA = ${INSTALL} -m 644 -t
+INSTALL_PROGRAM = ${INSTALL} -t
+INSTALL_SCRIPT = ${INSTALL} -t
 RM = /usr/bin/rm -f
 RMRF = /usr/bin/rm -Rf
 RMDIR = /usr/bin/rmdir
