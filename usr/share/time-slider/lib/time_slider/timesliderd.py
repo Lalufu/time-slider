@@ -43,7 +43,7 @@ import dbus.mainloop.glib
 import dbussvc
 import zfs
 import smf
-import timeslidersmf
+import time_slider.linux.timeslidersmf as timeslidersmf
 import autosnapsmf
 import plugin
 from time_slider.linux.rbac import RBACprofile
