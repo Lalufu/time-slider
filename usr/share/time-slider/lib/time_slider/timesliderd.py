@@ -46,7 +46,7 @@ import smf
 import timeslidersmf
 import autosnapsmf
 import plugin
-from linuxrbac import RBACprofile
+from time_slider.linux.rbac import RBACprofile
 import util
 
 _MINUTE = 60
