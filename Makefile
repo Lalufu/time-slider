@@ -70,11 +70,12 @@ install:
 	$(INSTALL_PROGRAM) $(DESTDIR)/usr/bin usr/bin/time-slider-setup
 	$(mkinstalldirs) $(DESTDIR)/usr/lib/time-slider/plugins/rsync
 	$(mkinstalldirs) $(DESTDIR)/usr/lib/time-slider/plugins/zfssend
-	$(INSTALL_PROGRAM) $(DESTDIR)/usr/lib usr/lib/time-sliderd
-	$(INSTALL_PROGRAM) $(DESTDIR)/usr/lib usr/lib/time-slider-delete
-	$(INSTALL_PROGRAM) $(DESTDIR)/usr/lib usr/lib/time-slider-notify
-	$(INSTALL_PROGRAM) $(DESTDIR)/usr/lib usr/lib/time-slider-snapshot
-	$(INSTALL_PROGRAM) $(DESTDIR)/usr/lib usr/lib/time-slider-version
+	$(mkinstalldirs) $(DESTDIR)/usr/libexec
+	$(INSTALL_PROGRAM) $(DESTDIR)/usr/libexec usr/lib/time-sliderd
+	$(INSTALL_PROGRAM) $(DESTDIR)/usr/libexec usr/lib/time-slider-delete
+	$(INSTALL_PROGRAM) $(DESTDIR)/usr/libexec usr/lib/time-slider-notify
+	$(INSTALL_PROGRAM) $(DESTDIR)/usr/libexec usr/lib/time-slider-snapshot
+	$(INSTALL_PROGRAM) $(DESTDIR)/usr/libexec usr/lib/time-slider-version
 	$(INSTALL_PROGRAM) $(DESTDIR)/usr/lib/time-slider/plugins/zfssend usr/lib/time-slider/plugins/zfssend/zfssend
 	$(INSTALL_PROGRAM) $(DESTDIR)/usr/lib/time-slider/plugins/rsync usr/lib/time-slider/plugins/rsync/rsync-trigger
 	$(INSTALL_PROGRAM) $(DESTDIR)/usr/lib/time-slider/plugins/rsync usr/lib/time-slider/plugins/rsync/rsync-backup

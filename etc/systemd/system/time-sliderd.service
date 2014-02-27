@@ -3,7 +3,7 @@ Description=Time slider daemon
 After=zfs.target
 
 [Service]
-ExecStart=/usr/lib/time-sliderd --foreground
+ExecStart=/usr/libexec/time-sliderd --foreground
 
 [Install]
 WantedBy=multi-user.target

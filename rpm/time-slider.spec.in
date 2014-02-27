@@ -36,7 +36,8 @@ rm -rf ${RPM_BUILD_ROOT}{/usr/bin,/usr/share/icons,/etc/xdg/,/usr/share/applicat
 %find_lang %{name}
 
 %files -f %{name}.lang
-%{_prefix}/lib/time-slider*
+%{_prefix}/libexec/*
+%{_prefix}/lib/time-slider
 %{_datadir}/time-slider
 %{_sysconfdir}/dbus-1/system.d/time-slider.conf
 %{_unitdir}/time-sliderd.service
