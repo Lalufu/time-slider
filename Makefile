@@ -59,6 +59,8 @@ install:
 	$(INSTALL_DATA) $(DESTDIR)/etc/dbus-1/system.d etc/dbus-1/system.d/time-slider.conf
 	$(mkinstalldirs) $(DESTDIR)/etc/xdg/autostart
 	$(INSTALL_DATA) $(DESTDIR)/etc/xdg/autostart etc/xdg/autostart/*.desktop
+	$(mkinstalldirs) $(DESTDIR)/usr/lib/systemd/system
+	$(INSTALL_DATA) $(DESTDIR)/usr/lib/systemd/system etc/systemd/system/*.service
 	$(mkinstalldirs) $(DESTDIR)/lib/svc/method
 	$(INSTALL_SCRIPT) $(DESTDIR)/lib/svc/method lib/svc/method/time-slider
 	$(INSTALL_SCRIPT) $(DESTDIR)/lib/svc/method lib/svc/method/time-slider-plugin
@@ -141,6 +143,7 @@ uninstall:
 	done
 	$(RM) $(DESTDIR)/etc/dbus-1/system.d/time-slider.conf
 	$(RM) $(DESTDIR)/etc/xdg/autostart/time-slider-notify.desktop
+	$(RM) $(DESTDIR)/usr/lib/systemd/system/time-sliderd.service
 	$(RM) $(DESTDIR)/lib/svc/method/time-slider
 	$(RM) $(DESTDIR)/lib/svc/method/time-slider-plugin
 	$(RM) $(DESTDIR)/lib/svc/method/time-slider-rsync
