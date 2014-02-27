@@ -76,7 +76,7 @@ class MyConfigParser(ConfigParser.ConfigParser):
             if not self.has_section(section):
                 self.add_section(section)
             for k,v in content.iteritems():
-                self.set(section, k, v)
+                self.set(section, k, str(v))
 
 class Config:
     def __init__(self):
