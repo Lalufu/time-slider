@@ -66,10 +66,6 @@ install:
 	$(INSTALL_DATA) $(DESTDIR)/etc/xdg/autostart etc/xdg/autostart/*.desktop
 	$(mkinstalldirs) $(DESTDIR)/usr/lib/systemd/system
 	$(INSTALL_DATA) $(DESTDIR)/usr/lib/systemd/system etc/systemd/system/*.service
-	$(mkinstalldirs) $(DESTDIR)/lib/svc/method
-	$(INSTALL_SCRIPT) $(DESTDIR)/lib/svc/method lib/svc/method/time-slider
-	$(INSTALL_SCRIPT) $(DESTDIR)/lib/svc/method lib/svc/method/time-slider-plugin
-	$(INSTALL_SCRIPT) $(DESTDIR)/lib/svc/method lib/svc/method/time-slider-rsync
 	$(mkinstalldirs) $(DESTDIR)/usr/bin
 	$(INSTALL_PROGRAM) $(DESTDIR)/usr/bin usr/bin/time-slider-setup
 	$(mkinstalldirs) $(DESTDIR)/usr/lib/time-slider/plugins/rsync
@@ -133,12 +129,6 @@ install:
 		  $(INSTALL_DATA) $(DESTDIR)/usr/share/time-slider/lib/plugin/zfssend $$file; \
 		fi; \
 	done
-	$(mkinstalldirs) $(DESTDIR)/var/svc/manifest/application
-	$(INSTALL_DATA) $(DESTDIR)/var/svc/manifest/application var/svc/manifest/application/time-slider.xml
-	$(INSTALL_DATA) $(DESTDIR)/var/svc/manifest/application var/svc/manifest/application/time-slider-plugin.xml
-	$(mkinstalldirs) $(DESTDIR)/var/svc/manifest/system/filesystem
-	$(INSTALL_DATA) $(DESTDIR)/var/svc/manifest/system/filesystem var/svc/manifest/system/filesystem/auto-snapshot.xml
-	$(PYTHON) py-compile.py
 	
 uninstall:
 	for subdir in $(SUBDIRS); do \
@@ -149,9 +139,6 @@ uninstall:
 	$(RM) $(DESTDIR)/etc/dbus-1/system.d/time-slider.conf
 	$(RM) $(DESTDIR)/etc/xdg/autostart/time-slider-notify.desktop
 	$(RM) $(DESTDIR)/usr/lib/systemd/system/time-sliderd.service
-	$(RM) $(DESTDIR)/lib/svc/method/time-slider
-	$(RM) $(DESTDIR)/lib/svc/method/time-slider-plugin
-	$(RM) $(DESTDIR)/lib/svc/method/time-slider-rsync
 	$(RM) $(DESTDIR)/usr/bin/time-slider-setup
 	$(RM) $(DESTDIR)/usr/lib/time-sliderd
 	$(RM) $(DESTDIR)/usr/lib/time-slider-delete
@@ -165,9 +152,6 @@ uninstall:
 	$(RM) $(DESTDIR)/usr/share/applications/time-slider.desktop
 	$(RM) $(DESTDIR)/usr/share/icons/hicolor/*/apps/time-slider-setup.png
 	$(RMRF) $(DESTDIR)/usr/share/time-slider
-	$(RM) $(DESTDIR)/var/svc/manifest/application/time-slider.xml
-	$(RM) $(DESTDIR)/var/svc/manifest/application/time-slider-plugin.xml
-	$(RM) $(DESTDIR)/var/svc/manifest/system/filesystem/auto-snapshot.xml
 
 
 rpm-local:
