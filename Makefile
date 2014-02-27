@@ -26,13 +26,15 @@ SUBDIRS = po data rpm
 DISTFILES = Authors \
 			VERSION \
 			ChangeLog \
+			README.md \
+			OPENSOLARIS.LICENSE \
 			Makefile \
 			py-compile.py \
 			$(SUBDIRS) \
 			lib \
 			usr \
 			var \
-			etc
+			etc 
 
 clean:
 	$(RM) usr/share/time-slider/lib/time_slider/*.pyc
