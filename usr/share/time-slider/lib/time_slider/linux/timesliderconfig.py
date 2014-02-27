@@ -94,3 +94,6 @@ class Config:
 
     def sections(self):
         return self.config.sections()
+
+def configdump():
+    MyConfigParser().write(sys.stdout)

@@ -934,7 +934,12 @@ def main(argv):
     parser = argparse.ArgumentParser()
     parser.add_argument('--foreground', action='store_true', help='Do not daemonize', default=False)
     parser.add_argument('--config', '-c', type=str, help='Configuration file', default='/etc/time-slider/timesliderd.conf')
+    parser.add_argument('--configdump', action='store_true', help='Dump default values in config file format', default=False)
     args, _ = parser.parse_known_args()
+
+    if args.configdump:
+        timesliderconfig.configdump()
+        sys.exit(smf.SMF_EXIT_OK)
 
     timesliderconfig.configfile = args.config
 
