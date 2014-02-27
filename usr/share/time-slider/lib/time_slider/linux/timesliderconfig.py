@@ -68,24 +68,29 @@ default_properties = {
     },
 }
 
+class MyConfigParser(ConfigParser.ConfigParser):
+    def __init__(self):
+        ConfigParser.ConfigParser.__init__(self)
+
+        for section, content in default_properties.iteritems():
+            if not self.has_section(section):
+                self.add_section(section)
+            for k,v in content.iteritems():
+                self.set(section, k, v)
+
 class Config:
     def __init__(self):
-        self.config = ConfigParser.ConfigParser()
+        self.config = MyConfigParser()
         self.config.read(configfile)
 
     def get(self, section, option):
         try:
             result = self.config.get(section, option)
-            sys.stderr.write('CONFIG: FILE section %s, option %s with value %s\n' % (section, option, result))
+            sys.stderr.write('CONFIG: GET section %s, option %s with value %s\n' % (section, option, result))
             return result
         except (ConfigParser.NoOptionError, ConfigParser.NoSectionError):
-            try:
-                result = default_properties[section][option]
-                sys.stderr.write('CONFIG: DEFAULT section %s, option %s with value %s\n' % (section, option, result))
-                return result
-            except KeyError:
-                sys.stderr.write('CONFIG: NOTFOUND section %s, option %s\n' % (section, option))
-                return ''
+            sys.stderr.write('CONFIG: NOTFOUND section %s, option %s\n' % (section, option))
+            return ''
 
     def sections(self):
         return self.config.sections()
