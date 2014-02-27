@@ -35,7 +35,7 @@ It is not enabled by default.
 No SysV init file is provided, but should not be too complicated to
 create.
 
-The main binary is /usr/lib/time-sliderd. By default this will daemonize
+The main binary is /usr/libexec/time-sliderd. By default this will daemonize
 itself, but a --foreground parameter has been added that will keep the
 program attached to the starting terminal.
 
@@ -59,7 +59,7 @@ be done unter Solaris by using SMF properties of the respective services.
 As Linux does not share this concept a config file located at
 /etc/time-slider/time-sliderd.conf can be used to set configuration options.
 
-To see a config file dump of the default options run "/usr/lib/time-sliderd
+To see a config file dump of the default options run "/usr/libexec/time-sliderd
 --configdump" which will print the config to stdout.
 
 No restart is necessary after changes to the config file, the new values
