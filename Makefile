@@ -3,6 +3,8 @@ ifeq ($(wildcard .git),)
 else
 	VERSION=$(shell git describe)
 endif
+MAINVER=$(shell echo $(VERSION) | cut -f1 -d'-')
+RELEASE=$(shell echo $(VERSION) | cut -f2- -d'-' | sed -e 's/-/./g')
 
 mkinstalldirs = /usr/bin/mkdir -p
 INSTALL = /usr/bin/install
@@ -12,12 +14,14 @@ INSTALL_SCRIPT = ${INSTALL} -t
 RM = /usr/bin/rm -f
 RMRF = /usr/bin/rm -Rf
 RMDIR = /usr/bin/rmdir
+RPM = /usr/bin/rpm
+RPMBUILD = /usr/bin/rpmbuild
 # Use python 2.6 if PYTHON environent is not set
 ifeq ($(strip $(PYTHON)),)
 PYTHON = /usr/bin/python2
 endif
 
-SUBDIRS = po data
+SUBDIRS = po data rpm
 
 DISTFILES = Authors \
 			VERSION \
@@ -35,6 +39,7 @@ clean:
 	$(RM) usr/share/time-slider/lib/plugin/*.pyc
 	$(RM) usr/share/time-slider/lib/plugin/rsync/*.pyc
 	$(RM) usr/share/time-slider/lib/plugin/zfssend/*.pyc
+	$(RM) rpm/time-slider.spec
 
 all:
 	for subdir in $(SUBDIRS); do \
@@ -163,3 +168,53 @@ uninstall:
 	$(RM) $(DESTDIR)/var/svc/manifest/application/time-slider.xml
 	$(RM) $(DESTDIR)/var/svc/manifest/application/time-slider-plugin.xml
 	$(RM) $(DESTDIR)/var/svc/manifest/system/filesystem/auto-snapshot.xml
+
+
+rpm-local:
+	@(if test ! -x "${RPMBUILD}"; then \
+		echo -e "\n" \
+	"*** Required util ${RPMBUILD} missing.  Please install the\n" \
+	"*** package for your distribution which provides ${RPMBUILD},\n" \
+	"*** re-run configure, and try again.\n"; \
+		exit 1; \
+	fi; \
+	mkdir -p $(rpmbuild)/TMP && \
+	mkdir -p $(rpmbuild)/BUILD && \
+	mkdir -p $(rpmbuild)/RPMS && \
+	mkdir -p $(rpmbuild)/SRPMS && \
+	mkdir -p $(rpmbuild)/SPECS && \
+	cp rpm/$(rpmspec) $(rpmbuild)/SPECS && \
+	mkdir -p $(rpmbuild)/SOURCES && \
+	cp time-slider-$(VERSION).tar.bz2 $(rpmbuild)/SOURCES)
+
+srpm: dist
+	@(dist=`$(RPM) --eval %{?dist}`; \
+	rpmpkg=time-slider-$(MAINVER)-0.$(RELEASE)$$dist*src.rpm; \
+	rpmspec=time-slider.spec; \
+	rpmbuild=`mktemp -t -d time-slider-build-$$USER-XXXXXXXX`; \
+	$(MAKE) \
+		rpmbuild="$$rpmbuild" \
+		rpmspec="$$rpmspec" \
+		rpm-local || exit 1; \
+	$(RPMBUILD) \
+		--define "_tmppath $$rpmbuild/TMP" \
+		--define "_topdir $$rpmbuild" \
+		$(def) -bs $$rpmbuild/SPECS/$$rpmspec || exit 1; \
+	cp $$rpmbuild/SRPMS/$$rpmpkg . || exit 1; \
+	rm -R $$rpmbuild)
+
+rpm: srpm
+	@(dist=`$(RPM) --eval %{?dist}`; \
+	rpmpkg=time-slider-$(MAINVER)-0.$(RELEASE)$$dist*src.rpm; \
+	rpmspec=time-slider.spec; \
+	rpmbuild=`mktemp -t -d time-slider-build-$$USER-XXXXXXXX`; \
+	$(MAKE) \
+		rpmbuild="$$rpmbuild" \
+		rpmspec="$$rpmspec" \
+		rpm-local || exit 1; \
+	${RPMBUILD} \
+		--define "_tmppath $$rpmbuild/TMP" \
+		--define "_topdir $$rpmbuild" \
+		$(def) --rebuild $$rpmpkg || exit 1; \
+	cp $$rpmbuild/RPMS/*/* . || exit 1; \
+	rm -R $$rpmbuild)

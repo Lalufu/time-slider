@@ -1,0 +1,57 @@
+%define gitver @GITVER@
+
+Name:           time-slider
+Version:        @VERSION@
+Release:        0.@RELEASE@%{?dist}
+Summary:        The Solaris ZFS time slider package
+
+License:        CDDL
+URL:            none
+Source0:        %{name}-%{gitver}.tar.bz2
+
+Requires:       python(abi) < 3.0
+Requires(post):   systemd
+Requires(preun):  systemd
+Requires(postun): systemd
+Requires(post):   systemd
+
+BuildRequires:  python(abi) < 3.0
+BuildRequires:  systemd
+
+BuildArch:      noarch
+
+%description
+The Solaris time slider package for ZFS
+
+%prep
+%setup -q -n %{name}-%{gitver}
+
+%build
+
+%install
+rm -rf ${RPM_BUILD_ROOT}
+mkdir ${RPM_BUILD_ROOT}
+make DESTDIR=${RPM_BUILD_ROOT} install
+rm -rf ${RPM_BUILD_ROOT}{/var,/lib,/usr/bin,/usr/share/icons,/etc/xdg/,/usr/share/applications}
+%find_lang %{name}
+
+%files -f %{name}.lang
+%{_prefix}/lib/time-slider*
+%{_datadir}/time-slider
+%{_sysconfdir}/dbus-1/system.d/time-slider.conf
+%{_unitdir}/time-sliderd.service
+
+%post
+# run after an installation
+%systemd_post time-sliderd.service
+
+%preun
+# run before a package is removed
+%systemd_preun time-sliderd.service
+
+%postun
+# run after a package is removed
+%systemd_postun_with_restart time-sliderd.service
+
+
+%changelog
