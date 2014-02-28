@@ -10,6 +10,7 @@ URL:            none
 Source0:        %{name}-%{gitver}.tar.bz2
 
 Requires:       python(abi) < 3.0
+Requires:         pygobject2
 Requires(post):   systemd
 Requires(preun):  systemd
 Requires(postun): systemd
