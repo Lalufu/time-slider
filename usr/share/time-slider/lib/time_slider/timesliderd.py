@@ -32,6 +32,8 @@ import datetime
 import calendar
 import signal
 import argparse
+import logging
+from logging.handlers import SysLogHandler
 
 import glib
 import gobject
@@ -85,6 +87,7 @@ class SnapshotManager(threading.Thread):
         self._zpools = []
         self._poolstatus = {}
         self._destroyedsnaps = []
+        self.logger = logging.getLogger('time-slider')
 
         # This is also checked during the refresh() method but we need
         # to know it sooner for instantiation of the PluginManager
@@ -92,7 +95,7 @@ class SnapshotManager(threading.Thread):
         try:
             self.verbose = self._smf.get_verbose()
         except RuntimeError,message:
-            sys.stderr.write("Error determing whether debugging is enabled\n")
+            self.logger.error("Error determing whether debugging is enabled")
             self.verbose = False
 
         self._dbus = dbussvc.AutoSnap(bus,
@@ -169,22 +172,22 @@ class SnapshotManager(threading.Thread):
                     self._conditionLock.wait(_MINUTE * 15)
 
             except OSError, message:
-                sys.stderr.write("Caught OSError exception in snapshot" +
-                                 " manager thread\n")
-                sys.stderr.write("Error details:\n" + \
+                self.logger.error("Caught OSError exception in snapshot" +
+                                 " manager thread")
+                self.logger.error("Error details:\n" + \
                                  "--------BEGIN ERROR MESSAGE--------\n" + \
                                  str(message) + \
-                                 "\n--------END ERROR MESSAGE--------\n")
+                                 "\n--------END ERROR MESSAGE--------")
                 self.exitCode = smf.SMF_EXIT_ERR_FATAL
                 # Exit this thread
                 break
             except RuntimeError,message:
-                sys.stderr.write("Caught RuntimeError exception in snapshot" +
-                                 " manager thread\n")
-                sys.stderr.write("Error details:\n" + \
+                self.logger.error("Caught RuntimeError exception in snapshot" +
+                                 " manager thread")
+                self.logger.error("Error details:\n" + \
                                  "--------BEGIN ERROR MESSAGE--------\n" + \
                                  str(message) + \
-                                 "\n--------END ERROR MESSAGE--------\n")
+                                 "\n--------END ERROR MESSAGE--------")
                 # Exit this thread
                 break
 
@@ -216,7 +219,7 @@ class SnapshotManager(threading.Thread):
         try:
             self.verbose = self._smf.get_verbose()
         except RuntimeError,message:
-            sys.stderr.write("Error determing whether debugging is enabled\n")
+            self.logger.error("Error determing whether debugging is enabled")
             self.verbose = False
 
         try:
@@ -228,12 +231,12 @@ class SnapshotManager(threading.Thread):
             emer = self._smf.get_cleanup_level("emergency")
             util.debug("Emergency level value is: %d%%" % emer, self.verbose)
         except RuntimeError,message:
-            sys.stderr.write("Failed to determine cleanup threshhold levels\n")
-            sys.stderr.write("Details:\n" + \
+            self.logger.error("Failed to determine cleanup threshhold levels")
+            self.logger.error("Details:\n" + \
                              "--------BEGIN ERROR MESSAGE--------\n" + \
                              str(message) + \
                              "\n---------END ERROR MESSAGE---------\n")
-            sys.stderr.write("Using factory defaults of 80%, 90% and 95%\n")
+            self.logger.error("Using factory defaults of 80%, 90% and 95%")
             #Go with defaults
             #FIXME - this would be an appropriate case to mark svc as degraded
             self._remedialCleanup = True
@@ -250,12 +253,12 @@ class SnapshotManager(threading.Thread):
             self._keepEmpties = self._smf.get_keep_empties()
         except RuntimeError,message:
             # Not fatal, just assume we delete them (default configuration)
-            sys.stderr.write("Can't determine whether to keep empty snapshots\n")
-            sys.stderr.write("Details:\n" + \
+            self.logger.error("Can't determine whether to keep empty snapshots")
+            self.logger.error("Details:\n" + \
                              "--------BEGIN ERROR MESSAGE--------\n" + \
                              str(message) + \
-                             "\n---------END ERROR MESSAGE---------\n")
-            sys.stderr.write("Assuming default value: False\n")
+                             "\n---------END ERROR MESSAGE---------")
+            self.logger.error("Assuming default value: False")
             self._keepEmpties = False
 
         # Previously, snapshot labels used the ":" character was used as a 
@@ -282,7 +285,7 @@ class SnapshotManager(threading.Thread):
                     self._zpools.append(zpool)
                 util.debug(str(zpool), self.verbose)
         except RuntimeError,message:
-            sys.stderr.write("Could not list Zpools\n")
+            self.logger.error("Could not list Zpools")
             self.exitCode = smf.SMF_EXIT_ERR_FATAL
             # Propogate exception up to thread's run() method
             raise RuntimeError,message
@@ -343,7 +346,7 @@ class SnapshotManager(threading.Thread):
                                                           schedule))
                 except RuntimeError,message:
                     self.exitCode = smf.SMF_EXIT_ERR_FATAL
-                    sys.stderr.write("Failed to list snapshots during schedule update\n")
+                    self.logger.error("Failed to list snapshots during schedule update")
                     #Propogate up to the thread's run() method
                     raise RuntimeError,message
 
@@ -361,9 +364,9 @@ class SnapshotManager(threading.Thread):
                     totalinterval = intervals[interval] * period
                 except KeyError:
                     self.exitCode = smf.SMF_EXIT_ERR_CONFIG
-                    sys.stderr.write(schedule + \
+                    self.logger.error(schedule + \
                                       " schedule has invalid interval: " + \
-                                      "'%s\'\n" % interval)
+                                      "'%s\'" % interval)
                     #Propogate up to thread's run() method
                     raise RuntimeError
                 if [schedule,interval,period,keep] in self._defaultSchedules:
@@ -474,7 +477,7 @@ class SnapshotManager(threading.Thread):
         except RuntimeError, message:
             # Write an error message, set the exit code and pass it up the
             # stack so the thread can terminate
-            sys.stderr.write("Failed to create snapshots for schedule: %s\n" \
+            self.logger.error("Failed to create snapshots for schedule: %s" \
                              % (schedule))
             self.exitCode = smf.SMF_EXIT_MON_DEGRADE
             raise RuntimeError,message
@@ -508,7 +511,7 @@ class SnapshotManager(threading.Thread):
             # while iterating through it.
             remainingsnaps = snaps[:]
         except RuntimeError,message:
-            sys.stderr.write("Failed to list snapshots during snapshot cleanup\n")
+            self.logger.error("Failed to list snapshots during snapshot cleanup")
             self.exitCode = smf.SMF_EXIT_ERR_FATAL
             raise RuntimeError,message
 
@@ -521,7 +524,7 @@ class SnapshotManager(threading.Thread):
                 try:
                     snapshot = zfs.Snapshot(snapname)
                 except Exception,message:
-                    sys.stderr.write(str(message))
+                    self.logger.error(str(message))
                     # Not fatal, just skip to the next snapshot
                     continue
 
@@ -532,15 +535,15 @@ class SnapshotManager(threading.Thread):
                         try:
                             snapshot.destroy()
                         except RuntimeError,message:
-                            sys.stderr.write("Failed to destroy snapshot: " +
-                                             snapname + "\n")
+                            self.logger.error("Failed to destroy snapshot: " +
+                                             snapname)
                             self.exitCode = smf.SMF_EXIT_MON_DEGRADE
                             # Propogate exception so thread can exit
                             raise RuntimeError,message
                         remainingsnaps.remove(snapname)
                 except RuntimeError,message:
-                    sys.stderr.write("Can not determine used size of: " + \
-                                     snapname + "\n")
+                    self.logger.error("Can not determine used size of: " + \
+                                     snapname)
                     self.exitCode = smf.SMF_EXIT_MON_DEGRADE
                     #Propogate the exception to the thead run() method
                     raise RuntimeError,message
@@ -558,15 +561,15 @@ class SnapshotManager(threading.Thread):
             try:
                 snapshot = zfs.Snapshot(remainingsnaps[counter])
             except Exception,message:
-                    sys.stderr.write(str(message))
+                    self.logger.error(str(message))
                     # Not fatal, just skip to the next snapshot
                     counter += 1
                     continue
             try:
                 snapshot.destroy()
             except RuntimeError,message:
-                sys.stderr.write("Failed to destroy snapshot: " +
-                                 snapshot.name + "\n")
+                self.logger.error("Failed to destroy snapshot: " +
+                                 snapshot.name)
                 self.exitCode = smf.SMF_EXIT_ERR_FATAL
                 # Propogate exception so thread can exit
                 raise RuntimeError,message
@@ -584,8 +587,8 @@ class SnapshotManager(threading.Thread):
                 dataset = zfs.ReadWritableDataset(name)
                 self._prune_snapshots(dataset, schedule)
         except RuntimeError,message:
-            sys.stderr.write("Error listing datasets during " + \
-                             "removal of expired snapshots\n")
+            self.logger.error("Error listing datasets during " + \
+                             "removal of expired snapshots")
             self.exitCode = smf.SMF_EXIT_ERR_FATAL
             # Propogate up to thread's run() method
             raise RuntimeError,message
@@ -623,8 +626,8 @@ class SnapshotManager(threading.Thread):
                                 self._cleanupLock.release()
                                 return True
                 except RuntimeError, message:
-                    sys.stderr.write("Error checking zpool capacity of: " + \
-                                     zpool.name + "\n")
+                    self.logger.error("Error checking zpool capacity of: " + \
+                                     zpool.name)
                     self._cleanupLock.release()
                     self.exitCode = smf.SMF_EXIT_ERR_FATAL
                     # Propogate up to thread's run() mehod.
@@ -660,9 +663,9 @@ class SnapshotManager(threading.Thread):
             # This also catches exceptions thrown from _run_<level>_cleanup()
             # and _run_cleanup() in methods called by _perform_cleanup()
             except RuntimeError,message:
-                sys.stderr.write("Remedial space cleanup failed because " + \
+                self.logger.error("Remedial space cleanup failed because " + \
                                  "of failure to determinecapacity of: " + \
-                                 zpool.name + "\n")
+                                 zpool.name)
                 self.exitCode = smf.SMF_EXIT_ERR_FATAL
                 self._cleanupLock.release()
                 # Propogate up to thread's run() method.
@@ -683,7 +686,7 @@ class SnapshotManager(threading.Thread):
         # Avoid needless list iteration for non-debug mode
         if self.verbose == True and len(self._destroyedsnaps) > 0:
             for snap in self._destroyedsnaps:
-                sys.stderr.write("\t%s\n" % snap)
+                self.logger.error("\t%s" % snap)
         self._cleanupLock.release()
 
     def _run_warning_cleanup(self, zpool):
@@ -730,12 +733,12 @@ class SnapshotManager(threading.Thread):
         try:
             clonedsnaps = self._datasets.list_cloned_snapshots()
         except RuntimeError,message:
-                sys.stderr.write("Error (non-fatal) listing cloned snapshots" +
-                                 " while recovering pool capacity\n")
-                sys.stderr.write("Error details:\n" + \
+                self.logger.error("Error (non-fatal) listing cloned snapshots" +
+                                 " while recovering pool capacity")
+                self.logger.error("Error details:\n" + \
                                  "--------BEGIN ERROR MESSAGE--------\n" + \
                                  str(message) + \
-                                 "\n--------END ERROR MESSAGE--------\n")    
+                                 "\n--------END ERROR MESSAGE--------")    
 
         # Build a list of snapshots in the given schedule, that are not
         # cloned, and sort the result in reverse chronological order.
@@ -746,15 +749,15 @@ class SnapshotManager(threading.Thread):
                             if not s in clonedsnaps]
             snapshots.reverse()
         except RuntimeError,message:
-            sys.stderr.write("Error listing snapshots" +
-                             " while recovering pool capacity\n")
+            self.logger.error("Error listing snapshots" +
+                             " while recovering pool capacity")
             self.exitCode = smf.SMF_EXIT_ERR_FATAL
             # Propogate the error up to the thread's run() method.
             raise RuntimeError,message
    
         while zpool.get_capacity() > threshold:
             if len(snapshots) == 0:
-                syslog.syslog(syslog.LOG_NOTICE,
+                self.logger.info( \
                               "No more %s snapshots left" \
                                % schedule)
                 return
@@ -791,9 +794,9 @@ class SnapshotManager(threading.Thread):
                 # Would be nice to be able to mark service as degraded here
                 # but it's better to try to continue on rather than to give
                 # up alltogether (SMF maintenance state)
-                sys.stderr.write("Warning: Cleanup failed to destroy: %s\n" % \
+                self.logger.error("Warning: Cleanup failed to destroy: %s" % \
                                  (snapshot.name))
-                sys.stderr.write("Details:\n%s\n" % (str(message)))
+                self.logger.error("Details:\n%s" % (str(message)))
             else:
                 self._destroyedsnaps.append(snapname)
             # Give zfs some time to recalculate.
@@ -803,28 +806,27 @@ class SnapshotManager(threading.Thread):
         for zpool in self._zpools:
             status = self._poolstatus[zpool.name]
             if status == 4:
-                syslog.syslog(syslog.LOG_EMERG,
-                              "%s is over %d%% capacity. " \
+                self.logger.critical( \
                               "All automatic snapshots were destroyed" \
                                % (zpool.name, self._emergencyLevel))
             elif status == 3:
-                syslog.syslog(syslog.LOG_ALERT,
+                self.logger.error( \
                               "%s exceeded %d%% capacity. " \
                               "Automatic snapshots over 1 hour old were destroyed" \
                                % (zpool.name, self._emergencyLevel))
             elif status == 2:
-                syslog.syslog(syslog.LOG_CRIT,
+                self.logger.critical( \
                               "%s exceeded %d%% capacity. " \
                               "Weekly, hourly and daily automatic snapshots were destroyed" \
                                % (zpool.name, self._criticalLevel))                             
             elif status == 1:
-                syslog.syslog(syslog.LOG_WARNING,
+                self.logger.warning( \
                               "%s exceeded %d%% capacity. " \
                               "Hourly and daily automatic snapshots were destroyed" \
                                % (zpool.name, self._warningLevel))
 
         if len(self._destroyedsnaps) > 0:
-            syslog.syslog(syslog.LOG_NOTICE,
+            self.logger.warning( \
                           "%d automatic snapshots were destroyed" \
                            % len(self._destroyedsnaps))
 
@@ -852,10 +854,11 @@ class SnapshotManager(threading.Thread):
 
 
 def monitor_threads(snapthread):
+    logger = logging.getLogger('time-slider')
     if snapthread.is_alive():
         return True
     else:
-        sys.stderr.write("Snapshot monitor thread exited.\n")
+        logger.error("Snapshot monitor thread exited.")
         if snapthread.exitCode == smf.SMF_EXIT_MON_DEGRADE:
             # FIXME - it would be nicer to mark the service as degraded than
             # go into maintenance state for some situations such as a
@@ -878,8 +881,8 @@ def monitor_threads(snapthread):
             sys.exit(smf.SMF_EXIT_ERR_FATAL)
             return False
         else:
-            sys.stderr.write("Snapshot monitor thread exited abnormally\n")
-            sys.stderr.write("Exit code: %d\n" % (snapthread.exitCode))
+            logger.error("Snapshot monitor thread exited abnormally")
+            logger.error("Exit code: %d" % (snapthread.exitCode))
             #subprocess.call(["/usr/sbin/svcadm", "mark", "maintenance",
             #                 os.getenv("SMF_FMRI")])
             sys.exit(smf.SMF_EXIT_ERR_FATAL)
@@ -937,6 +940,16 @@ def main(argv):
     parser.add_argument('--configdump', action='store_true', help='Dump default values in config file format', default=False)
     args, _ = parser.parse_known_args()
 
+    logger = logging.getLogger('time-slider')
+    logger.setLevel(logging.DEBUG)
+    if args.foreground:
+        handler = logging.StreamHandler()
+    else:
+        handler = SysLogHandler(address='/dev/log')
+    handler.setLevel(logging.DEBUG)
+    handler.setFormatter(logging.Formatter('%(asctime)s %(levelname)s: %(message)s', '%b %d %H:%M:%S time-sliderd:'))
+    logger.addHandler(handler)
+
     if args.configdump:
         timesliderconfig.configdump()
         sys.exit(smf.SMF_EXIT_OK)
@@ -950,7 +963,6 @@ def main(argv):
     # The user security attributes checked are the following:
     # Note that UID == 0 will match any profile search so
     # no need to check it explicitly.
-    syslog.openlog("time-sliderd", 0, syslog.LOG_DAEMON)
     rbacp = RBACprofile()
     if rbacp.has_profile("ZFS File System Management"):
 
@@ -976,11 +988,9 @@ def main(argv):
             mainloop.quit()
             sys.exit(smf.SMF_EXIT_OK)
     else:
-        syslog.syslog(syslog.LOG_ERR,
+        logger.error( \
                "%s has insufficient privileges to run time-sliderd!" \
                % rbacp.name)
-        syslog.closelog()    
         sys.exit(smf.SMF_EXIT_ERR_PERM)
-    syslog.closelog()
     sys.exit(smf.SMF_EXIT_OK)
 
