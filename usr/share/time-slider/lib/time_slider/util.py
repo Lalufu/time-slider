@@ -27,6 +27,7 @@ import syslog
 import statvfs
 import math
 import gio
+import logging
 
 def run_command(command, raise_on_try=True):
     """
@@ -60,8 +61,7 @@ def debug(message, verbose):
     context using syslog.openlog()
     """
     if verbose:
-        syslog.syslog(syslog.LOG_NOTICE, message + '\n')
-        sys.stderr.write(message + '\n')
+        logging.getLogger('time-slider').debug(message)
 
 def log_error(loglevel, message):
     """
@@ -69,8 +69,7 @@ def log_error(loglevel, message):
     Requires caller to have first opened a syslog session
     using syslog.openlog()
     """
-    syslog.syslog(loglevel, message + '\n')
-    sys.stderr.write(message + '\n')
+    logging.getLogger('time-slider').error(message)
 
 def get_filesystem_capacity(path):
     """Returns filesystem space usage of path as an integer percentage of
