@@ -22,6 +22,7 @@
 
 import ConfigParser
 import sys
+import time_slider.util as util
 
 # Default config file name position
 configfile = "/etc/time-slider/timesliderd.conf"
@@ -86,10 +87,10 @@ class Config:
     def get(self, section, option):
         try:
             result = self.config.get(section, option)
-            sys.stderr.write('CONFIG: GET section %s, option %s with value %s\n' % (section, option, result))
+            util.debug('CONFIG: GET section %s, option %s with value %s\n' % (section, option, result), 1)
             return result
         except (ConfigParser.NoOptionError, ConfigParser.NoSectionError):
-            sys.stderr.write('CONFIG: NOTFOUND section %s, option %s\n' % (section, option))
+            util.debug('CONFIG: NOTFOUND section %s, option %s\n' % (section, option), 1)
             return ''
 
     def sections(self):
