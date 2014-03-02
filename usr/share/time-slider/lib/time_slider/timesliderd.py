@@ -944,7 +944,7 @@ def main(argv):
     logger.setLevel(logging.DEBUG)
     if args.foreground:
         handler = logging.StreamHandler()
-        handler.setFormatter(logging.Formatter('%(message)s')
+        handler.setFormatter(logging.Formatter('%(message)s'))
     else:
         handler = SysLogHandler(address='/dev/log')
         handler.setFormatter(logging.Formatter('%(asctime)s %(levelname)s: %(message)s', '%b %d %H:%M:%S time-sliderd:'))
