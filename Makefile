@@ -18,7 +18,7 @@ RPM = /usr/bin/rpm
 RPMBUILD = /usr/bin/rpmbuild
 # Use python 2.6 if PYTHON environent is not set
 ifeq ($(strip $(PYTHON)),)
-PYTHON = /usr/bin/python2
+PYTHON = /usr/bin/python3
 endif
 
 SUBDIRS = po data rpm
