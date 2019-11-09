@@ -20,7 +20,7 @@
 # CDDL HEADER END
 #
 
-import timesliderconfig
+from . import timesliderconfig
 import time_slider.smf as base
 
 class SMFInstance(base.SMFInstance):
@@ -41,5 +41,5 @@ class SMFInstance(base.SMFInstance):
 
 if __name__ == "__main__":
   S = SMFInstance('svc:/application/time-slider')
-  print S
+  print(S)
 

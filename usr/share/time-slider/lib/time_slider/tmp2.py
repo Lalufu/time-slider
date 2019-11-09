@@ -73,8 +73,8 @@ GETTEXT_DOMAIN = 'time-slider'
 gtk.glade.bindtextdomain(GETTEXT_DOMAIN, LOCALE_PATH)
 gtk.glade.textdomain(GETTEXT_DOMAIN)
 
-import zfs
-from rbac import RBACprofile
+from . import zfs
+from .rbac import RBACprofile
 
 class RsyncBackup:
 
@@ -91,7 +91,7 @@ class RsyncBackup:
           self.creationtime = creationtime
           try:
               tm = time.localtime(self.creationtime)
-              self.creationtime_str = unicode(time.strftime ("%c", tm),
+              self.creationtime_str = str(time.strftime ("%c", tm),
                          locale.getpreferredencoding()).encode('utf-8')
           except:
               self.creationtime_str = time.ctime(self.creationtime)
@@ -131,22 +131,21 @@ class RsyncBackup:
 	      		     rsyncsmf.RSYNCLOCKSUFFIX)
 
 	if not os.path.exists(lockFileDir):
-	  os.makedirs(lockFileDir, 0755)
+	  os.makedirs(lockFileDir, 0o755)
 	
 	lockFile = os.path.join(lockFileDir, self.snaplabel + ".lock")
 	try:
 	  lockFp = open(lockFile, 'w')
 	  fcntl.flock(lockFp, fcntl.LOCK_EX | fcntl.LOCK_NB)
 	except IOError:
-	  raise RuntimeError, \
-	  "couldn't delete %s, already used by another process" % self.mountpoint
+	  raise RuntimeError("couldn't delete %s, already used by another process" % self.mountpoint)
 	  return 
 
 	trashDir = os.path.join(self.rsync_dir,
 	      		  self.fsname,
 	      		  rsyncsmf.RSYNCTRASHSUFFIX)
 	if not os.path.exists(trashDir):
-	  os.makedirs(trashDir, 0755)
+	  os.makedirs(trashDir, 0o755)
 
 	backupTrashDir = os.path.join (self.rsync_dir,
 	      			 self.fsname,
@@ -178,6 +177,6 @@ for root, dirs, files in os.walk(rsyncsmf.RsyncSMF("%s:rsync" %(plugin.PLUGINBAS
                     insort(backupDirs, os.path.abspath(backupDir))
 
 
-print backupDirs
+print(backupDirs)
 
 

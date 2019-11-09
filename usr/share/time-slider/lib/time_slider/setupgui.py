@@ -24,9 +24,9 @@ import sys
 import os
 import subprocess
 import threading
-import util
-import smf
-from autosnapsmf import enable_default_schedules, disable_default_schedules
+from . import util
+from . import smf
+from .autosnapsmf import enable_default_schedules, disable_default_schedules
 
 from os.path import abspath, dirname, join, pardir
 sys.path.insert(0, join(dirname(__file__), pardir, "plugin"))
@@ -53,7 +53,7 @@ import dbus
 import dbus.service
 import dbus.mainloop
 import dbus.mainloop.glib
-import dbussvc
+from . import dbussvc
 
 
 # This is the rough guess ratio used for rsync backup device size
@@ -79,9 +79,9 @@ GETTEXT_DOMAIN = 'time-slider'
 gtk.glade.bindtextdomain(GETTEXT_DOMAIN, LOCALE_PATH)
 gtk.glade.textdomain(GETTEXT_DOMAIN)
 
-import zfs
-from timeslidersmf import TimeSliderSMF
-from rbac import RBACprofile
+from . import zfs
+from .timeslidersmf import TimeSliderSMF
+from .rbac import RBACprofile
 
 
 class FilesystemIntention:
@@ -310,7 +310,7 @@ class SetupManager:
         # Initialise SMF service instance state.
         try:
             self._sliderSMF = TimeSliderSMF()
-        except RuntimeError,message:
+        except RuntimeError as message:
             self._xml.get_widget("toplevel").set_sensitive(False)
             dialog = gtk.MessageDialog(self._xml.get_widget("toplevel"),
                                        0,
@@ -1187,9 +1187,9 @@ class SetupManager:
                                           rsyncsmf.RSYNCCONFIGFILE)
                 newKey = generate_random_key()
                 try:
-                    origmask = os.umask(0222)
+                    origmask = os.umask(0o222)
                     if not os.path.exists(nodePath):
-                        os.makedirs(nodePath, 0755)
+                        os.makedirs(nodePath, 0o755)
                     f = open(configPath, 'w')
                     f.write("target_key=%s\n" % (newKey))
                     f.close()
@@ -1268,7 +1268,7 @@ class EnableService(threading.Thread):
             self._setupManager.setup_rsync_config()
             self._setupManager.setup_services()
             self._setupManager.broadcast_changes()
-        except RuntimeError, message:
+        except RuntimeError as message:
             sys.stderr.write(str(message))
 
 def generate_random_key(length=32):

@@ -21,8 +21,8 @@
 #
 
 import time_slider.autosnapsmf as base
-import smf
-from timesliderconfig import Config
+from . import smf
+from .timesliderconfig import Config
 
 SNAPLABELPREFIX = base.SNAPLABELPREFIX
 
@@ -49,11 +49,11 @@ def get_default_schedules():
             instance = AutoSnap(s)
             try:
                 _defaultSchedules.append(instance.get_schedule_details())
-            except RuntimeError, message:
-                raise RuntimeError, "Error getting schedule details for " + \
+            except RuntimeError as message:
+                raise RuntimeError("Error getting schedule details for " + \
                                     "default auto-snapshot SMF instance:" + \
                                     "\n\t" + instanceName + "\nDetails:\n" + \
-                                    str(message)
+                                    str(message))
     return _defaultSchedules
 
 
@@ -79,11 +79,11 @@ def get_custom_schedules():
                     instance = AutoSnap(label)
                     try:
                         _customSchedules.append(instance.get_schedule_details())
-                    except RuntimeError, message:
-                        raise RuntimeError, "Error getting schedule details " + \
+                    except RuntimeError as message:
+                        raise RuntimeError("Error getting schedule details " + \
                                             "for custom auto-snapshot SMF " + \
                                             "instance:\n\t" + label + "\n" + \
-                                            "Details:\n" + str(message)
+                                            "Details:\n" + str(message))
     return _customSchedules
 
 class AutoSnap(base.AutoSnap):
@@ -126,4 +126,4 @@ if __name__ == "__main__":
     defaults = get_default_schedules()
     for sched in defaults:
         S = AutoSnap(sched[0])
-        print S.get_schedule_details()
+        print(S.get_schedule_details())

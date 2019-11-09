@@ -21,7 +21,7 @@
 #
 
 import time_slider.timeslidersmf as base
-import smf
+from . import smf
 import threading
 
 class TimeSliderSMF(base.TimeSliderSMF):
@@ -62,4 +62,4 @@ base.TimeSliderSMF.__bases__ = (smf.SMFInstance,)
 
 if __name__ == "__main__":
   S = TimeSliderSMF('svc:/application/time-slider')
-  print S
+  print(S)

@@ -132,7 +132,7 @@ class File:
   COLUMN_STRING_DATE,
   COLUMN_DATE,
   COLUMN_SIZE
-) = range (5)
+) = list(range(5))
 
 
 

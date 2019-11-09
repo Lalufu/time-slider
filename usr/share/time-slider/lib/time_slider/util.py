@@ -24,7 +24,6 @@ import os
 import subprocess
 import sys
 import syslog
-import statvfs
 import math
 import gio
 import logging
@@ -35,6 +34,8 @@ def run_command(command, raise_on_try=True):
     Returns a tuple of standard out and stander error.
     Throws a RunTimeError if the command failed to execute or
     if the command returns a non-zero exit status.
+
+    Assume the output is UTF-8 encoded
     """
 
     debug("Trying to run command %s" % (command), True)
@@ -43,14 +44,14 @@ def run_command(command, raise_on_try=True):
                              stdout=subprocess.PIPE,
                              stderr=subprocess.PIPE,
                              close_fds=True)
-        outdata,errdata = p.communicate()
+        outdata,errdata = (x.decode('utf-8') for x in p.communicate())
         err = p.wait()
-    except OSError, message:
-        raise RuntimeError, "%s subprocess error:\n %s" % \
-                            (command, str(message))
+    except OSError as message:
+        raise RuntimeError("%s subprocess error:\n %s" % \
+                            (command, str(message)))
     if err != 0 and raise_on_try:
-        raise RuntimeError, '%s failed with exit code %d\n%s' % \
-                            (str(command), err, errdata)
+        raise RuntimeError('%s failed with exit code %d\n%s' % \
+                            (str(command), err, errdata))
     return outdata,errdata
 
 def debug(message, verbose):
@@ -79,8 +80,8 @@ def get_filesystem_capacity(path):
         raise ValueError("%s is a non-existent path" % path)
     f = os.statvfs(path)
 
-    unavailBlocks = f[statvfs.F_BLOCKS] - f[statvfs.F_BAVAIL]
-    capacity = int(math.ceil(100 * (unavailBlocks / float(f[statvfs.F_BLOCKS]))))
+    unavailBlocks = f.f_blocks - f.f_bavail
+    capacity = int(math.ceil(100 * (unavailBlocks / float(f.f_blocks))))
 
     return capacity
 
@@ -89,8 +90,8 @@ def get_available_size(path):
     if not os.path.exists(path):
         raise ValueError("%s is a non-existent path" % path)
     f = os.statvfs(path)
-    free = long(f[statvfs.F_BAVAIL] * f[statvfs.F_FRSIZE])
-    
+    free = int(f.f_bavail * f.f_frsize)
+
     return free
 
 def get_used_size(path):
@@ -100,8 +101,8 @@ def get_used_size(path):
         raise ValueError("%s is a non-existent path" % path)
     f = os.statvfs(path)
 
-    unavailBlocks = f[statvfs.F_BLOCKS] - f[statvfs.F_BAVAIL]
-    used = long(unavailBlocks * f[statvfs.F_FRSIZE])
+    unavailBlocks = f.f_blocks - f.f_bavail
+    used = int(unavailBlocks * f.f_frsize)
 
     return used
 
@@ -111,7 +112,7 @@ def get_total_size(path):
     if not os.path.exists(path):
         raise ValueError("%s is a non-existent path" % path)
     f = os.statvfs(path)
-    total = long(f[statvfs.F_BLOCKS] * f[statvfs.F_FRSIZE])
+    total = int(f.f_blocks * f.f_frsize)
 
     return total
 

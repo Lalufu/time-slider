@@ -62,8 +62,8 @@ GETTEXT_DOMAIN = 'time-slider'
 gtk.glade.bindtextdomain(GETTEXT_DOMAIN, LOCALE_PATH)
 gtk.glade.textdomain(GETTEXT_DOMAIN)
 
-import zfs
-from rbac import RBACprofile
+from . import zfs
+from .rbac import RBACprofile
 
 class SnapshotNowDialog:
 
@@ -219,6 +219,6 @@ def main(argv):
                                        "administrative priviliges."
                                        "\n\nConsult your system administrator "))
         dialog.run()
-        print argv + "is not a valid executable path"
+        print(argv + "is not a valid executable path")
         sys.exit(1)
 

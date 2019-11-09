@@ -22,8 +22,8 @@
 
 import subprocess
 import threading
-import smf
-import util
+from . import smf
+from . import util
 
 #SMF EXIT CODES
 SMF_EXIT_OK          = 0
@@ -150,5 +150,5 @@ class TimeSliderSMF(smf.SMFInstance):
 
 if __name__ == "__main__":
   S = TimeSliderSMF('svc:/application/time-slider')
-  print S
+  print(S)
 

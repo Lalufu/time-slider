@@ -73,8 +73,8 @@ GETTEXT_DOMAIN = 'time-slider'
 gtk.glade.bindtextdomain(GETTEXT_DOMAIN, LOCALE_PATH)
 gtk.glade.textdomain(GETTEXT_DOMAIN)
 
-import zfs
-from rbac import RBACprofile
+from . import zfs
+from .rbac import RBACprofile
 
 class RsyncBackup:
 
@@ -91,7 +91,7 @@ class RsyncBackup:
             self.creationtime = creationtime
             try:
                 tm = time.localtime(self.creationtime)
-                self.creationtime_str = unicode(time.strftime ("%c", tm),
+                self.creationtime_str = str(time.strftime ("%c", tm),
                            locale.getpreferredencoding()).encode('utf-8')
             except:
                 self.creationtime_str = time.ctime(self.creationtime)
@@ -133,22 +133,21 @@ class RsyncBackup:
                              rsyncsmf.RSYNCLOCKSUFFIX)
 
         if not os.path.exists(lockFileDir):
-            os.makedirs(lockFileDir, 0755)
+            os.makedirs(lockFileDir, 0o755)
 
         lockFile = os.path.join(lockFileDir, self.snaplabel + ".lock")
         try:
             lockFp = open(lockFile, 'w')
             fcntl.flock(lockFp, fcntl.LOCK_EX | fcntl.LOCK_NB)
         except IOError:
-            raise RuntimeError, \
-            "couldn't delete %s, already used by another process" % self.mountpoint
+            raise RuntimeError("couldn't delete %s, already used by another process" % self.mountpoint)
             return
 
         trashDir = os.path.join(self.rsync_dir,
                           self.fsname,
                           rsyncsmf.RSYNCTRASHSUFFIX)
         if not os.path.exists(trashDir):
-            os.makedirs(trashDir, 0755)
+            os.makedirs(trashDir, 0o755)
 
         backupTrashDir = os.path.join (self.rsync_dir,
                                  self.fsname,
@@ -207,7 +206,7 @@ class DeleteSnapManager:
     def initialise_view(self):
         if len(self.shortcircuit) == 0:
             # Set TreeViews
-            self.liststorefs = gtk.ListStore(str, str, str, str, str, long,
+            self.liststorefs = gtk.ListStore(str, str, str, str, str, int,
                                              gobject.TYPE_PYOBJECT)
             list_filter = self.liststorefs.filter_new()
             list_sort = gtk.TreeModelSort(list_filter)
@@ -441,7 +440,7 @@ class DeleteSnapManager:
         for snapshot in newlist:
             try:
                 tm = time.localtime(snapshot.get_creation_time())
-                t = unicode(time.strftime ("%c", tm),
+                t = str(time.strftime ("%c", tm),
                     locale.getpreferredencoding()).encode('utf-8')
             except:
                 t = time.ctime(snapshot.get_creation_time())
@@ -711,7 +710,7 @@ class DeleteSnapshots(threading.Thread):
             if backup.exists():
                 try:
                     backup.destroy ()
-                except RuntimeError, inst:
+                except RuntimeError as inst:
                     self.errors.append(str(inst))
             deleted += 1
             self.progress = deleted / (total * 1.0)
@@ -752,5 +751,5 @@ def main(argv):
                                        "administrative priviliges."
                                        "\n\nConsult your system administrator "))
         dialog.run()
-        print argv + "is not a valid executable path"
+        print(argv + "is not a valid executable path")
         sys.exit(1)

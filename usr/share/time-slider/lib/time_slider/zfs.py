@@ -25,7 +25,7 @@ import re
 import threading
 from bisect import insort, bisect_left, bisect_right
 
-import util
+from . import util
 
 BYTESPERMB = 1048576
 
@@ -38,14 +38,14 @@ ZPOOLCMD = "/usr/sbin/zpool"
 class Datasets(Exception):
     """
     Container class for all zfs datasets. Maintains a centralised
-    list of datasets (generated on demand) and accessor methods. 
+    list of datasets (generated on demand) and accessor methods.
     Also allows clients to notify when a refresh might be necessary.
     """
     # Class wide instead of per-instance in order to avoid duplication
     filesystems = None
     volumes = None
     snapshots = None
-    
+
     # Mutex locks to prevent concurrent writes to above class wide
     # dataset lists.
     _filesystemslock = threading.Lock()
@@ -56,7 +56,7 @@ class Datasets(Exception):
         """
         Create a complete set of snapshots as if this were
         for a standard zfs-auto-snapshot operation.
-        
+
         Keyword arguments:
         label:
             A label to apply to the snapshot name. Cannot be None.
@@ -64,7 +64,7 @@ class Datasets(Exception):
             A string indicating one of the standard auto-snapshot schedules
             tags to check (eg. "frequent" for will map to the tag:
             com.sun:auto-snapshot:frequent). If specified as a zfs property
-            on a zfs dataset, the property corresponding to the tag will 
+            on a zfs dataset, the property corresponding to the tag will
             override the wildcard property: "com.sun:auto-snapshot"
             Default value = None
         """
@@ -86,7 +86,7 @@ class Datasets(Exception):
             outdata,errdata = util.run_command(scmd)
             for line in outdata.rstrip().split('\n'):
                 line = line.split()
-                # Skip over unset values. 
+                # Skip over unset values.
                 if line[1] == "-":
                     continue
                 # Add to everything list. This is used later
@@ -104,7 +104,7 @@ class Datasets(Exception):
             line = line.split()
             idx = bisect_right(everything, line[0])
             if len(everything) == 0 or \
-               everything[idx-1] != line[0]:           
+               everything[idx-1] != line[0]:
                 # Dataset is neither included nor excluded so far
                 if line[1] == "-":
                     continue
@@ -117,7 +117,7 @@ class Datasets(Exception):
         # Now figure out what can be recursively snapshotted and what
         # must be singly snapshotted. Single snapshot restrictions apply
         # to those datasets who have a child in the excluded list.
-        # 'included' is sorted in reverse alphabetical order. 
+        # 'included' is sorted in reverse alphabetical order.
         for datasetname in included:
             excludedchild = False
             idx = bisect_right(everything, datasetname)
@@ -173,7 +173,7 @@ class Datasets(Exception):
             A string indicating one of the standard auto-snapshot schedules
             tags to check (eg. "frequent" will map to the tag:
             com.sun:auto-snapshot:frequent). If specified as a zfs property
-            on a zfs dataset, the property corresponding to the tag will 
+            on a zfs dataset, the property corresponding to the tag will
             override the wildcard property: "com.sun:auto-snapshot"
             Default value = None
         """
@@ -216,7 +216,7 @@ class Datasets(Exception):
     def list_filesystems(self, pattern = None):
         """
         List pattern matching filesystems sorted by name.
-        
+
         Keyword arguments:
         pattern -- Filter according to pattern (default None)
         """
@@ -230,13 +230,13 @@ class Datasets(Exception):
                    "-o", "name,mountpoint", "-s", "name"]
             try:
                 outdata,errdata = util.run_command(cmd, True)
-            except OSError, message:
-                raise RuntimeError, "%s subprocess error:\n %s" % \
-                                    (cmd, str(message))
+            except OSError as message:
+                raise RuntimeError("%s subprocess error:\n %s" % \
+                                    (cmd, str(message)))
             if err != 0:
                 Datasets._filesystemslock.release()
-                raise RuntimeError, '%s failed with exit code %d\n%s' % \
-                                    (str(cmd), err, errdata)
+                raise RuntimeError('%s failed with exit code %d\n%s' % \
+                                    (str(cmd), err, errdata))
             for line in outdata.rstrip().split('\n'):
                 line = line.rstrip().split()
                 Datasets.filesystems.append([line[0], line[1]])
@@ -258,7 +258,7 @@ class Datasets(Exception):
     def list_volumes(self, pattern = None):
         """
         List pattern matching volumes sorted by name.
-        
+
         Keyword arguments:
         pattern -- Filter according to pattern (default None)
         """
@@ -270,9 +270,9 @@ class Datasets(Exception):
                    "-o", "name", "-s", "name"]
             try:
                 outdata,errdata = util.run_command(cmd, True)
-            except RuntimeError, message:
+            except RuntimeError as message:
                 Datasets._volumeslock.release()
-                raise RuntimeError, str(message)
+                raise RuntimeError(str(message))
 
             for line in outdata.rstrip().split('\n'):
                 Datasets.volumes.append(line.rstrip())
@@ -295,7 +295,7 @@ class Datasets(Exception):
         """
         List pattern matching snapshots sorted by creation date.
         Oldest listed first
-        
+
         Keyword arguments:
         pattern -- Filter according to pattern (default None)
         """
@@ -307,14 +307,14 @@ class Datasets(Exception):
             cmd = [ZFSCMD, "get", "-H", "-p", "-o", "value,name", "creation"]
             try:
                 outdata,errdata = util.run_command(cmd, True)
-            except RuntimeError, message:
+            except RuntimeError as message:
                 Datasets.snapshotslock.release()
-                raise RuntimeError, str(message)
+                raise RuntimeError(str(message))
             for dataset in outdata.rstrip().split('\n'):
                 if re.search("@", dataset):
                     insort(snaps, dataset.split())
             for snap in snaps:
-                Datasets.snapshots.append([snap[1], long(snap[0])])
+                Datasets.snapshots.append([snap[1], int(snap[0])])
         if pattern == None:
             snapshots = Datasets.snapshots[:]
         else:
@@ -374,7 +374,7 @@ class Datasets(Exception):
         """
         # FIXME in future.
         # This is a little sub-optimal because we should be able to modify
-        # the snapshot list in place in some situations and regenerate the 
+        # the snapshot list in place in some situations and regenerate the
         # snapshot list without calling out to zfs(1m). But on the
         # pro side, we will pick up any new snapshots since the last
         # scan that we would be otherwise unaware of.
@@ -423,7 +423,7 @@ class ZPool:
         outdata,errdata = util.run_command(cmd)
         _used,_available = outdata.rstrip().split('\n')
         used = float(_used)
-        available = float(_available) 
+        available = float(_available)
         return 100.0 * used/(used + available)
 
     def get_available_size(self):
@@ -500,7 +500,7 @@ class ZPool:
             A string indicating one of the standard auto-snapshot schedules
             tags to check (eg. "frequent" will map to the tag:
             com.sun:auto-snapshot:frequent). If specified as a zfs property
-            on a zfs dataset, the property corresponding to the tag will 
+            on a zfs dataset, the property corresponding to the tag will
             override the wildcard property: "com.sun:auto-snapshot"
             Default value = None
         """
@@ -521,9 +521,9 @@ class ZPool:
         """
         List pattern matching snapshots sorted by creation date.
         Oldest listed first
-           
+
         Keyword arguments:
-        pattern -- Filter according to pattern (default None)   
+        pattern -- Filter according to pattern (default None)
         """
         # If there isn't a list of snapshots for this dataset
         # already, create it now and store it in order to save
@@ -591,7 +591,7 @@ class ReadableDataset:
             cmd = [ZFSCMD, "get", "-H", "-p", "-o", "value", "creation",
                    self.name]
             outdata,errdata = util.run_command(cmd)
-            self.__creationTime = long(outdata.rstrip())
+            self.__creationTime = int(outdata.rstrip())
         return self.__creationTime
 
     def exists(self):
@@ -599,13 +599,13 @@ class ReadableDataset:
         Returns True if the dataset is still existent on the system.
         False otherwise
         """
-        # Test existance of the dataset by checking the output of a 
+        # Test existance of the dataset by checking the output of a
         # simple zfs get command on the snapshot
         cmd = [ZFSCMD, "get", "-H", "-o", "name", "type", self.name]
         try:
             outdata,errdata = util.run_command(cmd)
-        except RuntimeError, message:
-            raise RuntimeError, str(message)
+        except RuntimeError as message:
+            raise RuntimeError(str(message))
 
         result = outdata.rstrip()
         if result == self.name:
@@ -616,7 +616,7 @@ class ReadableDataset:
     def get_used_size(self):
         cmd = [ZFSCMD, "get", "-H", "-p", "-o", "value", "used", self.name]
         outdata,errdata = util.run_command(cmd)
-        return long(outdata.rstrip())
+        return int(outdata.rstrip())
 
     def get_user_property(self, prop, local=False):
         if local == True:
@@ -629,7 +629,7 @@ class ReadableDataset:
     def set_user_property(self, prop, value):
         cmd = [ZFSCMD, "set", "%s=%s" % (prop, value), self.name]
         outdata,errdata = util.run_command(cmd)
-    
+
     def unset_user_property(self, prop):
         cmd = [ZFSCMD, "inherit", prop, self.name]
         outdata,errdata = util.run_command(cmd)
@@ -638,7 +638,7 @@ class Snapshot(ReadableDataset):
     """
     ZFS Snapshot object class.
     Provides information and operations specfic to ZFS snapshots
-    """    
+    """
     def __init__(self, name, creation = None):
         """
         Keyword arguments:
@@ -656,7 +656,7 @@ class Snapshot(ReadableDataset):
     def __split_snapshot_name(self):
         name = self.name.split("@", 1)
         # Make sure this is really a snapshot and not a
-        # filesystem otherwise a filesystem could get 
+        # filesystem otherwise a filesystem could get
         # destroyed instead of a snapshot. That would be
         # really really bad.
         if name[0] == self.name:
@@ -673,7 +673,7 @@ class Snapshot(ReadableDataset):
                "-o", "value", "referenced", \
                self.name]
         outdata,errdata = util.run_command(cmd)
-        return long(outdata.rstrip())
+        return int(outdata.rstrip())
 
     def list_children(self):
         """Returns a recursive list of child snapshots of this snapshot"""
@@ -807,7 +807,7 @@ class ReadWritableDataset(ReadableDataset):
         cmd = [ZFSCMD, "get", "-H", "-p", "-o", "value", "available", \
                self.name]
         outdata,errdata = util.run_command(cmd)
-        return long(outdata.rstrip())
+        return int(outdata.rstrip())
 
     def create_snapshot(self, snaplabel, recursive = False):
         """
@@ -828,12 +828,12 @@ class ReadWritableDataset(ReadableDataset):
             cmd.append("-r")
         cmd.append("%s@%s" % (self.name, snaplabel))
         outdata,errdata = util.run_command(cmd, False)
-	if errdata:
-	  print errdata
+        if errdata:
+            print(errdata)
         self.datasets.refresh_snapshots()
 
     def list_children(self):
-        
+
         # Note, if more dataset types ever come around they will
         # need to be added to the filsystem,volume args below.
         # Not for the forseeable future though.
@@ -851,9 +851,9 @@ class ReadWritableDataset(ReadableDataset):
         """
         List pattern matching snapshots sorted by creation date.
         Oldest listed first
-           
+
         Keyword arguments:
-        pattern -- Filter according to pattern (default None)   
+        pattern -- Filter according to pattern (default None)
         """
         # If there isn't a list of snapshots for this dataset
         # already, create it now and store it in order to save
@@ -1001,20 +1001,20 @@ def list_zpools():
 if __name__ == "__main__":
     for zpool in list_zpools():
         pool = ZPool(zpool)
-        print pool
+        print(pool)
         for filesys,mountpoint in pool.list_filesystems():
             fs = Filesystem(filesys, mountpoint)
-            print fs
-            print "\tSnapshots:"
+            print(fs)
+            print("\tSnapshots:")
             for snapshot, snaptime in fs.list_snapshots():
                 snap = Snapshot(snapshot, snaptime)
-                print "\t\t" + snap.name
+                print("\t\t" + snap.name)
 
         for volname in pool.list_volumes():
             vol = Volume(volname)
-            print vol
-            print "\tSnapshots:"
+            print(vol)
+            print("\tSnapshots:")
             for snapshot, snaptime in vol.list_snapshots():
                 snap = Snapshot(snapshot, snaptime)
-                print "\t\t" + snap.name
+                print("\t\t" + snap.name)
 

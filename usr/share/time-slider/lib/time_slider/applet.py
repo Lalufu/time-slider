@@ -638,7 +638,7 @@ def main(argv):
     try:
         mainloop.run()
     except:
-        print "Exiting"
+        print("Exiting")
 
 if __name__ == '__main__':
     main()

@@ -20,7 +20,7 @@
 # CDDL HEADER END
 #
 
-import ConfigParser
+import configparser
 import sys
 import time_slider.util as util
 
@@ -69,14 +69,14 @@ default_properties = {
     },
 }
 
-class MyConfigParser(ConfigParser.ConfigParser):
+class MyConfigParser(configparser.ConfigParser):
     def __init__(self):
-        ConfigParser.ConfigParser.__init__(self)
+        configparser.ConfigParser.__init__(self)
 
-        for section, content in default_properties.iteritems():
+        for section, content in default_properties.items():
             if not self.has_section(section):
                 self.add_section(section)
-            for k,v in content.iteritems():
+            for k,v in content.items():
                 self.set(section, k, str(v))
 
 class Config:
@@ -89,7 +89,7 @@ class Config:
             result = self.config.get(section, option)
             util.debug('CONFIG: GET section %s, option %s with value %s\n' % (section, option, result), 1)
             return result
-        except (ConfigParser.NoOptionError, ConfigParser.NoSectionError):
+        except (configparser.NoOptionError, configparser.NoSectionError):
             util.debug('CONFIG: NOTFOUND section %s, option %s\n' % (section, option), 1)
             return ''
 

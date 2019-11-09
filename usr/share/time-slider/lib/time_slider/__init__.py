@@ -45,8 +45,8 @@ gettext.bindtextdomain(GETTEXT_DOMAIN, LOCALE_PATH)
 gettext.textdomain(GETTEXT_DOMAIN)
 
 # register the gettext function for the whole interpreter as "_"
-import __builtin__
-__builtin__._ = gettext.gettext
+import builtins
+builtins._ = gettext.gettext
 
 
 
