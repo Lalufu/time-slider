@@ -27,7 +27,7 @@ running ZFS on Linux version 0.6.2 and later.
 Running
 =======
 
-Python 2 is needed to run this package. Python 3 is not supported.
+Python 3 is needed to run this package. Python 2 is no longer  supported.
 
 A systemd time-sliderd.service file is included in the installation.
 It is not enabled by default.
